@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.nova-bubble, .nova-bubble-static { font-size: 12px; position: absolute; background-color: #fff; color: #333333; width: 250px; border-radius: 3px; border: solid 1px #c3c6c7; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
+
+.nova-bubble-no-title { padding-top: 5px; color: #666666; }
+
+.nova-bubble-no-title .nova-bubble-close { right: 7px; }
+
+.nova-bubble-close { cursor: pointer; position: absolute; width: 16px; height: 16px; opacity: .8; transition: all .2s ease; text-decoration: none; top: 7px; right: 17px; font-family: '\5b8b\4f53'; font-size: 13px; font-weight: bold; }
+
+.nova-bubble-close i { font-style: normal; display: inline-block; width: 12px; height: 12px; vertical-align: top; background-image: none; margin: 0; font-size: 16px; font-weight: bold; color: #999; content: ''; }
+
+.nova-bubble-close:hover i { color: #666; background-position: -20px 0; }
+
+.nova-bubble-header { height: 35px; line-height: 35px; font-size: 14px; padding: 0 20px; border-bottom: 1px solid #e3e3e3; }
+
+.nova-bubble-header small { font-size: 12px; color: #666666; margin-left: 10px; }
+
+.nova-bubble-body { padding: 10px 20px 10px 20px; line-height: 22px; }
+
+.nova-bubble-body iframe { width: 100%; height: 100%; }
+
+.nova-bubble-footer { font-size: 0; text-align: center; padding-bottom: 20px; }
+
+.nova-bubble-footer .btn { margin: 0 10px; }
+
+.nova-bubble-body-loading { text-align: center; }
+
+.nova-bubble-body-loading i { background-image: url(../../img/new_v/ui_scrollLoading/loadingGIF46px.gif); width: 46px; height: 46px; display: inline-block; margin: 0 auto; }
+
+.nova-bubble-custom .nova-bubble-body { padding: 0; }
+
+.nova-bubble-custom .nova-bubble-body-loading { padding: 30px 30px 25px 30px; }
+
+.nova-bubble-arrow, .nova-bubble-arrow-inner { position: absolute; display: inline-block; height: 0; width: 0; overflow: hidden; left: 50%; top: -7px; border-left: 6px dashed transparent; border-right: 6px dashed transparent; border-bottom: 6px solid; margin-left: -6px; border-bottom-color: #c3c6c7; }
+
+.nova-bubble-arrow-inner { display: inline-block; margin-top: 1px; border-bottom-color: #fff; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { /* 当设备像素比不小于1.5的时候... */ }

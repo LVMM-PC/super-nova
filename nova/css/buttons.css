@@ -1,0 +1,70 @@
+/*! buttons.scss 2016-03-15 Sheng Jiang 1.0.0.3 */
+button.btn, input[type="button"].btn { *border: 0; *overflow: visible; outline: none; }
+
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner { border: none; padding: 0; }
+
+.btn { vertical-align: top; text-align: center; display: inline-block; box-sizing: content-box; cursor: pointer; height: 28px; line-height: 28px; padding: 0 19px; font-size: 14px; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; border: 1px solid #cccccc; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #ffffff; color: #666; }
+
+.btn:hover { color: #ff6600; border-color: #ff6600; text-decoration: none; }
+
+.btn:active { box-shadow: inset 0 3px 3px rgba(255, 102, 0, 0.15); }
+
+.btn[disabled], .btn.btn-disabled { cursor: default; color: #BABABA; background: #FFFFFF; border-color: #e5e5e5; }
+
+.btn.btn-forbidden:active, .btn[disabled]:active, .btn.btn-disabled:active { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
+input[type="button"].btn, button.btn { *height: 30px; *line-height: 30px; *padding: 0 20px; }
+
+.btn-block { display: block; }
+
+.btn-pink:active, .btn-orange:active, .btn-blue:active { -webkit-box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.15); box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.15); }
+
+.btn-pink.btn-forbidden:active, .btn-pink[disabled]:active, .btn-pink.btn-disabled:active, .btn-orange.btn-forbidden:active, .btn-orange[disabled]:active, .btn-orange.btn-disabled:active, .btn-blue.btn-forbidden:active, .btn-blue[disabled]:active, .btn-blue.btn-disabled:active { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
+.btn-xl:active, .btn-lg:active { box-shadow: inset 0 4px 4px rgba(255, 102, 0, 0.1); }
+
+.btn-xl.btn-pink:active, .btn-xl.btn-orange:active, .btn-xl.btn-blue:active, .btn-lg.btn-pink:active, .btn-lg.btn-orange:active, .btn-lg.btn-blue:active { -webkit-box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.15); box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.15); }
+
+.btn-xl.btn-pink.btn-forbidden:active, .btn-xl.btn-pink[disabled]:active, .btn-xl.btn-pink.btn-disabled:active, .btn-xl.btn-orange.btn-forbidden:active, .btn-xl.btn-orange[disabled]:active, .btn-xl.btn-orange.btn-disabled:active, .btn-xl.btn-blue.btn-forbidden:active, .btn-xl.btn-blue[disabled]:active, .btn-xl.btn-blue.btn-disabled:active, .btn-lg.btn-pink.btn-forbidden:active, .btn-lg.btn-pink[disabled]:active, .btn-lg.btn-pink.btn-disabled:active, .btn-lg.btn-orange.btn-forbidden:active, .btn-lg.btn-orange[disabled]:active, .btn-lg.btn-orange.btn-disabled:active, .btn-lg.btn-blue.btn-forbidden:active, .btn-lg.btn-blue[disabled]:active, .btn-lg.btn-blue.btn-disabled:active { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
+.btn-pink { color: #FFFFFF; background: #EE3388; border-color: #EE3388; }
+
+.btn-pink:hover { border-color: #EE3388; color: #FFFFFF; text-decoration: none; background: #DD3377; }
+
+.btn-pink[disabled], .btn-pink.btn-disabled { color: #FFFFFF; background: #F699C3; border-color: #F699C3; }
+
+.btn-orange { color: #FFFFFF; background: #FF8800; border-color: #FF8800; }
+
+.btn-orange:hover { border-color: #FF8800; color: #FFFFFF; text-decoration: none; background: #FF6600; }
+
+.btn-orange[disabled], .btn-orange.btn-disabled { color: #FFFFFF; background: #FFC37F; border-color: #FFC37F; }
+
+.btn-blue { color: #FFFFFF; background: #0099FF; border-color: #0099FF; }
+
+.btn-blue:hover { border-color: #0099FF; color: #FFFFFF; text-decoration: none; background: #0088DD; }
+
+.btn-blue[disabled], .btn-blue.btn-disabled { color: #FFFFFF; background: #7FCCFF; border-color: #7FCCFF; }
+
+.btn-xl { height: 40px; line-height: 40px; padding: 0 29px; font-size: 18px; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+.btn-xl .icon { display: inline-block; width: 18px; height: 18px; margin: 11px 10px 0 0; *margin: 3px 10px 0 0; vertical-align: top; }
+
+input[type="button"].btn-xl, button.btn-xl { *height: 42px; *line-height: 42px; *padding: 0 30px; }
+
+.btn-lg { height: 34px; line-height: 34px; padding: 0 24px; font-size: 16px; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+.btn-lg .icon { display: inline-block; width: 16px; height: 16px; margin: 9px 10px 0 0; *margin: 2px 10px 0 0; vertical-align: top; }
+
+input[type="button"].btn-lg, button.btn-lg { *height: 36px; *line-height: 36px; *padding: 0 25px; }
+
+.btn-sm { height: 24px; line-height: 24px; padding: 0 14px; font-size: 12px; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+input[type="button"].btn-sm, button.btn-sm { *height: 26px; *line-height: 26px; *padding: 0 15px; }
+
+.btn-xs { height: 20px; line-height: 20px; padding: 0 9px; font-size: 12px; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+input[type="button"].btn-xs, button.btn-xs { *height: 22px; *line-height: 22px; *padding: 0 10px; }
+
+.btn-forbidden { cursor: not-allowed; }
+
+.btn-forbidden, .btn-forbidden:hover, .btn-forbidden[disabled], .btn-forbidden.btn-disabled { color: #999999; background: #DDDDDD; border: 1px solid #CCC; }

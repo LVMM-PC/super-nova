@@ -1,0 +1,451 @@
+@charset "UTF-8";
+/*! buttons.scss 2016-03-15 Sheng Jiang 1.0.0.0 */
+/*region 日历*/
+.nova-calendar-tip { background: #fff; font-size: 12px; color: #999; line-height: 32px; height: 32px; }
+
+.nova-calendar-tip i { display: inline-block; width: 14px; height: 14px; margin-right: 5px; background-image: url(../../img/lv/icon.png); background-position: -240px -220px; vertical-align: -3px; }
+
+.ui-calendar { font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; background-color: #fff; position: relative; width: 1196px; border: 2px solid #e3e3e3; color: #333; }
+
+.ui-calendar .monthbg { display: none; }
+
+.ui-calendar .month-prev, .ui-calendar .month-next { position: absolute; color: #ffffff; font-size: 16px; width: 26px; height: 26px; background-image: url(../../img/lv/calendar.png); top: 4px; cursor: pointer; text-indent: -9999em; overflow: hidden; }
+
+.ui-calendar .month-prev:hover, .ui-calendar .month-next:hover { background-color: #ff77bb; }
+
+.ui-calendar .month-prev { background-position: -60px 0; left: 4px; }
+
+.ui-calendar .month-prev:hover { background-position: 0 0; }
+
+.ui-calendar .month-next { background-position: -90px 0; right: 4px; }
+
+.ui-calendar .month-next:hover { background-position: -30px 0; }
+
+.ui-calendar .calmonth { width: 596px; float: left; }
+
+.ui-calendar .calbox { position: relative; }
+
+.ui-calendar .caltitle { font-size: 16px; height: 34px; line-height: 34px; text-align: center; background-color: #ffffff; border-left: 1px solid #e3e3e3; border-right: 1px solid #e3e3e3; }
+
+.ui-calendar .month-loading { left: 0; top: 0; right: 0; bottom: 0; background: #fff url(../../img/new_v/ui_scrollLoading/loadingGIF46px.gif) no-repeat center center; position: absolute; overflow: hidden; font-size: 200px; line-height: 100%; text-align: center; display: none; }
+
+.ui-calendar table { position: relative; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+.ui-calendar thead { background-color: #eee; }
+
+.ui-calendar th, .ui-calendar td { border: 1px solid #e3e3e3; }
+
+.ui-calendar th { text-align: center; width: 30px; height: 26px; line-height: 26px; font-weight: normal; }
+
+.ui-calendar td { width: 84px; height: 49px; }
+
+.ui-calendar .sat, .ui-calendar .sun { color: #ee3388; }
+
+.ui-calendar .date { position: relative; width: 84px; height: 49px; cursor: default; }
+
+.ui-calendar .nodate { position: relative; width: 84px; height: 49px; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; color: #BBB; }
+
+.ui-calendar .nodate:hover { color: #BBB; }
+
+.ui-calendar .caldate { position: relative; cursor: pointer; }
+
+.ui-calendar .caldisabled { height: 49px; position: relative; cursor: default; }
+
+.ui-calendar .caldate:hover { width: 84px; height: 49px; background: #fffaee; }
+
+.ui-calendar .calday, .ui-calendar .calinfo, .ui-calendar .calprice, .ui-calendar .calactive { position: absolute; }
+
+.ui-calendar .calday { top: 5px; left: 6px; line-height: 12px; }
+
+.ui-calendar .calinfo { top: 19px; left: 5px; right: 5px; color: #11b811; line-height: 12px; }
+
+.ui-calendar .calinfo.sellout { color: #bbbbbb; text-align: center; }
+
+.ui-calendar .calinfo.sellouting { color: #ff3300; }
+
+.ui-calendar .calprice { left: 5px; top: 32px; line-height: 12px; color: #ff6600; }
+
+.ui-calendar .calprice i, .ui-calendar .calprice em { vertical-align: -1px; }
+
+.ui-calendar .calactive { top: 0; right: 0; }
+
+.ui-calendar .calsale, .ui-calendar .calfestival, .ui-calendar .calroute { margin-left: 1px; display: inline-block; background-image: url(../../img/lv/calendar.png); background-position: -120px 0; width: 14px; height: 14px; text-indent: -9999em; float: left; }
+
+.ui-calendar .calroute { background-image: none; background-color: #fe7878; color: #FFFFFF; text-indent: 0; line-height: 14px; text-align: center; }
+
+.ui-calendar .calfestival { background-position: -120px -15px; }
+
+.ui-calendar[data-float="true"] { position: absolute; -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); }
+
+/*endregion */
+/*region 大日历*/
+.ui-calendar-big .calbox { border: 1px solid #e3e3e3; }
+
+.ui-calendar-big table { margin: -1px; }
+
+.ui-calendar-big .caldisabled { color: #BBB; }
+
+.ui-calendar-big .caldisabled:hover { background-color: transparent; }
+
+.ui-calendar-big .caldate:hover.caldisabled { /*background: none;*/ /*margin: 0;*/ cursor: default; }
+
+.ui-calendar-big[data-bimonthly="true"] .notThisMonth { display: none; }
+
+.ui-calendar-big[data-bimonthly="true"] .nova-calendar-tip { line-height: 30px; height: 30px; padding-left: 10px; }
+
+.ui-calendar-big[data-float="true"] .nova-calendar-tip { border-left: 1px solid #e3e3e3; border-right: 1px solid #e3e3e3; padding-left: 10px; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] { width: 928px; border: none; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-tip { border-left: 2px solid #e3e3e3; border-right: 2px solid #e3e3e3; padding-left: 10px; margin-top: -1px; position: relative; border-bottom: 2px solid #e3e3e3; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .calmonth { width: 464px; margin: 0; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .caltitle { border: none; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] [data-offset="0"] .calbox { border-right: none; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .calbox { border: 2px solid #e3e3e3; border-top: none; overflow: hidden; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .caltable { margin: -1px; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] td { width: 65px; height: 49px; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .date { width: 65px; height: 49px; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .caltitle { background: #ee3388; color: #FFFFFF; line-height: 28px; height: 28px; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .month-prev, .ui-calendar-big[data-float="true"][data-bimonthly="true"] .month-next { width: 28px; height: 28px; top: 0; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .month-prev:hover, .ui-calendar-big[data-float="true"][data-bimonthly="true"] .month-next:hover { background-color: #a81c54; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .month-prev { left: 0; background-position: 0 0; }
+
+.ui-calendar-big[data-float="true"][data-bimonthly="true"] .month-next { right: 0; background-position: -30px 0; }
+
+.ui-calendar-big[data-bimonthly="false"] { width: 561px; border: none; }
+
+.ui-calendar-big[data-bimonthly="false"] .month-prev, .ui-calendar-big[data-bimonthly="false"] .month-next { width: 28px; height: 28px; top: 0; }
+
+.ui-calendar-big[data-bimonthly="false"] .month-prev:hover, .ui-calendar-big[data-bimonthly="false"] .month-next:hover { background-color: #a81c54; }
+
+.ui-calendar-big[data-bimonthly="false"] .month-prev { left: 0; background-position: 0 0; }
+
+.ui-calendar-big[data-bimonthly="false"] .month-next { right: 0; background-position: -30px 0; }
+
+.ui-calendar-big[data-bimonthly="false"] .caltitle { background-color: #ee3388; color: #ffffff; height: 28px; line-height: 28px; border: none; }
+
+.ui-calendar-big[data-bimonthly="false"] th { height: 24px; line-height: 24px; border-top: none; }
+
+.ui-calendar-big[data-bimonthly="false"] td { width: 79px; }
+
+.ui-calendar-big[data-bimonthly="false"] .nodate, .ui-calendar-big[data-bimonthly="false"] .caldate, .ui-calendar-big[data-bimonthly="false"] .date { width: 79px; }
+
+.ui-calendar-big[data-bimonthly="false"] .notThisMonth { background-color: #f8f8f8; }
+
+.ui-calendar-big[data-bimonthly="false"] .caldate:hover { width: 79px; }
+
+.ui-calendar-big[data-bimonthly="false"] .notThisMonth.caldate:hover { background-color: #fffaee; }
+
+.ui-calendar-big[data-bimonthly="false"] .notThisMonth.caldisabled:hover { background-color: #f8f8f8; }
+
+.ui-calendar-big[data-bimonthly="false"] .calmonth[data-offset='0'] { width: 561px; }
+
+.ui-calendar-big[data-bimonthly="true"][data-float="false"] .calmonth { margin-bottom: -1px; }
+
+.ui-calendar-big[data-bimonthly="true"][data-float="false"] .calmonth[data-offset='0'] { margin-left: -1px; }
+
+.ui-calendar-big[data-bimonthly="true"][data-float="false"] .calmonth[data-offset='1'] { margin-right: -1px; }
+
+.ui-calendar-big .calmonth[data-offset='1'] { float: right; }
+
+.ui-calendar-big .td-selected .calselected { display: block; position: absolute; right: 0; bottom: 0; background: url(../../img/lv/calendar.png) no-repeat -140px -10px; width: 20px; height: 20px; }
+
+.ui-calendar-big .td-selected .caldate { border: 1px solid #ff9900; background: #fffaee; margin: -1px; }
+
+.ui-calendar-big .caldate.nodate { cursor: default; }
+
+.ui-calendar-big .festival .calday { color: #ee3388; }
+
+.ui-calendar-big .calmiddle { margin: -1px; border: 1px solid #ff9900; background-color: #fffaee; }
+
+/*endregion */
+/*region 小日历*/
+.ui-calendar-mini { position: relative; width: 468px; border: none; }
+
+.ui-calendar-mini .month-prev, .ui-calendar-mini .month-next { position: absolute; color: #ffffff; font-size: 16px; width: 28px; height: 28px; top: 0; }
+
+.ui-calendar-mini .month-prev { left: 0; background-position: 0 0; }
+
+.ui-calendar-mini .month-next { right: 0; background-position: -30px 0; }
+
+.ui-calendar-mini .calmonth { width: 234px; float: left; border-bottom: 1px solid #cccccc; }
+
+.ui-calendar-mini .calbox { position: relative; }
+
+.ui-calendar-mini .calbox { padding: 5px 4px 4px 4px; }
+
+.ui-calendar-mini .caltitle { font-size: 14px; height: 28px; line-height: 28px; text-align: center; color: #ffffff; background-color: #ef3388; border: none; }
+
+.ui-calendar-mini .monthbg { position: absolute; overflow: hidden; font-size: 200px; opacity: 0.1; width: 100%; height: 100%; line-height: 100%; text-align: center; }
+
+.ui-calendar-mini table { position: relative; }
+
+.ui-calendar-mini thead { background-color: #eee; }
+
+.ui-calendar-mini th { text-align: center; width: 30px; height: 24px; border-bottom: 4px solid #fff; font-weight: normal; border-top: none; border-left: none; border-right: none; }
+
+.ui-calendar-mini td { position: relative; width: 30px; height: 30px; padding: 1px; border: none; text-align: center; vertical-align: top; }
+
+.ui-calendar-mini .sat { border-right: 2px solid #fff; }
+
+.ui-calendar-mini .sun { border-left: 1px solid #fff; }
+
+.ui-calendar-mini .date { position: absolute; left: 0; top: 0; text-align: center; width: 30px; height: 30px; line-height: 30px; cursor: default; border: none; }
+
+.ui-calendar-mini .today { color: #ee3388; }
+
+.ui-calendar-mini .caldate { cursor: pointer; }
+
+.ui-calendar-mini .notThisMonth { display: none; }
+
+.ui-calendar-mini .caldate:hover { width: 32px; margin: 0 0 0 -1px; height: 30px; border: none; background-color: #fef2f9; color: #ee3388; }
+
+.ui-calendar-mini .nodate { cursor: default; }
+
+.ui-calendar-mini .nodate:hover { color: #BBB; background-color: transparent; }
+
+.ui-calendar-mini .caldate.active { background-color: #ff77bb; color: #fff; }
+
+.ui-calendar-mini .calmonth[data-offset='0'] .calbox { border-right: 1px solid #f5f5f5; border-left: 1px solid #cccccc; }
+
+.ui-calendar-mini .calmonth[data-offset='1'] .calbox { border-left: 1px solid #f5f5f5; border-right: 1px solid #cccccc; }
+
+.ui-calendar-mini[data-bimonthly] .month-prev:hover, .ui-calendar-mini[data-bimonthly] .month-next:hover { background-color: #a81c54; }
+
+.ui-calendar-mini[data-bimonthly="false"] { width: 234px; }
+
+.ui-calendar-mini[data-bimonthly="false"] .nodate { background-color: transparent; }
+
+.ui-calendar-mini[data-bimonthly="false"] .caldate:hover { width: 32px; }
+
+.ui-calendar-mini[data-bimonthly="false"] .calmonth[data-offset='0'] { width: 234px; }
+
+.ui-calendar-mini[data-bimonthly="false"] .calmonth[data-offset='0'] .calbox { border-right: 1px solid #cccccc; }
+
+.ui-calendar-mini[data-bimonthly="true"] .calmonth { margin-bottom: -1px; }
+
+.ui-calendar-mini[data-bimonthly="true"] .calmonth[data-offset='0'], .ui-calendar-mini[data-bimonthly="true"] .calmonth[data-offset='1'], .ui-calendar-mini[data-bimonthly="false"] .calmonth[data-offset='0'] { margin: 0; }
+
+.ui-calendar-mini .festival { color: #ee3388; }
+
+.ui-calendar-mini .festival.nodate { color: #BBB; }
+
+.ui-calendar-mini .calmiddle { width: 32px; margin-left: -1px; background-color: #fcdaed; }
+
+.ui-calendar-mini .caldisabled { color: #BBB; cursor: default; }
+
+.ui-calendar-mini .caldisabled:hover { color: #BBB; background-color: transparent; }
+
+.ui-calendar-mini .caldisabled.calmiddle:hover { background-color: #fcdaed; }
+
+.ui-calendar-mini .td-selected .caldate { width: 32px; margin-left: -1px; color: #fff; background: #ff77bb; border: none; }
+
+.ui-calendar-mini .nodate { background-color: transparent; }
+
+/*endregion */
+/*region 生日日历*/
+.ui-calendar-birthday .cal-month-dropdown-box, .ui-calendar-birthday .cal-year-dropdown-box { background-color: #ffffff; box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); border: 1px solid #cccccc; width: 72px; position: absolute; }
+
+.ui-calendar-birthday .cal-month-dropdown-box { width: 49px; }
+
+.ui-calendar-birthday .td-selected .caldate:hover { background: #84b1e9; color: #fff; }
+
+.ui-calendar-birthday .cal-year-select-active, .ui-calendar-birthday .cal-year-select, .ui-calendar-birthday .cal-month-select-active, .ui-calendar-birthday .cal-month-select { font-size: 14px; text-align: center; cursor: pointer; height: 24px; line-height: 24px; }
+
+.ui-calendar-birthday .cal-year-select-active i, .ui-calendar-birthday .cal-year-select i, .ui-calendar-birthday .cal-month-select-active i, .ui-calendar-birthday .cal-month-select i { margin-left: 5px; vertical-align: 3px; display: inline-block; background-image: url(../../img/lv/calendar.png); background-position: -160px 0; width: 7px; height: 4px; }
+
+.ui-calendar-birthday .cal-month-select.active, .ui-calendar-birthday .cal-month-select-active, .ui-calendar-birthday .cal-year-select.active, .ui-calendar-birthday .cal-year-select-active { color: #ee3388; }
+
+.ui-calendar-birthday .cal-month-select.active i, .ui-calendar-birthday .cal-month-select-active i, .ui-calendar-birthday .cal-year-select.active i, .ui-calendar-birthday .cal-year-select-active i { background-position: -170px 0; }
+
+.ui-calendar-birthday .cal-year-select { position: absolute; top: 3px; left: 56px; width: 72px; display: block; }
+
+.ui-calendar-birthday .cal-month-select { position: absolute; top: 3px; left: 132px; width: 49px; display: block; }
+
+.ui-calendar-birthday .cal-year-dropdown, .ui-calendar-birthday .cal-month-dropdown { overflow-y: auto; max-height: 240px; width: 72px; }
+
+.ui-calendar-birthday .cal-year-dropdown::-webkit-scrollbar, .ui-calendar-birthday .cal-month-dropdown::-webkit-scrollbar { background-color: transparent; width: 12px; }
+
+.ui-calendar-birthday .cal-year-dropdown::-webkit-scrollbar-thumb, .ui-calendar-birthday .cal-month-dropdown::-webkit-scrollbar-thumb { background: #eaeaea; border: 2px solid #fff; width: 8px; border-radius: 6px; }
+
+.ui-calendar-birthday .cal-year-dropdown li, .ui-calendar-birthday .cal-month-dropdown li { cursor: pointer; font-size: 12px; padding-left: 8px; color: #666666; height: 20px; line-height: 20px; }
+
+.ui-calendar-birthday .cal-year-dropdown li:hover, .ui-calendar-birthday .cal-month-dropdown li:hover { color: #ee3388; background-color: #fef2f9; }
+
+.ui-calendar-birthday .cal-year-dropdown li.active, .ui-calendar-birthday .cal-month-dropdown li.active { color: #ffffff; background-color: #ed7eb6; }
+
+.ui-calendar-birthday .cal-month-dropdown { width: 49px; }
+
+.ui-calendar-birthday .cal-pane { text-align: right; height: 30px; margin: 5px 3px 0 0; color: #666666; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+.ui-calendar-birthday .cal-time-input { width: 48px; height: 20px; display: inline-block; border: 1px solid #cccccc; color: #333333; text-align: center; }
+
+.ui-calendar-birthday .cal-time-text, .ui-calendar-birthday .cal-time-input, .ui-calendar-birthday .cal-birthday-ok, .ui-calendar-birthday .cal-birthday-time, .ui-calendar-birthday .cal-birthday-clear { display: none; margin-left: 5px; margin-right: 0; }
+
+.ui-calendar-birthday .cal-birthday-clear { display: inline-block; }
+
+.ui-calendar-birthday .cal-hour, .ui-calendar-birthday .cal-minute, .ui-calendar-birthday .cal-time-to { height: 20px; line-height: 20px; display: inline-block; width: 20px; }
+
+.ui-calendar-birthday .cal-hour.active, .ui-calendar-birthday .cal-minute.active, .ui-calendar-birthday .cal-time-to.active { color: #0065d3; }
+
+.ui-calendar-birthday .cal-hour { text-align: right; }
+
+.ui-calendar-birthday .cal-minute { text-align: left; }
+
+.ui-calendar-birthday .cal-time-to { width: 8px; }
+
+.ui-calendar-birthday .cal-hour-dropdown, .ui-calendar-birthday .cal-minute-dropdown { width: 123px; height: 146px; border: 1px solid #cccccc; position: absolute; top: 113px; left: 78px; background: #fff; }
+
+.ui-calendar-birthday .cal-hour-dropdown ul, .ui-calendar-birthday .cal-minute-dropdown ul { margin: 5px 0 0 5px; }
+
+.ui-calendar-birthday .cal-hour-dropdown li, .ui-calendar-birthday .cal-minute-dropdown li { cursor: pointer; text-align: center; width: 21px; height: 21px; display: inline-block; margin: 0 2px 2px 0; color: #333333; }
+
+.ui-calendar-birthday .cal-hour-dropdown li:hover, .ui-calendar-birthday .cal-minute-dropdown li:hover { background: #eff8fc; color: #0065d3; }
+
+.ui-calendar-birthday .cal-hour-dropdown li.active, .ui-calendar-birthday .cal-minute-dropdown li.active { background: #84b1e9; color: #fff; }
+
+.ui-calendar-birthday .cal-hour-dropdown li[data-disabled="true"], .ui-calendar-birthday .cal-minute-dropdown li[data-disabled="true"] { cursor: default; color: #999; background-color: transparent; }
+
+.ui-calendar-birthday .cal-hour-dropdown .title, .ui-calendar-birthday .cal-minute-dropdown .title { font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; width: 123px; height: 24px; line-height: 24px; color: #666666; padding-left: 10px; }
+
+.ui-calendar-birthday .cal-hour-dropdown .close, .ui-calendar-birthday .cal-minute-dropdown .close { cursor: pointer; top: 2px; right: 4px; position: absolute; padding: 5px; }
+
+.ui-calendar-birthday .cal-hour-dropdown .close i, .ui-calendar-birthday .cal-minute-dropdown .close i { display: block; width: 11px; height: 11px; background-image: url(../../img/lv/calendar.png); background-position: -160px -15px; }
+
+.ui-calendar-birthday .cal-hour-dropdown .close i:hover, .ui-calendar-birthday .cal-minute-dropdown .close i:hover { background-position: -180px -15px; }
+
+.ui-calendar-birthday .cal-minute-dropdown { height: 100px; top: 159px; }
+
+/*endregion*/
+/*region 黄色*/
+.ui-calendar-orange .sat, .ui-calendar-orange .sun { color: #ff6600; }
+
+.ui-calendar-orange .caltitle { background-color: #ff8800; }
+
+.ui-calendar-orange[data-bimonthly="true"] .month-prev:hover, .ui-calendar-orange[data-bimonthly="true"] .month-next:hover { background-color: #ff6600; }
+
+.ui-calendar-orange .calmonth .caltable .caldate:hover { background-color: #fff7e4; color: #ff6600; }
+
+.ui-calendar-orange .calmonth .caltable .festival { color: #ff6600; }
+
+.ui-calendar-orange .calmonth .caltable .today { color: #ff6600; background-color: transparent; }
+
+.ui-calendar-orange .calmonth .caltable .td-selected .today { width: 32px; background-color: #fa0; }
+
+.ui-calendar-orange .calmonth .caltable .calmiddle { background-color: #ffedc1; }
+
+.ui-calendar-orange .calmonth .caltable .nodate, .ui-calendar-orange .calmonth .caltable .caldisabled { color: #BBB; cursor: default; }
+
+.ui-calendar-orange .calmonth .caltable .nodate:hover, .ui-calendar-orange .calmonth .caltable .caldisabled:hover { color: #BBB; background-color: transparent; }
+
+.ui-calendar-orange .calmonth .caltable .nodate.calmiddle:hover, .ui-calendar-orange .calmonth .caltable .caldisabled.calmiddle:hover { background-color: #ffedc1; }
+
+.ui-calendar-orange .calmonth .caltable .td-selected .caldate { color: #ffffff; background-color: #ffaa00; }
+
+/*endregion*/
+/*region 蓝色*/
+.ui-calendar-blue[data-float][data-bimonthly] .sat, .ui-calendar-blue[data-float][data-bimonthly] .sun { color: #1d79d8; }
+
+.ui-calendar-blue[data-float][data-bimonthly] .festival { color: #1d79d8; }
+
+.ui-calendar-blue[data-float][data-bimonthly] .festival .calday { color: #1d79d8; }
+
+.ui-calendar-blue[data-float][data-bimonthly] .caltitle { background-color: #0088dd; }
+
+.ui-calendar-blue[data-float][data-bimonthly] .month-prev:hover, .ui-calendar-blue[data-float][data-bimonthly] .month-next:hover { background-color: #007bc6; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .month-prev:hover, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .month-next:hover { background-color: #0065d3; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .caltitle { background-color: #5092e5; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .today { color: #0065d3; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .caldate:hover { background-color: #eff8fc; color: #0065d3; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .td-selected .caldate { background: #84b1e9; color: #fff; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .calmiddle { background-color: #eff8fc; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .caldisabled, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-mini .caldisabled:hover { color: #999999; background-color: transparent; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-month-select.active, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-month-select-active, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-year-select.active, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-year-select-active { color: #0065d3; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-month-select.active i, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-month-select-active i, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-year-select.active i, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-year-select-active i { background-position: -160px -5px; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-year-dropdown li:hover, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-month-dropdown li:hover { color: #0065d3; background-color: #eff8fc; }
+
+.ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-year-dropdown li.active, .ui-calendar-blue[data-float][data-bimonthly].ui-calendar-birthday .cal-month-dropdown li.active { color: #ffffff; background-color: #84b1e9; }
+
+.ui-calendar-big.ui-calendar-blue[data-float][data-bimonthly] td, .ui-calendar-big.ui-calendar-blue[data-float][data-bimonthly] .date { height: 62px; word-break: break-all; }
+
+/*endregion*/
+/*region 特卖会*/
+.ui-calendar-groupon[data-float][data-bimonthly] { width: 1127px; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] .nova-calendar-tip { margin-top: 0; border-left: 1px solid #e3e3e3; border-right: 1px solid #e3e3e3; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] .calmonth { width: 561px; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] .caltable { margin: 0; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] .calbox { width: 561px; border: none; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] td { width: 79px; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] .date { width: 79px; }
+
+.ui-calendar-groupon[data-float][data-bimonthly] [data-offset="0"] .caltitle { width: 566px; }
+
+/*endregion*/
+.calhover { -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; display: none; color: #666666; border: 1px solid #cccccc; background: #FFFFFF; position: absolute; padding: 10px 10px 4px 10px; *margin-left: -1px; *margin-top: -1px; }
+
+.calhover .triangle { width: 11px; height: 7px; display: block; position: absolute; margin: 0; top: -7px; left: 36px; bottom: auto; background: url(../../img/lv/calendar.png) no-repeat -140px 0; pointer-events: none; border: none; }
+
+.calhover.calhover-right { *margin-left: 0; }
+
+.calhover.calhover-right .triangle { left: auto; right: 36px; }
+
+.calhover .calroute, .calhover .calsale, .calhover .calfestival { line-height: 20px; }
+
+.calhover .calroute i, .calhover .calsale i, .calhover .calfestival i { width: 14px; height: 14px; display: inline-block; float: left; margin-right: 5px; vertical-align: top; text-align: center; line-height: 14px; overflow: hidden; }
+
+.calhover .calroute span, .calhover .calsale span, .calhover .calfestival span { vertical-align: top; display: inline-block; margin: -3px 0 3px 0; }
+
+.calhover .calroute i { background: #fe7878; color: #FFFFFF; }
+
+.calhover .calfestival i { text-indent: -9999em; background-image: url(../../img/lv/calendar.png); background-position: -120px -15px; }
+
+.calhover .calsale i { text-indent: -9999em; background-image: url(../../img/lv/calendar.png); background-position: -120px 0; }
+
+.calhover .calHasNotProduct { margin: -3px 0 3px 0; }
+
+.cal-number-of-days { -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); display: none; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; pointer-events: none; position: absolute; background: #ffffff; border: 1px solid #cccccc; line-height: 20px; padding: 5px 10px; }
+
+.cal-number-of-days .triangle { width: 11px; height: 7px; display: block; position: absolute; top: -7px; left: 50%; margin-left: -5px; background: url(../../img/lv/calendar.png) no-repeat -140px 0; pointer-events: none; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { /* 当设备像素比不小于1.5的时候... */
+  .nova-calendar-tip i { background-image: url(../../img/lv/icon@2x.png); background-size: 400px; }
+  .ui-calendar .month-prev, .ui-calendar .month-next { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .ui-calendar .calsale, .ui-calendar .calfestival, .ui-calendar .calroute { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  /*region 大日历*/
+  .ui-calendar-big .td-selected .calselected { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  /*endregion */
+  /*region 生日日历*/
+  .ui-calendar-birthday .cal-year-select-active i, .ui-calendar-birthday .cal-year-select i, .ui-calendar-birthday .cal-month-select-active i, .ui-calendar-birthday .cal-month-select i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .ui-calendar-birthday .cal-hour-dropdown .close i, .ui-calendar-birthday .cal-minute-dropdown .close i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  /*endregion*/
+  .calhover .triangle { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .calhover .calfestival i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .calhover .calsale i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .cal-number-of-days .triangle { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; } }

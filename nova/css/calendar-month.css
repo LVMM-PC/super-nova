@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.ui-calendar-big[data-bimonthly="false"] { width: 526px; }
+
+.ui-calendar-big[data-bimonthly="false"] .calmonth[data-offset='0'] { width: 526px; }
+
+.ui-calendar-big[data-bimonthly="false"] td { width: 74px; }
+
+.ui-calendar-big[data-bimonthly="false"] .nodate, .ui-calendar-big[data-bimonthly="false"] .caldate, .ui-calendar-big[data-bimonthly="false"] .date { width: 74px; }
+
+.ui-calendar-big[data-bimonthly="false"] .nodate:hover, .ui-calendar-big[data-bimonthly="false"] .caldate:hover, .ui-calendar-big[data-bimonthly="false"] .date:hover { width: 74px; }
+
+.ui-calendar-big[data-bimonthly="false"] .notThisMonth { display: none; }
+
+.nova-calendar-tabs-wrap { position: relative; height: 40px; }
+
+.nova-calendar-tabs { position: absolute; top: 0; left: 0; cursor: pointer; height: 40px; background-color: #db4787; }
+
+.nova-calendar-tabs-prev, .nova-calendar-tabs-next { background-color: #db4787; float: left; width: 35px; height: 40px; }
+
+.nova-calendar-tabs-prev i, .nova-calendar-tabs-next i { width: 8px; height: 17px; margin: 12px 0 0 13px; display: block; background-image: url(../../img/lv/calendar.png); background-position: -41px -5px; }
+
+.nova-calendar-tabs-prev:hover, .nova-calendar-tabs-next:hover { background-color: #aa2255; }
+
+.nova-calendar-tabs-prev.disabled, .nova-calendar-tabs-next.disabled { background-color: #db4787; cursor: default; }
+
+.nova-calendar-tabs-prev.disabled i, .nova-calendar-tabs-next.disabled i { background-image: none; }
+
+.nova-calendar-tabs-prev { background-position: 0 0; width: 36px; }
+
+.nova-calendar-tabs-prev i { background-position: -9px -5px; }
+
+.nova-calendar-tabs-next { background-position: -40px 0; margin-left: -1px; }
+
+.nova-calendar-tab { text-align: center; background-color: #db4787; color: #fff; float: left; width: 113px; height: 40px; margin-right: 1px; }
+
+.nova-calendar-tab:hover { background-color: #aa2255; }
+
+.nova-calendar-tab:hover a { color: #fff; }
+
+.nova-calendar-tab a { color: #fff; padding-top: 3px; display: block; width: 113px; }
+
+.nova-calendar-tab a:hover { text-decoration: none; }
+
+.nova-calendar-tab.disabled { cursor: default; background-color: #db4787; }
+
+.nova-calendar-tab.active { height: 41px; position: relative; background-color: #fff; }
+
+.nova-calendar-tab.active a { border-top: 3px solid #ed3387; padding-top: 0; color: #333333; }
+
+.nova-calendar-tab-month { line-height: 36px; font-size: 14px; font-weight: bold; }
+
+.nova-calendar-tab-price { line-height: 16px; font-size: 12px; color: #ff6702; }
+
+.nova-calendar-tab-price-none { color: #9a9a9a; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { /* 当设备像素比不小于1.5的时候... */
+  .nova-calendar-tabs-prev i, .nova-calendar-tabs-next i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; } }

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/*! tips.scss 2016-07-17 Sheng Jiang 1.0.0.0 */
+.nova-tip a, .nova-tip-box a { color: #0099cc; }
+
+.nova-tip a:hover, .nova-tip-box a:hover { color: #ff6600; }
+
+/*region 提示文本*/
+.nova-tip, .nova-tip-form { vertical-align: top; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; font-size: 12px; color: #333333; line-height: 18px; }
+
+.nova-tip .nova-icon-xs, .nova-tip-form .nova-icon-xs { float: left; margin: 2px 5px 0 -19px; }
+
+.nova-tip .nova-tip-text, .nova-tip-form .nova-tip-text { padding-left: 19px; }
+
+.nova-tip { background-color: #f6f6f6; border: 1px solid #dddddd; padding: 8px 31px 8px 10px; }
+
+.nova-tip-form { display: inline-block; padding: 8px 10px 8px 19px; }
+
+.nova-tip-close { float: right; right: 0; top: 0; margin: -8px -31px 0 0; padding: 10px; display: block; cursor: pointer; }
+
+.nova-tip-close i { width: 11px; height: 11px; background-image: url(../../img/lv/icon.png); background-position: -240px -200px; display: block; }
+
+.nova-tip-close:hover i { background-position: -260px -200px; }
+
+.nova-tip.nova-tip-default, .nova-tip.nova-tip-success, .nova-tip.nova-tip-error, .nova-tip.nova-tip-warning, .nova-tip.nova-tip-info, .nova-tip.nova-tip-help { padding: 8px 31px 8px 29px; }
+
+.nova-tip-form.nova-tip-default, .nova-tip-form.nova-tip-success, .nova-tip-form.nova-tip-error, .nova-tip-form.nova-tip-warning, .nova-tip-form.nova-tip-info, .nova-tip-form.nova-tip-help { padding: 8px 10px 8px 29px; }
+
+.nova-tip-success { background-color: #f8fff2; border: 1px solid #66cc33; }
+
+.nova-tip-success .nova-tip-close i { background-position: -200px -200px; }
+
+.nova-tip-success .nova-tip-close:hover i { background-position: -220px -200px; }
+
+.nova-tip-error { background-color: #fff2f2; border: 1px solid #ff8888; }
+
+.nova-tip-error .nova-tip-close i { background-position: -200px -220px; }
+
+.nova-tip-error .nova-tip-close:hover i { background-position: -220px -220px; }
+
+.nova-tip-warning { background-color: #fffaee; border: 1px solid #ffaa00; }
+
+.nova-tip-warning .nova-tip-close i { background-position: -200px -240px; }
+
+.nova-tip-warning .nova-tip-close:hover i { background-position: -220px -240px; }
+
+.nova-tip-info { background-color: #f0f5fc; border: 1px solid #88bbee; }
+
+.nova-tip-info .nova-tip-close i { background-position: -200px -260px; }
+
+.nova-tip-info .nova-tip-close:hover i { background-position: -220px -260px; }
+
+.nova-tip-help { background-color: #f0f5fc; border: 1px solid #88bbee; }
+
+.nova-tip-help .nova-tip-close i { background-position: -200px -280px; }
+
+.nova-tip-help .nova-tip-close:hover i { background-position: -220px -280px; }
+
+.nova-tip-normal { padding-left: 20px; padding-right: 10px; background-color: transparent; border: none; }
+
+.nova-tip-weak { padding-left: 0; padding-right: 10px; color: #999999; background-color: transparent; border: none; }
+
+/*endregion*/
+/*region 信息提示框*/
+.nova-tip-box { position: relative; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; padding: 15px 10px 15px 102px; }
+
+.nova-tip-box .nova-icon-lg { position: absolute; left: 0; top: 0; margin: 20px 0 0 50px; }
+
+.nova-tip-box-title { font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; color: #333333; font-size: 14px; line-height: 24px; font-weight: bold; }
+
+.nova-tip-box-content { font-size: 12px; color: #999999; line-height: 22px; }
+
+.nova-tip-box-links { line-height: 22px; color: #cccccc; }
+
+.nova-tip-box-links a, .nova-tip-box-links i { display: inline-block; }
+
+.nova-tip-box-links i { vertical-align: top; margin: 5px 10px 0 10px; text-indent: -9999em; height: 12px; border-right: 1px solid #cccccc; }
+
+/*endregion*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { /* 当设备像素比不小于1.5的时候... */
+  .nova-tip-close i { background-image: url(../../img/lv/icon@2x.png); background-size: 400px; } }

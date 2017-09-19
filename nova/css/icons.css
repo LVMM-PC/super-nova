@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/*! tips.scss 2016-07-17 Sheng Jiang 1.0.0.0 */
+.nova-icon-xl, .nova-icon-lg, .nova-icon, .nova-icon-sm, .nova-icon-xs, .nova-icon-outline-xl, .nova-icon-outline-lg, .nova-icon-outline, .nova-icon-outline-sm, .nova-icon-outline-xs { display: inline-block; background-image: url(../../img/lv/icon.png); vertical-align: middle; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { /* 当设备像素比不小于1.5的时候... */
+  .nova-icon-xl, .nova-icon-lg, .nova-icon, .nova-icon-sm, .nova-icon-xs, .nova-icon-outline-xl, .nova-icon-outline-lg, .nova-icon-outline, .nova-icon-outline-sm, .nova-icon-outline-xs { background-image: url(../../img/lv/icon@2x.png); background-size: 400px; } }
+
+/*region 24*/
+.nova-icon, .nova-icon-outline { width: 24px; height: 24px; }
+
+.nova-icon-outline { background-position: -200px 0; }
+
+.nova-icon-outline.nova-icon-success { background-position: -200px 0; }
+
+.nova-icon-outline.nova-icon-error { background-position: -200px -40px; }
+
+.nova-icon-outline.nova-icon-warning { background-position: -200px -80px; }
+
+.nova-icon-outline.nova-icon-info { background-position: -200px -120px; }
+
+.nova-icon-outline.nova-icon-help { background-position: -200px -160px; }
+
+.nova-icon { background-position: -240px 0; }
+
+.nova-icon.nova-icon-success { background-position: -240px 0; }
+
+.nova-icon.nova-icon-error { background-position: -240px -40px; }
+
+.nova-icon.nova-icon-warning { background-position: -240px -80px; }
+
+.nova-icon.nova-icon-info { background-position: -240px -120px; }
+
+.nova-icon.nova-icon-help { background-position: -240px -160px; }
+
+/*endregion*/
+/*region 48*/
+.nova-icon-xl, .nova-icon-outline-xl { width: 48px; height: 48px; }
+
+.nova-icon-outline-xl { background-position: 0 0; }
+
+.nova-icon-outline-xl.nova-icon-success { background-position: 0 0; }
+
+.nova-icon-outline-xl.nova-icon-error { background-position: 0 -60px; }
+
+.nova-icon-outline-xl.nova-icon-warning { background-position: 0 -120px; }
+
+.nova-icon-outline-xl.nova-icon-info { background-position: 0 -180px; }
+
+.nova-icon-outline-xl.nova-icon-help { background-position: 0 -240px; }
+
+.nova-icon-xl { background-position: -60px 0; }
+
+.nova-icon-xl.nova-icon-success { background-position: -60px 0; }
+
+.nova-icon-xl.nova-icon-error { background-position: -60px -60px; }
+
+.nova-icon-xl.nova-icon-warning { background-position: -60px -120px; }
+
+.nova-icon-xl.nova-icon-info { background-position: -60px -180px; }
+
+.nova-icon-xl.nova-icon-help { background-position: -60px -240px; }
+
+/*endregion*/
+/*region 32*/
+.nova-icon-lg, .nova-icon-outline-lg { width: 32px; height: 32px; }
+
+.nova-icon-outline-lg { background-position: -120px 0; }
+
+.nova-icon-outline-lg.nova-icon-success { background-position: -120px 0; }
+
+.nova-icon-outline-lg.nova-icon-error { background-position: -120px -40px; }
+
+.nova-icon-outline-lg.nova-icon-warning { background-position: -120px -80px; }
+
+.nova-icon-outline-lg.nova-icon-info { background-position: -120px -120px; }
+
+.nova-icon-outline-lg.nova-icon-help { background-position: -120px -160px; }
+
+.nova-icon-lg { background-position: -160px 0; }
+
+.nova-icon-lg.nova-icon-success { background-position: -160px 0; }
+
+.nova-icon-lg.nova-icon-error { background-position: -160px -40px; }
+
+.nova-icon-lg.nova-icon-warning { background-position: -160px -80px; }
+
+.nova-icon-lg.nova-icon-info { background-position: -160px -120px; }
+
+.nova-icon-lg.nova-icon-help { background-position: -160px -160px; }
+
+/*endregion*/
+/*region 18*/
+.nova-icon-sm, .nova-icon-outline-sm { width: 18px; height: 18px; }
+
+.nova-icon-outline-sm { background-position: -120px -200px; }
+
+.nova-icon-outline-sm.nova-icon-success { background-position: -120px -200px; }
+
+.nova-icon-outline-sm.nova-icon-error { background-position: -120px -220px; }
+
+.nova-icon-outline-sm.nova-icon-warning { background-position: -120px -240px; }
+
+.nova-icon-outline-sm.nova-icon-info { background-position: -120px -260px; }
+
+.nova-icon-outline-sm.nova-icon-help { background-position: -120px -280px; }
+
+.nova-icon-sm { background-position: -140px -200px; }
+
+.nova-icon-sm.nova-icon-success { background-position: -140px -200px; }
+
+.nova-icon-sm.nova-icon-error { background-position: -140px -220px; }
+
+.nova-icon-sm.nova-icon-warning { background-position: -140px -240px; }
+
+.nova-icon-sm.nova-icon-info { background-position: -140px -260px; }
+
+.nova-icon-sm.nova-icon-help { background-position: -140px -280px; }
+
+/*endregion*/
+/*region 14*/
+.nova-icon-xs, .nova-icon-outline-xs { width: 14px; height: 14px; }
+
+.nova-icon-outline-xs { background-position: -160px -200px; }
+
+.nova-icon-outline-xs.nova-icon-success { background-position: -160px -200px; }
+
+.nova-icon-outline-xs.nova-icon-error { background-position: -160px -220px; }
+
+.nova-icon-outline-xs.nova-icon-warning { background-position: -160px -240px; }
+
+.nova-icon-outline-xs.nova-icon-info { background-position: -160px -260px; }
+
+.nova-icon-outline-xs.nova-icon-help { background-position: -160px -280px; }
+
+.nova-icon-xs { background-position: -180px -200px; }
+
+.nova-icon-xs.nova-icon-success { background-position: -180px -200px; }
+
+.nova-icon-xs.nova-icon-error { background-position: -180px -220px; }
+
+.nova-icon-xs.nova-icon-warning { background-position: -180px -240px; }
+
+.nova-icon-xs.nova-icon-info { background-position: -180px -260px; }
+
+.nova-icon-xs.nova-icon-help { background-position: -180px -280px; }
+
+/*endregion*/

@@ -3,3 +3,143 @@
  * author: Sheng JIANG
  * date: 2017-09-18
  */
+
+//<editor-fold desc="reset">
+body {
+  color: #333;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+ol, ul, p {
+  margin: 0;
+  padding: 0;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #2299ee;
+  text-decoration: none;
+  &:hover {
+
+  }
+}
+
+//</editor-fold>
+
+//<editor-fold desc="header">
+.super-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin-bottom: 20px;
+  height: 80px;
+  background-color: #fff;
+}
+
+.super-menu {
+  display: flex;
+  height: 100%;
+  li {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    a {
+      padding: 0 20px;
+      height: 100%;
+      line-height: 80-4px;
+    }
+    &.active:after {
+      content: "";
+      display: block;
+      height: 4px;
+      background-color: #2299ee;
+    }
+  }
+}
+
+//</editor-fold>
+
+//<editor-fold desc="main">
+.super-main {
+  margin: 0 50px 20px 50px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.super-detail {
+  display: flex;
+}
+
+.super-sidebar {
+  width: 200px;
+  li {
+    line-height: 40px;
+    padding-left: 10px;
+  }
+  .list > li {
+    font-size: 18px;
+  }
+  .list > li > ul > li {
+    font-size: 16px;
+  }
+  .list > li > ul > li > ul > li {
+    font-size: 14px;
+  }
+}
+
+.super-sidebar-toggle {
+  height: 40px;
+  line-height: 40px;
+}
+
+.super-sidebar-dropdown {
+}
+
+//</editor-fold>
+
+//<editor-fold desc="page">
+#everything {
+  width: 200px;
+  flex-grow: 1;
+  h1 {
+    font-size: 28px;
+    line-height: 40px;
+    margin: 10px 0 20px 0;
+  }
+}
+
+//</editor-fold>
+
+//<editor-fold desc="footer">
+.super-footer {
+  display: flex;
+
+  padding: 0 50px;
+  background-color: #fff;
+  height: 80px;
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    margin-left: 10px;
+  }
+}
+
+//</editor-fold>

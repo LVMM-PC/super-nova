@@ -2,17 +2,15 @@
   <div id="app">
     <header class="super-header">
       <h1><a href="/">NOVA</a></h1>
+      <ul class="super-menu">
+        <li v-bind:class="{active:this.$route.matched[0].path === '/components'}"><a href="/components">组件</a></li>
+        <li v-bind:class="{active:this.$route.matched[0].path === '/guide'}"><a href="/guide">指南</a></li>
+      </ul>
     </header>
-    <div class="super-menu">
-      <div class="list">
-        <ul>
-          <li><a href="/plugins">组件</a></li>
-          <li><a href="/guide">指南</a></li>
-        </ul>
-      </div>
-    </div>
     <router-view></router-view>
-    <footer class="super-footer">copy right @copy;</footer>
+    <footer class="super-footer">
+      <p>Copyright © 2017 <a href="http://c.lvmama.com" target="_blank">c.lvmama.com</a></p>
+    </footer>
   </div>
 </template>
 
@@ -22,12 +20,7 @@
   }
 </script>
 
-<style>
-  .super-header {
-    background-color: #ccc;
-  }
+<style lang="scss">
+  @import "assets/scss/super-nova.scss";
 
-  .super-footer {
-    background-color: #ccc;
-  }
 </style>

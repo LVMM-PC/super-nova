@@ -1,0 +1,451 @@
+@charset "UTF-8";
+/*! buttons.scss 2016-03-15 Sheng Jiang 1.0.0.0 */
+/*region 日历*/
+.nova-calendar-tip { background: #fff; font-size: 12px; color: #999; line-height: 32px; height: 32px; }
+
+.nova-calendar-tip i { display: inline-block; width: 14px; height: 14px; margin-right: 5px; background-image: url(../../img/lv/icon.png); background-position: -240px -220px; vertical-align: -3px; }
+
+.nova-calendar { font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; background-color: #fff; position: relative; width: 1196px; border: 2px solid #e3e3e3; color: #333; }
+
+.nova-calendar .nova-calendar-bg { display: none; }
+
+.nova-calendar .nova-calendar-month-prev, .nova-calendar .nova-calendar-month-next { position: absolute; color: #ffffff; font-size: 16px; width: 26px; height: 26px; background-image: url(../../img/lv/calendar.png); top: 4px; cursor: pointer; text-indent: -9999em; overflow: hidden; }
+
+.nova-calendar .nova-calendar-month-prev:hover, .nova-calendar .nova-calendar-month-next:hover { background-color: #ff77bb; }
+
+.nova-calendar .nova-calendar-month-prev { background-position: -60px 0; left: 4px; }
+
+.nova-calendar .nova-calendar-month-prev:hover { background-position: 0 0; }
+
+.nova-calendar .nova-calendar-month-next { background-position: -90px 0; right: 4px; }
+
+.nova-calendar .nova-calendar-month-next:hover { background-position: -30px 0; }
+
+.nova-calendar .nova-calendar-month { width: 596px; float: left; }
+
+.nova-calendar .nova-calendar-box { position: relative; }
+
+.nova-calendar .nova-calendar-title { font-size: 16px; height: 34px; line-height: 34px; text-align: center; background-color: #ffffff; border-left: 1px solid #e3e3e3; border-right: 1px solid #e3e3e3; }
+
+.nova-calendar .nova-month-loading { left: 0; top: 0; right: 0; bottom: 0; background: #fff url(../../img/new_v/ui_scrollLoading/loadingGIF46px.gif) no-repeat center center; position: absolute; overflow: hidden; font-size: 200px; line-height: 100%; text-align: center; display: none; }
+
+.nova-calendar table { position: relative; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+.nova-calendar thead { background-color: #eee; }
+
+.nova-calendar th, .nova-calendar td { border: 1px solid #e3e3e3; }
+
+.nova-calendar th { text-align: center; width: 30px; height: 26px; line-height: 26px; font-weight: normal; }
+
+.nova-calendar td { width: 84px; height: 49px; }
+
+.nova-calendar .sat, .nova-calendar .sun { color: #ee3388; }
+
+.nova-calendar .date { position: relative; width: 84px; height: 49px; cursor: default; }
+
+.nova-calendar .nodate { position: relative; width: 84px; height: 49px; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; color: #BBB; }
+
+.nova-calendar .nodate:hover { color: #BBB; }
+
+.nova-calendar .nova-calendar-date { position: relative; cursor: pointer; }
+
+.nova-calendar .nova-calendar-disabled { height: 49px; position: relative; cursor: default; }
+
+.nova-calendar .nova-calendar-date:hover { width: 84px; height: 49px; background: #fffaee; }
+
+.nova-calendar .nova-calendar-day, .nova-calendar .nova-calendar-info, .nova-calendar .nova-calendar-price, .nova-calendar .nova-calendar-active { position: absolute; }
+
+.nova-calendar .nova-calendar-day { top: 5px; left: 6px; line-height: 12px; }
+
+.nova-calendar .nova-calendar-info { top: 19px; left: 5px; right: 5px; color: #11b811; line-height: 12px; }
+
+.nova-calendar .nova-calendar-info.sellout { color: #bbbbbb; text-align: center; }
+
+.nova-calendar .nova-calendar-info.sellouting { color: #ff3300; }
+
+.nova-calendar .nova-calendar-price { left: 5px; top: 32px; line-height: 12px; color: #ff6600; }
+
+.nova-calendar .nova-calendar-price i, .nova-calendar .nova-calendar-price em { vertical-align: -1px; }
+
+.nova-calendar .nova-calendar-active { top: 0; right: 0; }
+
+.nova-calendar .nova-calendar-sale, .nova-calendar .nova-calendar-festival, .nova-calendar .nova-calendar-route { margin-left: 1px; display: inline-block; background-image: url(../../img/lv/calendar.png); background-position: -120px 0; width: 14px; height: 14px; text-indent: -9999em; float: left; }
+
+.nova-calendar .nova-calendar-route { background-image: none; background-color: #fe7878; color: #FFFFFF; text-indent: 0; line-height: 14px; text-align: center; }
+
+.nova-calendar .nova-calendar-festival { background-position: -120px -15px; }
+
+.nova-calendar[data-float="true"] { position: absolute; -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); }
+
+/*endregion */
+/*region 大日历*/
+.nova-calendar-big .nova-calendar-box { border: 1px solid #e3e3e3; }
+
+.nova-calendar-big table { margin: -1px; }
+
+.nova-calendar-big .nova-calendar-disabled { color: #BBB; }
+
+.nova-calendar-big .nova-calendar-disabled:hover { background-color: transparent; }
+
+.nova-calendar-big .nova-calendar-date:hover.nova-calendar-disabled { /*background: none;*/ /*margin: 0;*/ cursor: default; }
+
+.nova-calendar-big[data-bimonthly="true"] .notThisMonth { display: none; }
+
+.nova-calendar-big[data-bimonthly="true"] .nova-calendar-tip { line-height: 30px; height: 30px; padding-left: 10px; }
+
+.nova-calendar-big[data-float="true"] .nova-calendar-tip { border-left: 1px solid #e3e3e3; border-right: 1px solid #e3e3e3; padding-left: 10px; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] { width: 928px; border: none; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-tip { border-left: 2px solid #e3e3e3; border-right: 2px solid #e3e3e3; padding-left: 10px; margin-top: -1px; position: relative; border-bottom: 2px solid #e3e3e3; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month { width: 464px; margin: 0; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-title { border: none; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] [data-offset="0"] .nova-calendar-box { border-right: none; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-box { border: 2px solid #e3e3e3; border-top: none; overflow: hidden; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-table { margin: -1px; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] td { width: 65px; height: 49px; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .date { width: 65px; height: 49px; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-title { background: #ee3388; color: #FFFFFF; line-height: 28px; height: 28px; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month-prev, .nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month-next { width: 28px; height: 28px; top: 0; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month-prev:hover, .nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month-next:hover { background-color: #a81c54; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month-prev { left: 0; background-position: 0 0; }
+
+.nova-calendar-big[data-float="true"][data-bimonthly="true"] .nova-calendar-month-next { right: 0; background-position: -30px 0; }
+
+.nova-calendar-big[data-bimonthly="false"] { width: 561px; border: none; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-month-prev, .nova-calendar-big[data-bimonthly="false"] .nova-calendar-month-next { width: 28px; height: 28px; top: 0; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-month-prev:hover, .nova-calendar-big[data-bimonthly="false"] .nova-calendar-month-next:hover { background-color: #a81c54; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-month-prev { left: 0; background-position: 0 0; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-month-next { right: 0; background-position: -30px 0; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-title { background-color: #ee3388; color: #ffffff; height: 28px; line-height: 28px; border: none; }
+
+.nova-calendar-big[data-bimonthly="false"] th { height: 24px; line-height: 24px; border-top: none; }
+
+.nova-calendar-big[data-bimonthly="false"] td { width: 79px; }
+
+.nova-calendar-big[data-bimonthly="false"] .nodate, .nova-calendar-big[data-bimonthly="false"] .nova-calendar-date, .nova-calendar-big[data-bimonthly="false"] .date { width: 79px; }
+
+.nova-calendar-big[data-bimonthly="false"] .notThisMonth { background-color: #f8f8f8; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-date:hover { width: 79px; }
+
+.nova-calendar-big[data-bimonthly="false"] .notThisMonth.nova-calendar-date:hover { background-color: #fffaee; }
+
+.nova-calendar-big[data-bimonthly="false"] .notThisMonth.nova-calendar-disabled:hover { background-color: #f8f8f8; }
+
+.nova-calendar-big[data-bimonthly="false"] .nova-calendar-month[data-offset='0'] { width: 561px; }
+
+.nova-calendar-big[data-bimonthly="true"][data-float="false"] .nova-calendar-month { margin-bottom: -1px; }
+
+.nova-calendar-big[data-bimonthly="true"][data-float="false"] .nova-calendar-month[data-offset='0'] { margin-left: -1px; }
+
+.nova-calendar-big[data-bimonthly="true"][data-float="false"] .nova-calendar-month[data-offset='1'] { margin-right: -1px; }
+
+.nova-calendar-big .nova-calendar-month[data-offset='1'] { float: right; }
+
+.nova-calendar-big .td-selected .nova-calendar-selected { display: block; position: absolute; right: 0; bottom: 0; background: url(../../img/lv/calendar.png) no-repeat -140px -10px; width: 20px; height: 20px; }
+
+.nova-calendar-big .td-selected .nova-calendar-date { border: 1px solid #ff9900; background: #fffaee; margin: -1px; }
+
+.nova-calendar-big .nova-calendar-date.nodate { cursor: default; }
+
+.nova-calendar-big .festival .nova-calendar-day { color: #ee3388; }
+
+.nova-calendar-big .nova-calendar-middle { margin: -1px; border: 1px solid #ff9900; background-color: #fffaee; }
+
+/*endregion */
+/*region 小日历*/
+.nova-calendar-mini { position: relative; width: 468px; border: none; }
+
+.nova-calendar-mini .nova-calendar-month-prev, .nova-calendar-mini .nova-calendar-month-next { position: absolute; color: #ffffff; font-size: 16px; width: 28px; height: 28px; top: 0; }
+
+.nova-calendar-mini .nova-calendar-month-prev { left: 0; background-position: 0 0; }
+
+.nova-calendar-mini .nova-calendar-month-next { right: 0; background-position: -30px 0; }
+
+.nova-calendar-mini .nova-calendar-month { width: 234px; float: left; border-bottom: 1px solid #cccccc; }
+
+.nova-calendar-mini .nova-calendar-box { position: relative; }
+
+.nova-calendar-mini .nova-calendar-box { padding: 5px 4px 4px 4px; }
+
+.nova-calendar-mini .nova-calendar-title { font-size: 14px; height: 28px; line-height: 28px; text-align: center; color: #ffffff; background-color: #ef3388; border: none; }
+
+.nova-calendar-mini .nova-calendar-bg { position: absolute; overflow: hidden; font-size: 200px; opacity: 0.1; width: 100%; height: 100%; line-height: 100%; text-align: center; }
+
+.nova-calendar-mini .nova-calendar-table { height: auto; position: relative; }
+
+.nova-calendar-mini thead { background-color: #eee; }
+
+.nova-calendar-mini th { text-align: center; width: 30px; height: 24px; border-bottom: 4px solid #fff; font-weight: normal; border-top: none; border-left: none; border-right: none; }
+
+.nova-calendar-mini td { position: relative; width: 30px; height: 30px; padding: 1px; border: none; text-align: center; vertical-align: top; }
+
+.nova-calendar-mini .sat { border-right: 2px solid #fff; }
+
+.nova-calendar-mini .sun { border-left: 1px solid #fff; }
+
+.nova-calendar-mini .date { position: absolute; left: 0; top: 0; text-align: center; width: 30px; height: 30px; line-height: 30px; cursor: default; border: none; }
+
+.nova-calendar-mini .today { color: #ee3388; }
+
+.nova-calendar-mini .nova-calendar-date { cursor: pointer; }
+
+.nova-calendar-mini .notThisMonth { display: none; }
+
+.nova-calendar-mini .nova-calendar-date:hover { width: 32px; margin: 0 0 0 -1px; height: 30px; border: none; background-color: #fef2f9; color: #ee3388; }
+
+.nova-calendar-mini .nodate { cursor: default; }
+
+.nova-calendar-mini .nodate:hover { color: #BBB; background-color: transparent; }
+
+.nova-calendar-mini .nova-calendar-date.active { background-color: #ff77bb; color: #fff; }
+
+.nova-calendar-mini .nova-calendar-month[data-offset='0'] .nova-calendar-box { border-right: 1px solid #f5f5f5; border-left: 1px solid #cccccc; }
+
+.nova-calendar-mini .nova-calendar-month[data-offset='1'] .nova-calendar-box { border-left: 1px solid #f5f5f5; border-right: 1px solid #cccccc; }
+
+.nova-calendar-mini[data-bimonthly] .nova-calendar-month-prev:hover, .nova-calendar-mini[data-bimonthly] .nova-calendar-month-next:hover { background-color: #a81c54; }
+
+.nova-calendar-mini[data-bimonthly="false"] { width: 234px; }
+
+.nova-calendar-mini[data-bimonthly="false"] .nodate { background-color: transparent; }
+
+.nova-calendar-mini[data-bimonthly="false"] .nova-calendar-date:hover { width: 32px; }
+
+.nova-calendar-mini[data-bimonthly="false"] .nova-calendar-month[data-offset='0'] { width: 234px; }
+
+.nova-calendar-mini[data-bimonthly="false"] .nova-calendar-month[data-offset='0'] .nova-calendar-box { border-right: 1px solid #cccccc; }
+
+.nova-calendar-mini[data-bimonthly="true"] .nova-calendar-month { margin-bottom: -1px; }
+
+.nova-calendar-mini[data-bimonthly="true"] .nova-calendar-month[data-offset='0'], .nova-calendar-mini[data-bimonthly="true"] .nova-calendar-month[data-offset='1'], .nova-calendar-mini[data-bimonthly="false"] .nova-calendar-month[data-offset='0'] { margin: 0; }
+
+.nova-calendar-mini .festival { color: #ee3388; }
+
+.nova-calendar-mini .festival.nodate { color: #BBB; }
+
+.nova-calendar-mini .nova-calendar-middle { width: 32px; margin-left: -1px; background-color: #fcdaed; }
+
+.nova-calendar-mini .nova-calendar-disabled { color: #BBB; cursor: default; }
+
+.nova-calendar-mini .nova-calendar-disabled:hover { color: #BBB; background-color: transparent; }
+
+.nova-calendar-mini .nova-calendar-disabled.nova-calendar-middle:hover { background-color: #fcdaed; }
+
+.nova-calendar-mini .td-selected .nova-calendar-date { width: 32px; margin-left: -1px; color: #fff; background: #ff77bb; border: none; }
+
+.nova-calendar-mini .nodate { background-color: transparent; }
+
+/*endregion */
+/*region 生日日历*/
+.nova-calendar-birthday .nova-calendar-month-dropdown-box, .nova-calendar-birthday .nova-calendar-year-dropdown-box { background-color: #ffffff; box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.15); border: 1px solid #cccccc; width: 72px; position: absolute; }
+
+.nova-calendar-birthday .nova-calendar-month-dropdown-box { width: 49px; }
+
+.nova-calendar-birthday .td-selected .nova-calendar-date:hover { background: #84b1e9; color: #fff; }
+
+.nova-calendar-birthday .nova-calendar-year-select-active, .nova-calendar-birthday .nova-calendar-year-select, .nova-calendar-birthday .nova-calendar-month-select-active, .nova-calendar-birthday .nova-calendar-month-select { font-size: 14px; text-align: center; cursor: pointer; height: 24px; line-height: 24px; }
+
+.nova-calendar-birthday .nova-calendar-year-select-active i, .nova-calendar-birthday .nova-calendar-year-select i, .nova-calendar-birthday .nova-calendar-month-select-active i, .nova-calendar-birthday .nova-calendar-month-select i { margin-left: 5px; vertical-align: 3px; display: inline-block; background-image: url(../../img/lv/calendar.png); background-position: -160px 0; width: 7px; height: 4px; }
+
+.nova-calendar-birthday .nova-calendar-month-select.active, .nova-calendar-birthday .nova-calendar-month-select-active, .nova-calendar-birthday .nova-calendar-year-select.active, .nova-calendar-birthday .nova-calendar-year-select-active { color: #ee3388; }
+
+.nova-calendar-birthday .nova-calendar-month-select.active i, .nova-calendar-birthday .nova-calendar-month-select-active i, .nova-calendar-birthday .nova-calendar-year-select.active i, .nova-calendar-birthday .nova-calendar-year-select-active i { background-position: -170px 0; }
+
+.nova-calendar-birthday .nova-calendar-year-select { position: absolute; top: 3px; left: 56px; width: 72px; display: block; }
+
+.nova-calendar-birthday .nova-calendar-month-select { position: absolute; top: 3px; left: 132px; width: 49px; display: block; }
+
+.nova-calendar-birthday .nova-calendar-year-dropdown, .nova-calendar-birthday .nova-calendar-month-dropdown { overflow-y: auto; max-height: 240px; width: 72px; }
+
+.nova-calendar-birthday .nova-calendar-year-dropdown::-webkit-scrollbar, .nova-calendar-birthday .nova-calendar-month-dropdown::-webkit-scrollbar { background-color: transparent; width: 12px; }
+
+.nova-calendar-birthday .nova-calendar-year-dropdown::-webkit-scrollbar-thumb, .nova-calendar-birthday .nova-calendar-month-dropdown::-webkit-scrollbar-thumb { background: #eaeaea; border: 2px solid #fff; width: 8px; border-radius: 6px; }
+
+.nova-calendar-birthday .nova-calendar-year-dropdown li, .nova-calendar-birthday .nova-calendar-month-dropdown li { cursor: pointer; font-size: 12px; padding-left: 8px; color: #666666; height: 20px; line-height: 20px; }
+
+.nova-calendar-birthday .nova-calendar-year-dropdown li:hover, .nova-calendar-birthday .nova-calendar-month-dropdown li:hover { color: #ee3388; background-color: #fef2f9; }
+
+.nova-calendar-birthday .nova-calendar-year-dropdown li.active, .nova-calendar-birthday .nova-calendar-month-dropdown li.active { color: #ffffff; background-color: #ed7eb6; }
+
+.nova-calendar-birthday .nova-calendar-month-dropdown { width: 49px; }
+
+.nova-calendar-birthday .nova-calendar-pane { text-align: right; height: 30px; margin: 5px 3px 0 0; color: #666666; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; }
+
+.nova-calendar-birthday .nova-calendar-time-input { width: 48px; height: 20px; display: inline-block; border: 1px solid #cccccc; color: #333333; text-align: center; }
+
+.nova-calendar-birthday .nova-calendar-time-text, .nova-calendar-birthday .nova-calendar-time-input, .nova-calendar-birthday .nova-calendar-birthday-ok, .nova-calendar-birthday .nova-calendar-birthday-time, .nova-calendar-birthday .nova-calendar-birthday-clear { display: none; margin-left: 5px; margin-right: 0; }
+
+.nova-calendar-birthday .nova-calendar-birthday-clear { display: inline-block; }
+
+.nova-calendar-birthday .nova-calendar-hour, .nova-calendar-birthday .nova-calendar-minute, .nova-calendar-birthday .nova-calendar-time-to { height: 20px; line-height: 20px; display: inline-block; width: 20px; }
+
+.nova-calendar-birthday .nova-calendar-hour.active, .nova-calendar-birthday .nova-calendar-minute.active, .nova-calendar-birthday .nova-calendar-time-to.active { color: #0065d3; }
+
+.nova-calendar-birthday .nova-calendar-hour { text-align: right; }
+
+.nova-calendar-birthday .nova-calendar-minute { text-align: left; }
+
+.nova-calendar-birthday .nova-calendar-time-to { width: 8px; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown, .nova-calendar-birthday .nova-calendar-minute-dropdown { width: 123px; height: 146px; border: 1px solid #cccccc; position: absolute; top: 113px; left: 78px; background: #fff; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown ul, .nova-calendar-birthday .nova-calendar-minute-dropdown ul { margin: 5px 0 0 5px; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown li, .nova-calendar-birthday .nova-calendar-minute-dropdown li { cursor: pointer; text-align: center; width: 21px; height: 21px; display: inline-block; margin: 0 2px 2px 0; color: #333333; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown li:hover, .nova-calendar-birthday .nova-calendar-minute-dropdown li:hover { background: #eff8fc; color: #0065d3; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown li.active, .nova-calendar-birthday .nova-calendar-minute-dropdown li.active { background: #84b1e9; color: #fff; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown li[data-disabled="true"], .nova-calendar-birthday .nova-calendar-minute-dropdown li[data-disabled="true"] { cursor: default; color: #999; background-color: transparent; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown .title, .nova-calendar-birthday .nova-calendar-minute-dropdown .title { font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; width: 123px; height: 24px; line-height: 24px; color: #666666; padding-left: 10px; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown .close, .nova-calendar-birthday .nova-calendar-minute-dropdown .close { cursor: pointer; top: 2px; right: 4px; position: absolute; padding: 5px; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown .close i, .nova-calendar-birthday .nova-calendar-minute-dropdown .close i { display: block; width: 11px; height: 11px; background-image: url(../../img/lv/calendar.png); background-position: -160px -15px; }
+
+.nova-calendar-birthday .nova-calendar-hour-dropdown .close i:hover, .nova-calendar-birthday .nova-calendar-minute-dropdown .close i:hover { background-position: -180px -15px; }
+
+.nova-calendar-birthday .nova-calendar-minute-dropdown { height: 100px; top: 159px; }
+
+/*endregion*/
+/*region 黄色*/
+.nova-calendar-orange .sat, .nova-calendar-orange .sun { color: #ff6600; }
+
+.nova-calendar-orange .nova-calendar-title { background-color: #ff8800; }
+
+.nova-calendar-orange[data-bimonthly="true"] .nova-calendar-month-prev:hover, .nova-calendar-orange[data-bimonthly="true"] .nova-calendar-month-next:hover { background-color: #ff6600; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .nova-calendar-date:hover { background-color: #fff7e4; color: #ff6600; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .festival { color: #ff6600; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .today { color: #ff6600; background-color: transparent; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .td-selected .today { width: 32px; background-color: #fa0; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .nova-calendar-middle { background-color: #ffedc1; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .nodate, .nova-calendar-orange .nova-calendar-month .nova-calendar-table .nova-calendar-disabled { color: #BBB; cursor: default; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .nodate:hover, .nova-calendar-orange .nova-calendar-month .nova-calendar-table .nova-calendar-disabled:hover { color: #BBB; background-color: transparent; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .nodate.nova-calendar-middle:hover, .nova-calendar-orange .nova-calendar-month .nova-calendar-table .nova-calendar-disabled.nova-calendar-middle:hover { background-color: #ffedc1; }
+
+.nova-calendar-orange .nova-calendar-month .nova-calendar-table .td-selected .nova-calendar-date { color: #ffffff; background-color: #ffaa00; }
+
+/*endregion*/
+/*region 蓝色*/
+.nova-calendar-blue[data-float][data-bimonthly] .sat, .nova-calendar-blue[data-float][data-bimonthly] .sun { color: #1d79d8; }
+
+.nova-calendar-blue[data-float][data-bimonthly] .festival { color: #1d79d8; }
+
+.nova-calendar-blue[data-float][data-bimonthly] .festival .nova-calendar-day { color: #1d79d8; }
+
+.nova-calendar-blue[data-float][data-bimonthly] .nova-calendar-title { background-color: #0088dd; }
+
+.nova-calendar-blue[data-float][data-bimonthly] .nova-calendar-month-prev:hover, .nova-calendar-blue[data-float][data-bimonthly] .nova-calendar-month-next:hover { background-color: #007bc6; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-month-prev:hover, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-month-next:hover { background-color: #0065d3; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-title { background-color: #5092e5; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .today { color: #0065d3; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-date:hover { background-color: #eff8fc; color: #0065d3; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .td-selected .nova-calendar-date { background: #84b1e9; color: #fff; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-middle { background-color: #eff8fc; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-disabled, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-mini .nova-calendar-disabled:hover { color: #999999; background-color: transparent; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-month-select.active, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-month-select-active, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-year-select.active, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-year-select-active { color: #0065d3; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-month-select.active i, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-month-select-active i, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-year-select.active i, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-year-select-active i { background-position: -160px -5px; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-year-dropdown li:hover, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-month-dropdown li:hover { color: #0065d3; background-color: #eff8fc; }
+
+.nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-year-dropdown li.active, .nova-calendar-blue[data-float][data-bimonthly].nova-calendar-birthday .nova-calendar-month-dropdown li.active { color: #ffffff; background-color: #84b1e9; }
+
+.nova-calendar-big.nova-calendar-blue[data-float][data-bimonthly] td, .nova-calendar-big.nova-calendar-blue[data-float][data-bimonthly] .date { height: 62px; word-break: break-all; }
+
+/*endregion*/
+/*region 特卖会*/
+.nova-calendar-groupon[data-float][data-bimonthly] { width: 1127px; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] .nova-calendar-tip { margin-top: 0; border-left: 1px solid #e3e3e3; border-right: 1px solid #e3e3e3; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] .nova-calendar-month { width: 561px; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] .nova-calendar-table { margin: 0; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] .nova-calendar-box { width: 561px; border: none; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] td { width: 79px; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] .date { width: 79px; }
+
+.nova-calendar-groupon[data-float][data-bimonthly] [data-offset="0"] .nova-calendar-title { width: 566px; }
+
+/*endregion*/
+.nova-calendar-hover { -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; display: none; color: #666666; border: 1px solid #cccccc; background: #FFFFFF; position: absolute; padding: 10px 10px 4px 10px; *margin-left: -1px; *margin-top: -1px; }
+
+.nova-calendar-hover .triangle { width: 11px; height: 7px; display: block; position: absolute; margin: 0; top: -7px; left: 36px; bottom: auto; background: url(../../img/lv/calendar.png) no-repeat -140px 0; pointer-events: none; border: none; }
+
+.nova-calendar-hover.nova-calendar-hover-right { *margin-left: 0; }
+
+.nova-calendar-hover.nova-calendar-hover-right .triangle { left: auto; right: 36px; }
+
+.nova-calendar-hover .nova-calendar-route, .nova-calendar-hover .nova-calendar-sale, .nova-calendar-hover .nova-calendar-festival { line-height: 20px; }
+
+.nova-calendar-hover .nova-calendar-route i, .nova-calendar-hover .nova-calendar-sale i, .nova-calendar-hover .nova-calendar-festival i { width: 14px; height: 14px; display: inline-block; float: left; margin-right: 5px; vertical-align: top; text-align: center; line-height: 14px; overflow: hidden; }
+
+.nova-calendar-hover .nova-calendar-route span, .nova-calendar-hover .nova-calendar-sale span, .nova-calendar-hover .nova-calendar-festival span { vertical-align: top; display: inline-block; margin: -3px 0 3px 0; }
+
+.nova-calendar-hover .nova-calendar-route i { background: #fe7878; color: #FFFFFF; }
+
+.nova-calendar-hover .nova-calendar-festival i { text-indent: -9999em; background-image: url(../../img/lv/calendar.png); background-position: -120px -15px; }
+
+.nova-calendar-hover .nova-calendar-sale i { text-indent: -9999em; background-image: url(../../img/lv/calendar.png); background-position: -120px 0; }
+
+.nova-calendar-hover .nova-calendar-has-not-product { margin: -3px 0 3px 0; }
+
+.nova-calendar-number-of-days { -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1); display: none; font-family: "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif; pointer-events: none; position: absolute; background: #ffffff; border: 1px solid #cccccc; line-height: 20px; padding: 5px 10px; }
+
+.nova-calendar-number-of-days .triangle { width: 11px; height: 7px; display: block; position: absolute; top: -7px; left: 50%; margin-left: -5px; background: url(../../img/lv/calendar.png) no-repeat -140px 0; pointer-events: none; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { /* 当设备像素比不小于1.5的时候... */
+  .nova-calendar-tip i { background-image: url(../../img/lv/icon@2x.png); background-size: 400px; }
+  .nova-calendar .nova-calendar-month-prev, .nova-calendar .nova-calendar-month-next { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .nova-calendar .nova-calendar-sale, .nova-calendar .nova-calendar-festival, .nova-calendar .nova-calendar-route { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  /*region 大日历*/
+  .nova-calendar-big .td-selected .nova-calendar-selected { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  /*endregion */
+  /*region 生日日历*/
+  .nova-calendar-birthday .nova-calendar-year-select-active i, .nova-calendar-birthday .nova-calendar-year-select i, .nova-calendar-birthday .nova-calendar-month-select-active i, .nova-calendar-birthday .nova-calendar-month-select i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .nova-calendar-birthday .nova-calendar-hour-dropdown .close i, .nova-calendar-birthday .nova-calendar-minute-dropdown .close i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  /*endregion*/
+  .nova-calendar-hover .triangle { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .nova-calendar-hover .nova-calendar-festival i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .nova-calendar-hover .nova-calendar-sale i { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; }
+  .nova-calendar-number-of-days .triangle { background-image: url(../../img/lv/calendar@2x.png); background-size: 200px; } }
