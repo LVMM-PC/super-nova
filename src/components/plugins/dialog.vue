@@ -1,6 +1,9 @@
 <template>
-  <section class="super-main">
-    <h1>button</h1>
+  <section>
+    <h2>dialog</h2>
+    <div>
+      <div>弹框</div>
+    </div>
   </section>
 </template>
 

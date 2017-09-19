@@ -1,5 +1,10 @@
 <template>
-  <h1>button</h1>
+  <section>
+    <h2>button</h2>
+    <div>
+      <div>按钮</div>
+    </div>
+  </section>
 </template>
 
 <script>

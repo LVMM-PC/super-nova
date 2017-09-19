@@ -1,17 +1,16 @@
 <template>
   <section class="super-main">
     <h1>组件</h1>
-
     <ul>
       <li><a href="/plugins/button">button</a></li>
+      <li><a href="/plugins/dialog">dialog</a></li>
     </ul>
-    <div>
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </section>
 </template>
 
 <script>
+  import componentsSidebar from '@/components/guide'
   export default {
     name: '',
     data () {

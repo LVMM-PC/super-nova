@@ -3,7 +3,7 @@
     <header class="super-header">
       <h1><a href="/">NOVA</a></h1>
     </header>
-    <div class="super-sidebar">
+    <div class="super-menu">
       <div class="list">
         <ul>
           <li><a href="/plugins">组件</a></li>
