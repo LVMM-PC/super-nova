@@ -6,8 +6,8 @@
     <div class="super-sidebar">
       <div class="list">
         <ul>
-          <li><a href="/#/button">button</a></li>
-          <li><a href="/#/dialog">dialog</a></li>
+          <li><a href="/plugins">组件</a></li>
+          <li><a href="/guide">指南</a></li>
         </ul>
       </div>
     </div>

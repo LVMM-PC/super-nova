@@ -1,7 +1,5 @@
 <template>
-  <section class="super-main">
-    <h1>button</h1>
-  </section>
+  <h1>button</h1>
 </template>
 
 <script>

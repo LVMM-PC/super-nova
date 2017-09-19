@@ -1,12 +1,19 @@
 <template>
   <section class="super-main">
-    <h1>button</h1>
+    <h1>组件</h1>
+
+    <ul>
+      <li><a href="/plugins/button">button</a></li>
+    </ul>
+    <div>
+      <router-view></router-view>
+    </div>
   </section>
 </template>
 
 <script>
   export default {
-    name: 'button',
+    name: '',
     data () {
       return {
         msg: 'a nova page'

@@ -1,12 +1,16 @@
 <template>
   <section class="super-main">
-    <h1>button</h1>
+    <h1>指南</h1>
+
+    <div>
+      <router-view></router-view>
+    </div>
   </section>
 </template>
 
 <script>
   export default {
-    name: 'button',
+    name: '',
     data () {
       return {
         msg: 'a nova page'
