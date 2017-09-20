@@ -238,7 +238,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../../nova/css/buttons.css";
+  @import "../../../nova/assert/css/buttons.css";
 
   .btn .icon {
     background-color: #666666;
@@ -248,6 +248,15 @@
   .btn-orange .icon,
   .btn-blue .icon {
     background-color: #FFFFFF;
+  }
+
+  .btn-group {
+    margin-bottom: 10px;
+    font-size: 0;
+  }
+
+  .btn {
+    margin-right: 10px;
   }
 
 </style>

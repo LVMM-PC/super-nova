@@ -236,5 +236,6 @@
 </script>
 
 <style lang="scss">
+  @import "../../../../nova/assets/css/icons.css";
 
 </style>

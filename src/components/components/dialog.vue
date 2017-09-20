@@ -575,6 +575,8 @@ nova.dialog({
   export default {
     name: 'dialog'
   }
+  require('script-loader!../../../nova/js/dialog')
+  require('script-loader!../../../nova/doc/dialog')
 </script>
 
 <style lang="scss">
