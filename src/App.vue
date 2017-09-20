@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <header class="super-header">
-      <h1><a href="/">NOVA</a></h1>
+      <div class="super-logo">
+        <div class="super-svg"></div>
+        <a href="/">NOVA</a></div>
       <ul class="super-menu">
-        <li v-bind:class="{active:this.$route.matched[0].path === '/components'}"><a href="/components">组件</a></li>
-        <li v-bind:class="{active:this.$route.matched[0].path === '/guide'}"><a href="/guide">指南</a></li>
+        <li v-bind:class="{active:this.$route.matched[0].path === '/components'}">
+          <router-link to="/components">组件</router-link>
+        </li>
+        <li v-bind:class="{active:this.$route.matched[0].path === '/guide'}">
+          <router-link to="/guide">指南</router-link>
+        </li>
       </ul>
     </header>
     <router-view></router-view>
