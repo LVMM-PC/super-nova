@@ -217,12 +217,6 @@
       <div class="weekOffsetCalendar"></div>
     </div>
 
-    <h2>评论</h2>
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="calendar" data-title="NOVA"
-         data-url="http://www.em2046.com/nova/docs/calendar.html"></div>
-    <!-- 多说评论框 end -->
-
   </div>
 </template>
 
@@ -230,8 +224,34 @@
   export default {
     name: 'calendar'
   }
+  require('script-loader!../../../static/doc/navigation')
+  require('script-loader!../../../static/js/calendar')
+  require('script-loader!../../../static/doc/calendar')
 </script>
 
 <style lang="scss">
+  @import "../../assets/scss/doc.scss";
+  @import "/static/assert/css/buttons.css";
+  @import "/static/assert/css/calendar.css";
 
+  input[type="text"] {
+    border: 1px solid #CCC;
+    line-height: 20px;
+  }
+
+  #offsetInput {
+    border: 1px solid #29e;
+    margin: 20px 0 20px 200px;
+    outline: 20px solid #eee;
+  }
+
+  .distribution-loading td .date {
+    background: url(http://pic.lvmama.com/img/new_v/ui_scrollLoading/loading.gif) no-repeat center center;
+
+  }
+
+  .distribution-loading td .date.notThisMonth {
+    background: none;
+
+  }
 </style>

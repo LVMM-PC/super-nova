@@ -382,12 +382,6 @@
       </div>
     </div>
 
-    <h2>评论</h2>
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="validate" data-title="NOVA"
-         data-url="http://www.em2046.com/nova/docs/validate.html"></div>
-    <!-- 多说评论框 end -->
-
   </div>
 </template>
 
@@ -395,8 +389,15 @@
   export default {
     name: 'validate'
   }
+  require('script-loader!../../../static/doc/navigation')
+  require('script-loader!../../../static/js/validate')
+  require('script-loader!../../../static/doc/validate')
 </script>
 
 <style lang="scss">
+  @import "../../assets/scss/doc.scss";
+  @import "../../assets/scss/validate.css";
+  @import "/static/assert/css/tips.css";
+  @import "/static/assert/css/icons.css";
 
 </style>

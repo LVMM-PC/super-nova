@@ -244,12 +244,6 @@
       </dl>
     </section>
 
-    <h2>评论</h2>
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="tips" data-title="NOVA"
-         data-url="http://www.em2046.com/nova/docs/tips.html"></div>
-    <!-- 多说评论框 end -->
-
   </div>
 </template>
 
@@ -260,5 +254,48 @@
 </script>
 
 <style lang="scss">
+  @import "../../assets/scss/doc.scss";
+  @import "/static/assert/css/icons.css";
+  @import "/static/assert/css/tips.css";
+
+  .nova-tip {
+    margin-bottom: 10px;
+  }
+
+  input[type=text] {
+    height: 34px;
+    border: 1px solid #CCC;
+    padding: 0 5px;
+  }
+
+  dl {
+    margin-bottom: 10px;
+  }
+
+  dt {
+    float: left;
+    width: 90px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 36px;
+  }
+
+  dd {
+    float: left;
+    width: 800px;
+    font-size: 0;
+  }
+
+  dd > * {
+    font-size: 12px;
+  }
+
+  dd input {
+    margin-right: 10px;
+  }
+
+  .nova-tip-form {
+    max-width: 300px;
+  }
 
 </style>

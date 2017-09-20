@@ -238,7 +238,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../../nova/assert/css/buttons.css";
+  @import "../../assets/scss/doc.scss";
+  @import "/static/assert/css/buttons.css";
 
   .btn .icon {
     background-color: #666666;

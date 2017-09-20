@@ -551,12 +551,6 @@ nova.dialog({
       <button id="testbtn" class="btn btn-blue">点此测试事件</button>
     </div>
 
-    <h2>评论</h2>
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="dialog" data-title="NOVA"
-         data-url="http://www.em2046.com/nova/docs/dialog.html"></div>
-    <!-- 多说评论框 end -->
-
     <div class="dialog-auto">
       <div class="tabs clearfix">
         <div class="tab active">往返推荐</div>
@@ -575,10 +569,13 @@ nova.dialog({
   export default {
     name: 'dialog'
   }
-  require('script-loader!../../../nova/js/dialog')
-  require('script-loader!../../../nova/doc/dialog')
+  require('script-loader!../../../static/js/dialog')
+  require('script-loader!../../../static/doc/dialog')
 </script>
 
 <style lang="scss">
+  @import "../../assets/scss/doc.scss";
+  @import "/static/assert/css/buttons.css";
+  @import "/static/assert/css/dialog.css";
 
 </style>

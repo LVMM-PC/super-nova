@@ -36,12 +36,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
         </code>
     </pre>
 
-    <h2>评论</h2>
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="retina" data-title="NOVA"
-         data-url="http://www.em2046.com/nova/docs/retina.html"></div>
-    <!-- 多说评论框 end -->
-
   </div>
 </template>
 
@@ -49,8 +43,11 @@ only screen and (min-device-pixel-ratio: 1.5) {
   export default {
     name: 'retina'
   }
+  require('script-loader!../../../static/doc/navigation')
 </script>
 
 <style lang="scss">
+  @import "../../assets/scss/doc.scss";
+  @import "../../assets/scss/retina.css";
 
 </style>

@@ -448,12 +448,6 @@
       <div class="btn JS_number_box_add">添加</div>
     </div>
 
-    <h2>评论</h2>
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="ui" data-title="NOVA"
-         data-url="http://www.em2046.com/nova/docs/ui.html"></div>
-    <!-- 多说评论框 end -->
-
   </div>
 </template>
 
@@ -461,8 +455,14 @@
   export default {
     name: 'ui'
   }
+  require('script-loader!../../../static/doc/navigation')
+  require('script-loader!../../../static/js/ui')
+  require('script-loader!../../../static/doc/ui')
 </script>
 
 <style lang="scss">
+  @import "../../assets/scss/doc.scss";
+  @import "/static/assert/css/buttons.css";
+  @import "/static/assert/css/ui.css";
 
 </style>
