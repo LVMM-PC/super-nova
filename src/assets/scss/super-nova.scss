@@ -42,6 +42,7 @@ a {
 
 //<editor-fold desc="header">
 .super-header {
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,6 +53,7 @@ a {
 }
 
 .super-menu {
+  font-size: 16px;
   display: flex;
   height: 100%;
   li {
@@ -86,28 +88,67 @@ a {
 }
 
 .super-sidebar {
+  padding: 10px 0;
+  box-sizing: border-box;
+  border-right: 1px solid #eee;
+  margin-right: 40px;
+  color: #999;
   width: 200px;
+  .list {
+    top: 0;
+    position: sticky;
+    font-size: 16px;
+  }
+  a {
+    color: #333;
+    &:hover {
+      color: #2299ee;
+    }
+  }
   li {
-    line-height: 40px;
-    padding-left: 10px;
+    line-height: 30px;
+    &.active {
+      border-right: 3px solid #29e;
+      margin-right: -1px;
+      a {
+        color: #2299ee;
+      }
+      background-color: rgba(34, 158, 238, 0.2);
+    }
   }
   .list > li {
+    .super-sidebar-toggle {
+      padding-left: 10px;
+    }
     font-size: 18px;
   }
   .list > li > ul > li {
+    .super-sidebar-toggle {
+      padding-left: 20px;
+    }
     font-size: 16px;
   }
   .list > li > ul > li > ul > li {
+    .super-sidebar-toggle {
+      padding-left: 30px;
+    }
     font-size: 14px;
   }
 }
 
 .super-sidebar-toggle {
-  height: 40px;
-  line-height: 40px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
 }
 
 .super-sidebar-dropdown {
+}
+
+#navigator {
+  width: 200px;
+  margin-left: 40px;
+  border-left: 1px solid #eee;
 }
 
 //</editor-fold>
@@ -129,6 +170,7 @@ a {
 .super-footer {
   display: flex;
 
+  font-size: 16px;
   padding: 0 50px 100px 50px;
   background-color: #fff;
   height: 80px;

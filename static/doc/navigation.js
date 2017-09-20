@@ -8,7 +8,7 @@ $(function () {
     var $navigation = $('<div class="navigation"><span class="close">x</span><div class="links"></div></div>');
     var $links = $navigation.find(".links");
 
-    $("body").append($navigation);
+    $("#navigator").append($navigation);
     var size = $headers.length;
     var $tempA;
     for (var i = 0; i < size; i++) {
@@ -17,6 +17,10 @@ $(function () {
         var tagName = $header.get(0).tagName.toLocaleLowerCase();
         $tempA = $('<a class="' + tagName + '">' + $header.html() + '</a>');
         $links.append($tempA)
+    }
+
+    if(size){
+      $navigation.show()
     }
 
     $document.on("click", ".navigation>.close", function () {

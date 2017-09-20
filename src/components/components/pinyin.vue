@@ -76,12 +76,12 @@
   export default {
     name: 'pinyin'
   }
-  require('script-loader!../../../static/doc/navigation')
+
   require('script-loader!../../../static/js/pinyin')
   require('script-loader!../../../static/doc/pinyin')
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
 
 </style>

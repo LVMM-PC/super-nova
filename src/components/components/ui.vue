@@ -455,13 +455,13 @@
   export default {
     name: 'ui'
   }
-  require('script-loader!../../../static/doc/navigation')
+
   require('script-loader!../../../static/js/ui')
   require('script-loader!../../../static/doc/ui')
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "/static/assert/css/buttons.css";
   @import "/static/assert/css/ui.css";
 

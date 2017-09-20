@@ -574,8 +574,82 @@ nova.dialog({
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "/static/assert/css/buttons.css";
   @import "/static/assert/css/dialog.css";
+
+  input {
+    border: 1px solid #CCC;
+    line-height: 20px;
+  }
+
+  .table, .table td {
+    border: 1px solid #CCC;
+  }
+
+  .table td {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .dialog-iframe {
+    border: 2px solid #7FCCFF;
+    width: 500px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  #elemBack {
+    display: none;
+  }
+
+  .dialog-auto {
+    display: none;
+  }
+
+  .dialog-auto .tabs {
+  }
+
+  .dialog-auto .tab {
+    cursor: pointer;
+    float: left;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  .dialog-auto .tab.active {
+    color: #fff;
+    background-color: #ff9900;
+  }
+
+  .dialog-auto .panes {
+    text-align: center;
+  }
+
+  .dialog-auto .pane {
+    display: none;
+  }
+
+  .dialog-auto .pane.active {
+    display: block;
+  }
+
+  .da-recommend {
+    background-color: #cdf0ff;
+    height: 300px;
+    line-height: 300px;
+  }
+
+  .da-free {
+    background-color: #d6fada;
+    height: 500px;
+    line-height: 300px;
+  }
+
+  .dialog-ajax {
+    padding: 20px;
+    height: 300px;
+    overflow: auto;
+  }
 
 </style>

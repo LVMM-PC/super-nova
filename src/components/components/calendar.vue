@@ -224,13 +224,13 @@
   export default {
     name: 'calendar'
   }
-  require('script-loader!../../../static/doc/navigation')
+
   require('script-loader!../../../static/js/calendar')
   require('script-loader!../../../static/doc/calendar')
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "/static/assert/css/buttons.css";
   @import "/static/assert/css/calendar.css";
 

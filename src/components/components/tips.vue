@@ -254,7 +254,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "/static/assert/css/icons.css";
   @import "/static/assert/css/tips.css";
 

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/components/home'
+import componentsHome from '@/components/components/home'
 import components from '@/components/components'
 import button from '@/components/components/button'
 import calendar from '@/components/components/calendar'
@@ -26,9 +27,9 @@ export default new Router({
     },
     {
       path: '/components',
-      name: 'components',
       component: components,
       children: [
+        {path: '', component: componentsHome},
         {path: 'button', component: button},
         {path: 'calendar', component: calendar},
         {path: 'dialog', component: dialog},

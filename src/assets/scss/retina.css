@@ -1,18 +1,16 @@
 @charset "UTF-8";
 
 .lvmama-logo {
-    background-image: url(../img/logo-61.png);
-    width: 330px;
-    height: 70px;
+  background-image: url(../img/logo-61.png);
+  width: 330px;
+  height: 70px;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-    /* 当设备像素比不小于1.5的时候... */
-    .lvmama-logo-retina {
-        background-image: url(../img/logo-61@2x.png);
-        background-size: 100%;
-    }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* 当设备像素比不小于1.5的时候... */
+  .lvmama-logo-retina {
+    background-image: url(../img/logo-61@2x.png);
+    background-size: 100%;
+  }
 
 }

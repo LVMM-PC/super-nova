@@ -43,11 +43,11 @@ only screen and (min-device-pixel-ratio: 1.5) {
   export default {
     name: 'retina'
   }
-  require('script-loader!../../../static/doc/navigation')
+
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "../../assets/scss/retina.css";
 
 </style>

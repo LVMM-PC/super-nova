@@ -56,10 +56,10 @@
   export default {
     name: 'font-family'
   }
-  require('script-loader!../../../static/doc/navigation')
+
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
 
 </style>

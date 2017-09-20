@@ -389,13 +389,13 @@
   export default {
     name: 'validate'
   }
-  require('script-loader!../../../static/doc/navigation')
+
   require('script-loader!../../../static/js/validate')
   require('script-loader!../../../static/doc/validate')
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "../../assets/scss/validate.css";
   @import "/static/assert/css/tips.css";
   @import "/static/assert/css/icons.css";

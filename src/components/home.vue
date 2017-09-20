@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="super-main">
     <h1>NOVA</h1>
     <div>
       PLUGINS
@@ -14,12 +14,7 @@
 
 <script>
   export default {
-    name: 'hello',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
-    }
+    name: 'hello'
   }
 </script>
 

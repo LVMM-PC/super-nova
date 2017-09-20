@@ -238,7 +238,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/doc.scss";
+
   @import "/static/assert/css/buttons.css";
 
   .btn .icon {

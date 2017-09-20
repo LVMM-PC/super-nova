@@ -1,52 +1,93 @@
 <template>
   <div class="super-sidebar">
     <ul class="list">
-      <li>
-        <div class="super-sidebar-toggle"><h4>组件</h4></div>
-        <ul class="super-sidebar-dropdown">
-          <li>
-            <div class="super-sidebar-toggle">通用</div>
-            <ul class="super-sidebar-dropdown">
-              <li><a href="/components/icon">icon</a></li>
-              <li><a href="/components/button">button</a></li>
-              <li><a href="/components/tips">tips</a></li>
-            </ul>
-          </li>
-          <li>
-            <div class="super-sidebar-toggle">数据输入</div>
-            <ul class="super-sidebar-dropdown">
-              <li><a href="/components/calendar">calendar</a></li>
-              <li><a href="/components/ui">ui</a></li>
-            </ul>
-          </li>
-          <li>
-            <div class="super-sidebar-toggle">反馈</div>
-            <ul class="super-sidebar-dropdown">
-              <li><a href="/components/dialog">dialog</a></li>
-            </ul>
-          </li>
-          <li>
-            <div class="super-sidebar-toggle">其他</div>
-            <ul class="super-sidebar-dropdown">
-              <li><a href="/components/validate">validate</a></li>
-              <li><a href="/components/pinyin">pinyin</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <div class="super-sidebar-toggle"><h4>解决方案</h4></div>
-        <ul class="super-sidebar-dropdown">
-          <li><a href="/components/font-family">font family</a></li>
-          <li><a href="/components/retina">retina</a></li>
-        </ul>
-      </li>
+      <sidebar-tree v-for="node in models" :key="node.name" :model="node"></sidebar-tree>
     </ul>
   </div>
 </template>
 
 <script>
+  import sidebarTree from '@/components/sidebar-tree'
+
+  var data = [
+    {
+      name: 'Components',
+      value: '组件',
+      children: [
+        {
+          name: 'General',
+          value: '通用',
+          path: 'components',
+          children: [
+            {
+              name: 'Icon', value: 'icon', link: 'icon'
+            },
+            {
+              name: 'Button', value: 'button', link: 'button'
+            },
+            {
+              name: 'Tips', value: 'tips', link: 'tips'
+            }]
+        },
+        {
+          name: 'Data Entry',
+          value: '数据输入',
+          path: 'components',
+          children: [
+            {
+              name: 'Calendar', value: 'calendar', link: 'calendar'
+            },
+            {
+              name: 'UI', value: 'ui', link: 'ui'
+            }
+          ]
+        },
+        {
+          name: 'Feedback',
+          value: '反馈',
+          path: 'components',
+          children: [
+            {
+              name: 'Dialog', value: 'dialog', link: 'dialog'
+            }
+          ]
+        },
+        {
+          name: 'Other',
+          value: '其他',
+          path: 'components',
+          children: [
+            {
+              name: 'Validate', value: 'validate', link: 'validate'
+            },
+            {
+              name: 'Pinyin', value: 'pinyin', link: 'pinyin'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Solution',
+      value: '解决方案',
+      path: 'components',
+      children: [
+        {
+          name: 'Font Family', value: 'font family', link: 'font-family'
+        },
+        {
+          name: 'Retina', value: 'retina', link: 'retina'
+        }
+      ]
+    }
+  ]
   export default {
-    name: 'components-sidebar'
+    value: 'components-sidebar',
+    components: {sidebarTree},
+    data () {
+      return {
+        models: data
+      }
+    }
   }
 </script>

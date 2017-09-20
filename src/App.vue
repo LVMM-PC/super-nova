@@ -18,9 +18,15 @@
   export default {
     name: 'app'
   }
+  import { superNova } from '../src/assets/js/super-nova'
+
+  superNova()
+
+  require('script-loader!../static/doc/navigation')
 </script>
 
 <style lang="scss">
   @import "assets/scss/super-nova.scss";
+  @import "assets/scss/doc.scss";
 
 </style>

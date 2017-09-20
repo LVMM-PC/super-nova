@@ -3,6 +3,7 @@
     <div class="super-detail">
       <components-sidebar></components-sidebar>
       <router-view></router-view>
+      <div id="navigator"></div>
     </div>
   </section>
 </template>
@@ -11,13 +12,8 @@
   import componentsSidebar from '@/components/components-sidebar'
 
   export default {
-    name: '',
-    components: {componentsSidebar},
-    data () {
-      return {
-        msg: 'a nova page'
-      }
-    }
+    name: 'components',
+    components: {componentsSidebar}
   }
 </script>
 

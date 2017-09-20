@@ -47,11 +47,6 @@ body {
   input {
     vertical-align: top;
   }
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
   .section {
     margin: 0 0 15px 0;
   }
@@ -66,38 +61,59 @@ td {
   padding: 0;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .navigation {
+  padding: 10px;
+  line-height: 20px;
   z-index: 1;
-  position: fixed;
-  top: 190px;
-  right: 50px;
-  padding: 10px 20px 10px 10px;
-  border: 1px solid #CCCCCC;
-  background: #FFFFFF;
-  max-height: 600px;
-  overflow-y: auto;
-}
+  position: sticky;
+  top: 0;
 
-.navigation .close {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px;
-  margin: -5px -5px 0 0;
-}
+  a {
+    display: block;
+    cursor: pointer;
+    color: #333333;
+    &:hover {
+      color: #FF6600;
+      background: none;
+    }
+  }
 
-.navigation .close:hover {
-  background-color: #F06;
-  color: #ffffff;
-}
+  .close {
+    display: none;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    margin: -5px -5px 0 0;
+    &:hover {
+      background-color: #F06;
+      color: #ffffff;
+    }
+  }
 
-.navigation a {
-  display: block;
-  cursor: pointer;
-  color: #333333;
-}
+  .h1 {
+    font-size: 16px;
+  }
 
-.navigation a:hover {
-  color: #FF6600;
-  background: none;
+  .h2 {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .h3 {
+    font-size: 12px;
+    margin-left: 20px;
+  }
+
+  .h4 {
+    font-size: 12px;
+    margin-left: 30px;
+  }
+
 }
