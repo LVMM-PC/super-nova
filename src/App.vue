@@ -6,10 +6,13 @@
         <a href="/">NOVA</a></div>
       <ul class="super-menu">
         <li v-bind:class="{active:this.$route.path === '/components'}">
-          <router-link to="/components">组件</router-link>
+          <a href="/components">组件</a>
+        </li>
+        <li v-bind:class="{active:this.$route.path === '/reference'}">
+          <a href="/reference">参考</a>
         </li>
         <li v-bind:class="{active:this.$route.path === '/guide'}">
-          <router-link to="/guide">指南</router-link>
+          <a href="/guide">指南</a>
         </li>
       </ul>
     </header>

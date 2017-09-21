@@ -1,7 +1,7 @@
 <template>
   <section class="super-main">
     <div class="super-detail">
-      <guide-sidebar></guide-sidebar>
+      <reference-sidebar></reference-sidebar>
       <router-view></router-view>
       <div id="navigator"></div>
     </div>
@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import guideSidebar from '@/components/guide-sidebar'
+  import referenceSidebar from '@/components/reference-sidebar'
   export default {
-    components: {guideSidebar},
+    components: {referenceSidebar},
     name: ''
   }
 </script>

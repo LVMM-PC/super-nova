@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import componentsHome from '@/components/components/home'
 import components from '@/components/components'
 import button from '@/components/components/button'
@@ -32,7 +33,16 @@ import tips from '@/components/components/tips'
 import ui from '@/components/components/ui'
 import validate from '@/components/components/validate'
 import validateSetting from '@/components/components/validate/setting'
+
 import guide from '@/components/guide'
+import guideHome from '@/components/guide/home'
+import guideCommon from '@/components/guide/common'
+import guideRule from '@/components/guide/rule'
+import guideLoadingIcon from '@/components/guide/loading-icon'
+
+import reference from '@/components/reference'
+import referenceHome from '@/components/reference/home'
+import referenceSelectorsLevel3 from '@/components/reference/selectors-level-3'
 
 Vue.use(Router)
 
@@ -87,8 +97,21 @@ export default new Router({
     },
     {
       path: '/guide',
-      name: 'guide',
-      component: guide
+      component: guide,
+      children: [
+        {path: '', component: guideHome},
+        {path: 'common', component: guideCommon},
+        {path: 'rule', component: guideRule},
+        {path: 'loading-icon', component: guideLoadingIcon}
+      ]
+    },
+    {
+      path: '/reference',
+      component: reference,
+      children: [
+        {path: '', component: referenceHome},
+        {path: 'selectors-level-3', component: referenceSelectorsLevel3}
+      ]
     }
   ]
 })

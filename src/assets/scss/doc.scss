@@ -98,12 +98,14 @@ td {
 }
 
 .navigation {
+  box-sizing: border-box;
   padding: 10px;
   line-height: 20px;
   z-index: 1;
   position: sticky;
   top: 0;
-
+  max-height: 500px;
+  overflow: auto;
   a {
     display: block;
     cursor: pointer;
