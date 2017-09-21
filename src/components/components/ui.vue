@@ -465,4 +465,34 @@
   @import "/static/assert/css/buttons.css";
   @import "/static/assert/css/ui.css";
 
+  dl {
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  dt {
+    min-height: 1px;
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  dd {
+    float: left;
+  }
+
+  .nova-number-box {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  input {
+    padding: 0;
+  }
 </style>

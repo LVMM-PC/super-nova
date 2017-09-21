@@ -4,7 +4,7 @@
 
     <h1>Calendar</h1>
 
-<pre>
+    <pre>
 <code class="js">
 var floatSmallBimonthlyCalendar = lv.calendar({
     date: "2016-02-13",

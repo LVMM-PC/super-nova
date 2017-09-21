@@ -15,7 +15,14 @@ import calendarBig from '@/components/components/calendar/big'
 import calendarBigBimonthly from '@/components/components/calendar/big-bimonthly'
 import calendarFloatSmall from '@/components/components/calendar/float-small'
 import calendarFloatSmallBimonthly from '@/components/components/calendar/float-small-bimonthly'
+import calendarFloatBigBimonthly from '@/components/components/calendar/float-big-bimonthly'
+import calendarFloatBimonthlyCascading from '@/components/components/calendar/float-bimonthly-cascading'
+import calendarFloatCascading from '@/components/components/calendar/float-cascading'
+import calendarVacation from '@/components/components/calendar/vacation'
+import calendarDistribution from '@/components/components/calendar/distribution'
+import calendarGroupon from '@/components/components/calendar/groupon'
 import dialog from '@/components/components/dialog'
+import dialogIframe from '@/components/components/dialog/iframe'
 import fontFamily from '@/components/components/font-family'
 import icon from '@/components/components/icon'
 import pinyin from '@/components/components/pinyin'
@@ -36,6 +43,11 @@ export default new Router({
       component: home
     },
     {
+      path: '/components/dialog/iframe',
+      name: 'dialogIframe',
+      component: dialogIframe
+    },
+    {
       path: '/components',
       component: components,
       children: [
@@ -52,6 +64,12 @@ export default new Router({
         {path: 'calendar/big-bimonthly', component: calendarBigBimonthly},
         {path: 'calendar/float-small', component: calendarFloatSmall},
         {path: 'calendar/float-small-bimonthly', component: calendarFloatSmallBimonthly},
+        {path: 'calendar/float-big-bimonthly', component: calendarFloatBigBimonthly},
+        {path: 'calendar/float-bimonthly-cascading', component: calendarFloatBimonthlyCascading},
+        {path: 'calendar/float-cascading', component: calendarFloatCascading},
+        {path: 'calendar/vacation', component: calendarVacation},
+        {path: 'calendar/distribution', component: calendarDistribution},
+        {path: 'calendar/groupon', component: calendarGroupon},
         {path: 'dialog', component: dialog},
         {path: 'font-family', component: fontFamily},
         {path: 'icon', component: icon},

@@ -53,7 +53,7 @@
 
     <h2>实例</h2>
 
-    <h3>日历1 单月小日历</h3>
+    <h3>单月小日历</h3>
 
     <div class="section">
       <span id="mySmallCalendar"></span>
@@ -63,7 +63,7 @@
       </p>
     </div>
 
-    <h3>日历2 双月小日历</h3>
+    <h3>双月小日历</h3>
     <div class="section">
       <span id="mySmallBimonthlyCalendar"></span>
       <p>
@@ -71,7 +71,7 @@
       </p>
     </div>
 
-    <h3>日历3 单月大日历</h3>
+    <h3>单月大日历</h3>
     <div class="section">
       <span id="myBigCalendar"></span>
       <p>
@@ -84,7 +84,7 @@
       </p>
     </div>
 
-    <h3>日历4 双月大日历</h3>
+    <h3>双月大日历</h3>
     <div class="section">
       <div id="myBigBimonthlyCalendar"></div>
       <p>
@@ -93,7 +93,7 @@
       </p>
     </div>
 
-    <h3>日历5 小日历控件浮层</h3>
+    <h3>小日历控件浮层</h3>
     <div class="section">
       <input type="text" class="floatSmallInput" readonly="readonly" value="2016-07-28">
       <span id="floatSmallText"></span>
@@ -102,7 +102,7 @@
       </p>
     </div>
 
-    <h3>日历6 小日历双月控件浮层</h3>
+    <h3>小日历双月控件浮层</h3>
     <div class="section">
       <input type="text" id="floatSmallBimonthlyInput" readonly="readonly">
       <span id="floatSmallBimonthlyText"></span>
@@ -112,7 +112,7 @@
     </div>
 
     <!--
-        日历7 计划外
+        计划外
         <div>
             <input type="text" id="floatBigInput" readonly="readonly">
             <span id="floatBigText"></span>
@@ -120,26 +120,26 @@
     -->
 
     <!--TODO-->
-    
-    <h3>日历8 日历控件浮层</h3>
+
+    <h3>日历控件浮层</h3>
     <p>［门票订单填写页］</p>
     <div class="section">
       <input type="text" id="floatBigBimonthlyInput" readonly="readonly">
       <span id="floatBigBimonthlyText"></span>
       <p>
-        <a href="calendar/float-big-bimonthly-calendar.html" target="_blank">调用文档</a>
-        <a href="json/calendar-data.json" target="_blank">JSON数据</a>
+        <a href="/components/calendar/float-big-bimonthly" target="_blank">调用文档</a>
+        <a href="/static/json/calendar-data.json" target="_blank">JSON数据</a>
       </p>
     </div>
 
-    <h3>日历9 区间日历控件浮层</h3>
+    <h3>区间日历控件浮层</h3>
     <div class="section">
       <input type="text" class="floatBimonthlyCascadingInput" readonly="readonly" value="2016-07-15">
       <span class="floatBimonthlyCascadingText"></span>
       <input type="text" class="floatBimonthlyCascadingInput" readonly="readonly" value="2016-07-20">
       <span class="floatBimonthlyCascadingText"></span>
       <p>
-        <a href="calendar/float-bimonthly-cascading-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/float-bimonthly-cascading" target="_blank">调用文档</a>
       </p>
     </div>
 
@@ -147,42 +147,42 @@
       <button class="btn" id="floatBimonthlyCascadingBtn">获取</button>
     </div>
 
-    <h3>日历10 区间日历单月控件</h3>
+    <h3>区间日历单月控件</h3>
     <div class="section">
       <input type="text" class="floatCascadingInput" readonly="readonly">
       <input type="text" class="floatCascadingInput" readonly="readonly">
       <p>
-        <a href="calendar/float-cascading-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/float-cascading" target="_blank">调用文档</a>
       </p>
     </div>
 
-    <h3>日历11 度假酒店日历控件样式</h3>
+    <h3>度假酒店日历控件样式</h3>
     <div class="section">
       <input type="text" class="vacationInput" readonly="readonly">
       <input type="text" class="vacationInput" readonly="readonly">
       <p>
-        <a href="calendar/vacation-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/vacation" target="_blank">调用文档</a>
       </p>
     </div>
 
-    <h3>日历12 分销日历控件</h3>
+    <h3>分销日历控件</h3>
     <div class="section">
       <input type="text" id="distributionInput" readonly="readonly">
       <a id="distributionClearCache">清缓存</a>
       <span id="distributionText"></span>
       <p>
-        <a href="calendar/distribution-calendar.html" target="_blank">调用文档</a>
-        <a href="json/calendar-data.json" target="_blank">JSON数据</a>
+        <a href="/components/calendar/distribution" target="_blank">调用文档</a>
+        <a href="/static/json/calendar-data.json" target="_blank">JSON数据</a>
       </p>
     </div>
 
-    <h3>日历13 特卖会线路弹层</h3>
+    <h3>特卖会线路弹层</h3>
     <div class="section">
       <input type="text" id="GrouponInput" readonly="readonly">
       <span id="GrouponText"></span>
       <p>
-        <a href="calendar/groupon-calendar.html" target="_blank">调用文档</a>
-        <a href="json/calendar-data.json" target="_blank">JSON数据</a>
+        <a href="/components/calendar/groupon" target="_blank">调用文档</a>
+        <a href="/static/json/calendar-data.json" target="_blank">JSON数据</a>
       </p>
     </div>
 
@@ -190,18 +190,18 @@
 
     </div>
 
-    <h3>14 offset margin</h3>
+    <h3>Offset margin</h3>
     <div class="section">
       <input type="text" id="offsetInput" readonly="readonly">
     </div>
 
-    <h3>15 大日历级联</h3>
+    <h3>大日历级联</h3>
     <div class="section">
       <input type="text" class="bigCascadingInput">
       <input type="text" class="bigCascadingInput">
     </div>
 
-    <h3>16 今天起几日不可选</h3>
+    <h3>今天起几日不可选</h3>
     <div class="section">
       <input type="text" class="dayDisableNextInput">
     </div>
@@ -209,12 +209,12 @@
       <input type="text" class="dayDisableNextInput">
     </div>
 
-    <h3>17 区间单日历</h3>
+    <h3>区间单日历</h3>
     <div class="section">
       <div class="sectionCalendar"></div>
     </div>
 
-    <h3>18 星期偏移</h3>
+    <h3>星期偏移</h3>
     <div class="section">
       <div class="weekOffsetCalendar"></div>
     </div>

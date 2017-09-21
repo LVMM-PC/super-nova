@@ -3,18 +3,16 @@
   <div id="everything">
 
     <h1>Calendar</h1>
-
     <pre>
 <code class="js">
-
-var myBigBimonthlyCalendar = lv.calendar({
-    autoRender: true,
-    trigger: "#myBigBimonthlyCalendar",
+var floatCascadingCalendar = lv.calendar({
+    autoRender: false,
+    trigger: ".floatCascadingInput",
     triggerEvent: "click",
-    sourceFn: fillData,  //见日历3文档
-    bimonthly: true
+    bimonthly: false,
+    template: "small",
+    cascading: true
 });
-
 </code>
 </pre>
 

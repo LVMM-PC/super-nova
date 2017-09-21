@@ -1,20 +1,19 @@
 <template>
 
   <div id="everything">
-
     <h1>Calendar</h1>
 
     <pre>
 <code class="js">
-
-var myBigBimonthlyCalendar = lv.calendar({
-    autoRender: true,
-    trigger: "#myBigBimonthlyCalendar",
+//特卖会
+var grouponCalendar = lv.calendar({
+    autoRender: false,
+    trigger: "#GrouponInput",
     triggerEvent: "click",
-    sourceFn: fillData,  //见日历3文档
-    bimonthly: true
+    sourceFn: fillData,
+    bimonthly: true,
+    wrapClass: "ui-calendar-groupon"
 });
-
 </code>
 </pre>
 

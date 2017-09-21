@@ -3,7 +3,7 @@
   <div id="everything">
 
     <h1>Calendar</h1>
-<pre>
+    <pre>
 <code class="js">
 var mySmallBimonthlyCalendar = lv.calendar({
     autoRender: true,

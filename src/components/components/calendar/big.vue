@@ -4,7 +4,7 @@
 
     <h1>Calendar</h1>
 
-<pre>
+    <pre>
 <code class="js">
 var myBigCalendar = lv.calendar({
         autoRender: true,  //自动渲染日历

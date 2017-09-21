@@ -29,6 +29,10 @@ body {
     line-height: 120%;
     font-weight: normal;
     margin: 35px 0 15px 0;
+    &.hover{
+      color: #2299ee;
+      background-color: rgba(34, 158, 238, 0.2);
+    }
   }
   p {
     margin: 15px 0 5px 0;
@@ -95,8 +99,8 @@ td {
     cursor: pointer;
     color: #333333;
     &:hover {
-      color: #FF6600;
-      background: none;
+      color: #29e;
+      background: rgba(34, 158, 238, 0.2)
     }
   }
 
@@ -114,26 +118,26 @@ td {
   }
 
   .h1 {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin-left: 10px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding-left: 10px;
   }
 
   .h3 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin-left: 20px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-left: 20px;
   }
 
   .h4 {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin-left: 30px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    padding-left: 30px;
   }
 
 }

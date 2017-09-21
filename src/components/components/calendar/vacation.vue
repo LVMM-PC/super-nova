@@ -3,22 +3,24 @@
   <div id="everything">
 
     <h1>Calendar</h1>
-
     <pre>
 <code class="js">
-
-var myBigBimonthlyCalendar = lv.calendar({
-    autoRender: true,
-    trigger: "#myBigBimonthlyCalendar",
+//度假酒店
+var vacationCalendar = lv.calendar({
+    autoRender: false,
+    trigger: ".vacationInput",
     triggerEvent: "click",
-    sourceFn: fillData,  //见日历3文档
-    bimonthly: true
+    bimonthly: true,
+    template: "small",
+    wrapClass: "ui-calendar-orange",
+    cascading: true,
+    showNumberOfDays: true
 });
-
 </code>
 </pre>
 
   </div>
+
 
 </template>
 

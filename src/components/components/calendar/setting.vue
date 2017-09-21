@@ -5,21 +5,21 @@
     <h2>配置文档</h2>
 
     <h3>默认值</h3>
-<pre>
+    <pre>
 <code class="js">
 {{js1}}
 </code>
 </pre>
 
     <h3>节假日</h3>
-<pre>
+    <pre>
 <code class="js">
 {{js2}}
 </code>
 </pre>
 
     <h3>日历模板</h3>
-<pre>
+    <pre>
 <code>
 {{js3}}
 </code>

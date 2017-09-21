@@ -26,7 +26,13 @@
 
       <!--联系人信息填写--开始-->
       <div class="order_box">
+        <!--付款按钮-->
+        <div class="fk_box_fixed mt_20">
+          <div class="fk_box">
+            <a class="btn_fk" href="javascript:;">提交表单</a>
 
+          </div>
+        </div>
         <!--购买人免登陆--开始-->
         <div class="user_info no_bd js_copy_info"> <!--js_copy_info是购买人专用的，下面得复制购买人信息按钮点击,需要读取这个名字下面输入得内容-->
 
@@ -367,20 +373,6 @@
 
     </section>
 
-    <!--付款按钮-->
-    <div class="fk_box_fixed mt_20">
-      <div class="fk_box">
-        <a class="btn_fk" href="javascript:;">同意以下协议，去付款</a>
-        <div class="fk_l">
-          <a href="#"><i class="order_icon icon_jtl"></i>返回上一步</a>
-          <div class="fk_jg">
-            <p class="fk_p1">应付总价<span><small>¥</small>5000000.00</span></p>
-            <p class="fk_p2">（总价 - 促销<span>¥ 260.00</span> + 优惠<span>¥ 20.00</span> + 快递<span>¥ 10.00</span>）
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </template>

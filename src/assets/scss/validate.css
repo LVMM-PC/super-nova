@@ -58,7 +58,6 @@ input {
   border-top: #eee solid 1px;
   padding: 20px 0 10px;
   position: relative;
-  font-family: SimSun, sans-serif;
 }
 
 .user_b {
@@ -169,37 +168,28 @@ input {
 /*付款跟随按钮*/
 .fk_box_fixed {
   height: 70px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .fk_box_fixed .fk_box {
   margin: 0;
-  width: 776px;
-  position: fixed;
-  bottom: 0;
-  _position: absolute;
-  z-index: 999;
 }
 
 .fk_box {
-  padding-right: 217px;
-  border: #f80 solid 3px;
-  margin-top: 20px;
   height: 64px;
-  background: #fff;
   position: relative;
 }
 
 .btn_fk {
   float: right;
-  margin-right: -217px;
   width: 217px;
   height: 64px;
   background: #f80;
   color: #fff;
   text-align: center;
   line-height: 64px;
-  font-family: "微软雅黑";
   font-size: 18px;
 }
 
@@ -257,7 +247,6 @@ input {
 
 .fk_p1 span {
   margin-left: 10px;
-  font-family: Arial;
   font-size: 32px;
   color: #f60;
 }
@@ -273,7 +262,6 @@ input {
 }
 
 .fk_p2 span {
-  font-family: Arial;
   margin-left: 5px;
 }
 
@@ -295,18 +283,15 @@ input {
 
 .yl_price {
   color: #f60;
-  font-family: "微软雅黑";
   font-size: 14px;
 }
 
 .yl_price big {
   font-size: 18px;
-  font-family: Arial;
 }
 
 .yl_time {
   font-size: 14px;
-  font-family: Arial;
   color: #333;
   line-height: 30px;
 }
@@ -346,7 +331,6 @@ input {
   padding: 6px 0;
   border-bottom: #e3e3e3 solid 1px;
   font-size: 14px;
-  font-family: "微软雅黑";
   color: #333;
 }
 

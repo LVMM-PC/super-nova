@@ -192,7 +192,7 @@ nova.confirm(
         <span class="btn JS_loading_top">loading状态，遮盖完整浏览器窗口</span>
       </p>
       在iframe中使用
-      <iframe class="dialog-iframe" src="dialog/dialog-iframe.html" frameborder="0"></iframe>
+      <iframe class="dialog-iframe" src="/components/dialog/iframe" frameborder="0"></iframe>
       <pre>
 <code class="js">
 //遮罩当前页面，在iframe中时，不能遮罩iframe的父级页面
@@ -532,7 +532,7 @@ $.ajax({
 <code>
 nova.dialog({
     url: true,
-    content: "dialog/dialog-iframe.html",
+    content: "/components/dialog/iframe",
     width: 600,
     initHeight: 300  //设置iframe的高度
     //height: 300,  //同时设置了iframe与dialog的高度后，iframe可能会溢出
@@ -594,8 +594,8 @@ nova.dialog({
 
   .dialog-iframe {
     border: 2px solid #7FCCFF;
-    width: 500px;
-    height: 200px;
+    width: 100%;
+    height: 400px;
     margin-bottom: 10px;
   }
 

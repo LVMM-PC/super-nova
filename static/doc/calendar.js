@@ -873,11 +873,11 @@ $(function () {
         bimonthly: true,
         selectDateCallback: function () {
 
-            var sectionSelectStartStr = nova.calendar.dateFormat(this.sectionSelectStart, this.options.dateFormat)
-            var sectionSelectEndStr = nova.calendar.dateFormat(this.sectionSelectEnd, this.options.dateFormat)
-
-
-            console.log(sectionSelectStartStr, sectionSelectEndStr)
+            // var sectionSelectStartStr = nova.calendar.dateFormat(this.sectionSelectStart, this.options.dateFormat)
+            // var sectionSelectEndStr = nova.calendar.dateFormat(this.sectionSelectEnd, this.options.dateFormat)
+            //
+            //
+            // console.log(sectionSelectStartStr, sectionSelectEndStr)
 
         },
         cancelDateCallback: function () {
@@ -896,11 +896,11 @@ $(function () {
         weekOffset: 1,
         selectDateCallback: function () {
 
-            var sectionSelectStartStr = nova.calendar.dateFormat(this.sectionSelectStart, this.options.dateFormat)
-            var sectionSelectEndStr = nova.calendar.dateFormat(this.sectionSelectEnd, this.options.dateFormat)
-
-
-            console.log(sectionSelectStartStr, sectionSelectEndStr)
+            // var sectionSelectStartStr = nova.calendar.dateFormat(this.sectionSelectStart, this.options.dateFormat)
+            // var sectionSelectEndStr = nova.calendar.dateFormat(this.sectionSelectEnd, this.options.dateFormat)
+            //
+            //
+            // console.log(sectionSelectStartStr, sectionSelectEndStr)
 
         },
         cancelDateCallback: function () {
