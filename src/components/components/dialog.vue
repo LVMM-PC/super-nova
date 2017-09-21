@@ -583,6 +583,11 @@ nova.dialog({
     line-height: 20px;
   }
 
+  .nova-dialog-static .btn,
+  .nova-dialog .btn {
+    margin: 0 5px;
+  }
+
   .table, .table td {
     border: 1px solid #CCC;
   }

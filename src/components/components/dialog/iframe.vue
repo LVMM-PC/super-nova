@@ -1,5 +1,4 @@
 <template>
-
   <section class="super-main">
     <div class="super-detail">
       <div id="everything">
@@ -22,7 +21,7 @@
 
 <script>
   export default {
-    name: 'dialog'
+    name: 'iframe'
   }
   require('script-loader!../../../../static/js/dialog')
   require('script-loader!../../../../static/doc/dialog')

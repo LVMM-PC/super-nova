@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
 import componentsHome from '@/components/components/home'
 import components from '@/components/components'
 import button from '@/components/components/button'
@@ -8,6 +7,8 @@ import calendar from '@/components/components/calendar'
 import calendarSetting from '@/components/components/calendar/setting'
 import calendarAPI from '@/components/components/calendar/api'
 import calendarBirthday from '@/components/components/calendar/birthday'
+import calendarBirthdayHome from '@/components/components/calendar/birthday/home'
+import calendarBirthdayVST from '@/components/components/calendar/birthday/vst'
 import calendarFourMonth from '@/components/components/calendar/four-month'
 import calendarSmall from '@/components/components/calendar/small'
 import calendarSmallBimonthly from '@/components/components/calendar/small-bimonthly'
@@ -30,6 +31,7 @@ import retina from '@/components/components/retina'
 import tips from '@/components/components/tips'
 import ui from '@/components/components/ui'
 import validate from '@/components/components/validate'
+import validateSetting from '@/components/components/validate/setting'
 import guide from '@/components/guide'
 
 Vue.use(Router)
@@ -39,8 +41,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: home
+      redirect: '/components'
     },
     {
       path: '/components/dialog/iframe',
@@ -56,6 +57,9 @@ export default new Router({
         {path: 'calendar', component: calendar},
         {path: 'calendar/settings', component: calendarSetting},
         {path: 'calendar/api', component: calendarAPI},
+        {path: 'calendar/birthday', component: calendarBirthday},
+        {path: 'calendar/birthday/home', component: calendarBirthdayHome},
+        {path: 'calendar/birthday/vst', component: calendarBirthdayVST},
         {path: 'calendar/birthday', component: calendarBirthday},
         {path: 'calendar/four-month', component: calendarFourMonth},
         {path: 'calendar/small', component: calendarSmall},
@@ -77,7 +81,8 @@ export default new Router({
         {path: 'retina', component: retina},
         {path: 'tips', component: tips},
         {path: 'ui', component: ui},
-        {path: 'validate', component: validate}
+        {path: 'validate', component: validate},
+        {path: 'validate/setting', component: validateSetting}
       ]
     },
     {

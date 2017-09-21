@@ -1,8 +1,7 @@
 <template>
   <div id="everything">
 
-    <h1>Home</h1>
-
+    <h1>NOVA</h1>
     <h2>简介</h2>
     <div>
       <p>比组件库还组件库</p>

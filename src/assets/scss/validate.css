@@ -167,7 +167,7 @@ input {
 
 /*付款跟随按钮*/
 .fk_box_fixed {
-  height: 70px;
+  height: 0;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -178,7 +178,7 @@ input {
 }
 
 .fk_box {
-  height: 64px;
+  height: 0;
   position: relative;
 }
 
@@ -186,17 +186,18 @@ input {
   float: right;
   width: 217px;
   height: 64px;
-  background: #f80;
+  background: #29e;
   color: #fff;
   text-align: center;
   line-height: 64px;
   font-size: 18px;
+  margin-top: 20px;
 }
 
 .btn_fk:hover {
   text-decoration: none;
   color: #fff;
-  background: #ff6600;
+  background: #18f;
 }
 
 .stop_fk {
@@ -220,7 +221,7 @@ input {
 }
 
 .fk_l a:hover {
-  color: #f60;
+  color: #29e;
 }
 
 .icon_jtl {
@@ -248,7 +249,7 @@ input {
 .fk_p1 span {
   margin-left: 10px;
   font-size: 32px;
-  color: #f60;
+  color: #29e;
 }
 
 .fk_p1 span small {
@@ -282,7 +283,7 @@ input {
 }
 
 .yl_price {
-  color: #f60;
+  color: #29e;
   font-size: 14px;
 }
 
@@ -329,7 +330,6 @@ input {
 .user_info_room {
   line-height: 20px;
   padding: 6px 0;
-  border-bottom: #e3e3e3 solid 1px;
   font-size: 14px;
   color: #333;
 }
@@ -354,7 +354,7 @@ input {
 }
 
 .btn_qk:hover {
-  color: #f60;
+  color: #29e;
   top: inherit
 }
 

@@ -230,7 +230,7 @@ $(function () {
     $(".JS_dialog_iframe_load").on("click", function () {
         nova.dialog({
             url: true,
-            content: "components/dialog/iframe",
+            content: "/components/dialog/iframe",
             width: 600,
             //height: 300,
             initHeight: 400

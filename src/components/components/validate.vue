@@ -14,7 +14,7 @@
 
     <h2>配置</h2>
     <div>
-      <h3><a href="validate/settings.html" target="_blank">配置文档</a></h3>
+      <h3><a href="/components/validate/setting" target="_blank">配置文档</a></h3>
     </div>
 
     <h2>预览</h2>

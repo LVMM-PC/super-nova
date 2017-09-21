@@ -29,7 +29,7 @@
       <span id="birthdayText"></span>
     </div>
     <p>
-      <a href="calendar/birthday-calendar.html" target="_blank">调用文档</a>
+      <a href="/components/calendar/birthday/home" target="_blank">调用文档</a>
     </p>
 
     <h3>VST后台区间日历控件</h3>
@@ -40,7 +40,7 @@
       <span class="vstText"></span>
     </div>
     <p>
-      <a href="calendar/vst-calendar.html" target="_blank">调用文档</a>
+      <a href="/components/calendar/birthday/vst" target="_blank">调用文档</a>
     </p>
 
     <h3>VST后台区间日历时间控件</h3>
@@ -52,7 +52,7 @@
       <span class="vstHasTimeText"></span>
     </div>
     <p>
-      <a href="calendar/vst-calendar.html" target="_blank">调用文档</a>
+      <a href="/components/calendar/birthday/vst" target="_blank">调用文档</a>
     </p>
 
   </div>

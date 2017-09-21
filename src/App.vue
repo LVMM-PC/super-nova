@@ -28,11 +28,13 @@
 
   superNova()
 
+  require('script-loader!../static/doc/highlight.pack')
   require('script-loader!../static/doc/navigation')
 </script>
 
 <style lang="scss">
   @import "assets/scss/super-nova.scss";
+  @import "assets/scss/color-brewer.css";
   @import "assets/scss/doc.scss";
 
 </style>
