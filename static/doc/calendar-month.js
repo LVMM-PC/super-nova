@@ -13,7 +13,7 @@ $(function () {
     var fourMonthCalendar;
 
     $.ajax({
-        url: "../json/calendar-data-month.json",
+        url: "/static/json/calendar-data-month.json",
         dataType: "json"
     }).done(function (jsonData) {
 

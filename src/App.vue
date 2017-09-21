@@ -5,10 +5,10 @@
         <div class="super-svg"></div>
         <a href="/">NOVA</a></div>
       <ul class="super-menu">
-        <li v-bind:class="{active:this.$route.matched[0].path === '/components'}">
+        <li v-bind:class="{active:this.$route.path === '/components'}">
           <router-link to="/components">组件</router-link>
         </li>
-        <li v-bind:class="{active:this.$route.matched[0].path === '/guide'}">
+        <li v-bind:class="{active:this.$route.path === '/guide'}">
           <router-link to="/guide">指南</router-link>
         </li>
       </ul>

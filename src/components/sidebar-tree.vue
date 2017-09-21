@@ -1,5 +1,5 @@
 <template>
-  <li v-bind:class="{active:model.link && $route.fullPath === '/'+parent.path+'/'+model.link}">
+  <li v-bind:class="{active:model.link && new RegExp('^\/'+parent.path+'\/'+model.link).test($route.fullPath)}">
     <a class="super-sidebar-toggle" v-bind:href="'/'+parent.path+'/'+model.link" v-if="model.link">
       {{model.value}}
     </a>

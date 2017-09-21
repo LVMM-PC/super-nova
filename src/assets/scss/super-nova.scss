@@ -4,6 +4,28 @@
  * date: 2017-09-18
  */
 
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-resizer {
+  background: #202123;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  //background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-resizer {
+  background: #202123;
+}
+
 //<editor-fold desc="reset">
 body {
   font-size: 1rem;

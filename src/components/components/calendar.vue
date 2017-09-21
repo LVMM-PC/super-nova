@@ -22,10 +22,10 @@
     <div>
       <blockquote>.ui-calendar层级（z-index）需自定义</blockquote>
       <blockquote>自定义.ui-calendar层级后, 如需在级联日历中显示“n晚”信息，需要设置.cal-number-of-days层级大于.ui-calendar</blockquote>
-      <h3><a href="calendar/settings.html" target="_blank">配置文档</a></h3>
-      <h3><a href="calendar/api.html" target="_blank">API文档</a></h3>
-      <h3><a href="calendar-birthday.html" target="_blank">生日日历</a></h3>
-      <h3><a href="calendar/four-month.html" target="_blank">4个月日历</a></h3>
+      <h3><a href="/components/calendar/settings" target="_blank">配置文档</a></h3>
+      <h3><a href="/components/calendar/api" target="_blank">API文档</a></h3>
+      <h3><a href="/components/calendar/birthday" target="_blank">生日日历</a></h3>
+      <!--<h3><a href="/components/calendar/four-month" target="_blank">4个月日历</a></h3>-->
     </div>
 
     <pre>
@@ -59,7 +59,7 @@
       <span id="mySmallCalendar"></span>
       <button class="btn" id="mySmallBtn">获取</button>
       <p>
-        <a href="calendar/small-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/small" target="_blank">调用文档</a>
       </p>
     </div>
 
@@ -67,7 +67,7 @@
     <div class="section">
       <span id="mySmallBimonthlyCalendar"></span>
       <p>
-        <a href="calendar/small-bimonthly-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/small-bimonthly" target="_blank">调用文档</a>
       </p>
     </div>
 
@@ -75,8 +75,8 @@
     <div class="section">
       <span id="myBigCalendar"></span>
       <p>
-        <a href="calendar/big-calendar.html" target="_blank">调用文档</a>
-        <a href="json/calendar-data.json" target="_blank">JSON数据</a>
+        <a href="/components/calendar/big" target="_blank">调用文档</a>
+        <a href="/static/json/calendar-data.json" target="_blank">JSON数据</a>
       </p>
       <p>
         <span class="btn bigChange">201607</span>
@@ -88,8 +88,8 @@
     <div class="section">
       <div id="myBigBimonthlyCalendar"></div>
       <p>
-        <a href="calendar/big-bimonthly-calendar.html" target="_blank">调用文档</a>
-        <a href="json/calendar-data.json" target="_blank">JSON数据</a>
+        <a href="/components/calendar/big-bimonthly" target="_blank">调用文档</a>
+        <a href="/static/json/calendar-data.json" target="_blank">JSON数据</a>
       </p>
     </div>
 
@@ -98,7 +98,7 @@
       <input type="text" class="floatSmallInput" readonly="readonly" value="2016-07-28">
       <span id="floatSmallText"></span>
       <p>
-        <a href="calendar/float-small-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/float-small" target="_blank">调用文档</a>
       </p>
     </div>
 
@@ -107,7 +107,7 @@
       <input type="text" id="floatSmallBimonthlyInput" readonly="readonly">
       <span id="floatSmallBimonthlyText"></span>
       <p>
-        <a href="calendar/float-small-bimonthly-calendar.html" target="_blank">调用文档</a>
+        <a href="/components/calendar/float-small-bimonthly" target="_blank">调用文档</a>
       </p>
     </div>
 
@@ -119,6 +119,8 @@
         </div>
     -->
 
+    <!--TODO-->
+    
     <h3>日历8 日历控件浮层</h3>
     <p>［门票订单填写页］</p>
     <div class="section">

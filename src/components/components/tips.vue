@@ -19,7 +19,7 @@
 
     <div>
       <h3>
-        <a href="icons.html" target="_blank">警示类图标</a>
+        <a href="/components/icon" target="_blank">警示类图标</a>
       </h3>
     </div>
 

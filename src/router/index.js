@@ -5,6 +5,16 @@ import componentsHome from '@/components/components/home'
 import components from '@/components/components'
 import button from '@/components/components/button'
 import calendar from '@/components/components/calendar'
+import calendarSetting from '@/components/components/calendar/setting'
+import calendarAPI from '@/components/components/calendar/api'
+import calendarBirthday from '@/components/components/calendar/birthday'
+import calendarFourMonth from '@/components/components/calendar/four-month'
+import calendarSmall from '@/components/components/calendar/small'
+import calendarSmallBimonthly from '@/components/components/calendar/small-bimonthly'
+import calendarBig from '@/components/components/calendar/big'
+import calendarBigBimonthly from '@/components/components/calendar/big-bimonthly'
+import calendarFloatSmall from '@/components/components/calendar/float-small'
+import calendarFloatSmallBimonthly from '@/components/components/calendar/float-small-bimonthly'
 import dialog from '@/components/components/dialog'
 import fontFamily from '@/components/components/font-family'
 import icon from '@/components/components/icon'
@@ -32,6 +42,16 @@ export default new Router({
         {path: '', component: componentsHome},
         {path: 'button', component: button},
         {path: 'calendar', component: calendar},
+        {path: 'calendar/settings', component: calendarSetting},
+        {path: 'calendar/api', component: calendarAPI},
+        {path: 'calendar/birthday', component: calendarBirthday},
+        {path: 'calendar/four-month', component: calendarFourMonth},
+        {path: 'calendar/small', component: calendarSmall},
+        {path: 'calendar/small-bimonthly', component: calendarSmallBimonthly},
+        {path: 'calendar/big', component: calendarBig},
+        {path: 'calendar/big-bimonthly', component: calendarBigBimonthly},
+        {path: 'calendar/float-small', component: calendarFloatSmall},
+        {path: 'calendar/float-small-bimonthly', component: calendarFloatSmallBimonthly},
         {path: 'dialog', component: dialog},
         {path: 'font-family', component: fontFamily},
         {path: 'icon', component: icon},
