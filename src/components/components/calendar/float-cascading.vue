@@ -13,8 +13,7 @@ var floatCascadingCalendar = lv.calendar({
     template: "small",
     cascading: true
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

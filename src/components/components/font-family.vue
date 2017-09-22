@@ -24,8 +24,7 @@
 .sans-serif {
     font-family: "Helvetica Neue", "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif;
 }
-</code>
-</pre>
+</code></pre>
       <pre>
 <code class="css">
 /**
@@ -35,8 +34,7 @@
     font-family: "Arial", "PingFang SC", "SimSun", serif;
     *font-family: "SimSun", serif;
 }
-</code>
-</pre>
+</code></pre>
       <pre>
 <code class="css">
 /**
@@ -45,8 +43,7 @@
 .arial {
     font-family: "Arial", sans-serif;
 }
-</code>
-</pre>
+</code></pre>
     </section>
 
   </div>

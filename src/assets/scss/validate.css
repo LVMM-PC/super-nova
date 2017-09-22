@@ -66,16 +66,14 @@ input {
 }
 
 .user_dl {
-  padding-left: 210px;
+  font-size: 14px;
   position: relative;
   zoom: 1;
+  display: flex;
 }
 
 .user_dl dt {
-  float: left;
   width: 200px;
-  margin-left: -210px;
-  display: inline;
   text-align: right;
   line-height: 30px;
   color: #333;
@@ -83,6 +81,8 @@ input {
 }
 
 .user_dl dd {
+  width: 200px;
+  flex-grow: 1;
   line-height: 30px;
 }
 
@@ -319,6 +319,8 @@ input {
   width: 46px;
   z-index: 99;
   top: 25px;
+  position: absolute;
+  right: 0;
 }
 
 .user_info_yl .Preser_box_long {

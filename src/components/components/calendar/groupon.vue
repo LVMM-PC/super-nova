@@ -14,8 +14,7 @@ var grouponCalendar = lv.calendar({
     bimonthly: true,
     wrapClass: "ui-calendar-groupon"
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

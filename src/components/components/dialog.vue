@@ -20,7 +20,7 @@
 
     <h2>预览</h2>
     <h3>默认提示框</h3>
-    <div class="section">
+    <div class="section" style="overflow:visible;">
       <div class="nova-dialog-static" style="position:relative;">
         <div class="nova-dialog-close"><i></i></div>
         <div class="nova-dialog-header">消息提醒</div>
@@ -47,8 +47,7 @@
         &lt;span class="btn"&gt;取消&lt;/span&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code>
-    </pre>
+</code></pre>
 
     <h3>调用方式</h3>
     <div class="section">
@@ -71,8 +70,7 @@ nova.confirm("你确定要删除吗？", function() {
     //取消操作的事件
 });
 
-</code>
-</pre>
+</code></pre>
     </div>
     <h4>1.1 模拟alert()的消息提醒</h4>
     <div class="section">
@@ -97,8 +95,7 @@ nova.dialog({
     content: "实现一个alert的模态提醒",
     okCallback: true
 });
-</code>
-</pre>
+</code></pre>
     </div>
     <h4>1.2 定时信息</h4>
     <div class="section">
@@ -200,8 +197,7 @@ nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt
 
 //遮罩祖先级页面，在iframe中时，可以遮罩iframe的祖先级页面
 top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt;br&gt;正在加载中...&lt;/div&gt;');
-</code>
-</pre>
+</code></pre>
     </div>
 
     <h3>2 标准模式参数</h3>
@@ -598,6 +594,7 @@ nova.dialog({
   }
 
   .dialog-iframe {
+    box-sizing: border-box;
     border: 2px solid #7FCCFF;
     width: 100%;
     height: 400px;

@@ -425,8 +425,7 @@
     &lt;input value="9" type="text" data-max="9" data-min="0"&gt;
     &lt;div class="nova-number-box-add"&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
 &lt;/div&gt;
-</code>
-</pre>
+</code></pre>
     </div>
     <div class="section">
 

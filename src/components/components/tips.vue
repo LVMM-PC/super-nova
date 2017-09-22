@@ -108,7 +108,7 @@
     </section>
 
     <h3>3 表单提示信息</h3>
-    <section>
+    <section class="tip-doc">
       <code>nova-tip</code>
       <dl class="clearfix">
         <dt>
@@ -262,40 +262,40 @@
     margin-bottom: 10px;
   }
 
-  input[type=text] {
-    height: 34px;
-    border: 1px solid #CCC;
-    padding: 0 5px;
+  .tip-doc {
+    input[type=text] {
+      height: 34px;
+      border: 1px solid #CCC;
+      padding: 0 5px;
+    }
+
+    dl {
+      margin-bottom: 10px;
+    }
+
+    dt {
+      float: left;
+      width: 90px;
+      padding-right: 10px;
+      text-align: right;
+      line-height: 36px;
+    }
+
+    dd {
+      float: left;
+      width: 800px;
+      font-size: 0;
+    }
+
+
+    dd input {
+      margin-right: 10px;
+    }
+
+    .nova-tip-form {
+      max-width: 300px;
+    }
   }
 
-  dl {
-    margin-bottom: 10px;
-  }
-
-  dt {
-    float: left;
-    width: 90px;
-    padding-right: 10px;
-    text-align: right;
-    line-height: 36px;
-  }
-
-  dd {
-    float: left;
-    width: 800px;
-    font-size: 0;
-  }
-
-  dd > * {
-    font-size: 12px;
-  }
-
-  dd input {
-    margin-right: 10px;
-  }
-
-  .nova-tip-form {
-    max-width: 300px;
-  }
 
 </style>

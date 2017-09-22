@@ -8,22 +8,19 @@
     <pre>
 <code class="js">
 {{js1}}
-</code>
-</pre>
+</code></pre>
 
     <h3>节假日</h3>
     <pre>
 <code class="js">
 {{js2}}
-</code>
-</pre>
+</code></pre>
 
     <h3>日历模板</h3>
     <pre>
 <code>
 {{js3}}
-</code>
-</pre>
+</code></pre>
 
   </div>
 

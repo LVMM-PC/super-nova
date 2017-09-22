@@ -52,8 +52,7 @@ var vstHasTimeCalendar = lv.calendar({
     minLimit: "1990-06",
     maxLimit: "2017-06"
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

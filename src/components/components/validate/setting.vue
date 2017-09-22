@@ -144,8 +144,7 @@ $(".btn_fk").on("click", function () {
 
     console.log(validated);
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

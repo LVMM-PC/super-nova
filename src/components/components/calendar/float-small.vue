@@ -34,8 +34,7 @@ var mySmallCalendar = lv.calendar({
     dayPrev: 10
 
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

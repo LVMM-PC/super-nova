@@ -17,8 +17,7 @@ var floatSmallBimonthlyCalendar = lv.calendar({
     monthPrev: 10,
     dayPrev: -1
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

@@ -15,8 +15,7 @@ var myBigBimonthlyCalendar = lv.calendar({
     bimonthly: true
 });
 
-</code>
-</pre>
+</code></pre>
 
   </div>
 

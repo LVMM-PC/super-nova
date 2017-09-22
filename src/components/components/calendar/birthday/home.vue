@@ -21,8 +21,7 @@ var birthdayCalendar = lv.calendar({
     dayNext: 0
 });
 
-</code>
-</pre>
+</code></pre>
 
   </div>
 

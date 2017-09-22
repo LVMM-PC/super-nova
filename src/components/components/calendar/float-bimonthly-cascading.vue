@@ -27,8 +27,7 @@ var floatBimonthlyCascadingCalendar = lv.calendar({
         var dayOfWeek = self.getDayOfWeek();  //获取选中日期的星期（如果是节日或当天，则显示相应的信息）
     }
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

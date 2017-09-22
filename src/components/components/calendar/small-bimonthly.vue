@@ -17,8 +17,7 @@ var mySmallBimonthlyCalendar = lv.calendar({
     },
     template: "small"
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

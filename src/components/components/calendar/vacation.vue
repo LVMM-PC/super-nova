@@ -16,8 +16,7 @@ var vacationCalendar = lv.calendar({
     cascading: true,
     showNumberOfDays: true
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

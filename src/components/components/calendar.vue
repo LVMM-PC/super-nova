@@ -48,8 +48,7 @@
 
     //格式化日期Date化
     lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2016, 12-1, 16);
-</code>
-</pre>
+</code></pre>
 
     <h2>实例</h2>
 

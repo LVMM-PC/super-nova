@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <header class="super-header">
-      <div class="super-logo">
+      <a href="/" class="super-logo">
         <div class="super-svg"></div>
-        <a href="/">NOVA</a></div>
+        <em>NOVA</em>
+      </a>
       <ul class="super-menu">
         <li v-bind:class="{active:this.$route.path === '/components'}">
           <a href="/components">组件</a>

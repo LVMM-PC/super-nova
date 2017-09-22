@@ -15,8 +15,7 @@ var myBigCalendar = lv.calendar({
 
         monthPrev: 2  //日历可以往前翻页2页
     });
-</code>
-</pre>
+</code></pre>
     <pre>
 <code class="js">
 
@@ -280,8 +279,7 @@ var myBigCalendar = lv.calendar({
     }
 
 
-</code>
-</pre>
+</code></pre>
 
   </div>
 

@@ -145,8 +145,7 @@
      */
     Calendar.dayToMS = function (days) {};
 
-</code>
-</pre>
+</code></pre>
     </div>
 
     <h3>实例方法</h3>
@@ -173,8 +172,7 @@
     //结束加载动画
     loaded: function () {}
 
-</code>
-</pre>
+</code></pre>
     </div>
   </div>
 

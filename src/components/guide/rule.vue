@@ -53,8 +53,7 @@ dev
 │   └── README.md
 │
 └── README.md
-</code>
-</pre>
+</code></pre>
 
       <h3>目录、文档结构</h3>
       <ol>
@@ -112,8 +111,7 @@ dev
 ...
 &lt;/body&gt;
 &lt;/html&gt;
-</code>
-</pre>
+</code></pre>
 
       <h3>Meta 的使用：（需根据具体项目选择）参考 cool-head</h3>
       <ul>
@@ -177,8 +175,7 @@ dev
       <pre class="prettyprint linenums">
 <code>
 &lt;a class="" id="" data-modal="" href=""&gt;链接示例&lt;/a&gt;
-</code>
-</pre>
+</code></pre>
     </section>
 
     <h2 id="css">CSS 书写规范</h2>
@@ -187,8 +184,7 @@ dev
       <pre class="prettyprint linenums">
 <code>
 &lt;link rel="stylesheet" href="http://pic.lvmama.com/styles/v3/combo.css" &gt;
-</code>
-</pre>
+</code></pre>
       <h3>CSS 注意事项</h3>
       <ul>
         <li>无特殊说明，编码统一为utf-8；</li>
@@ -250,8 +246,7 @@ dev
 
 /* 火车票 */
 .ticket-search { }
-</code>
-</pre>
+</code></pre>
 
       <h4>错误示例：</h4>
       <pre class="prettyprint linenums">
@@ -262,8 +257,7 @@ dev
     background-color:rgba(0, 0, 0, 0.5);
     box-shadow:0 1px 2px #CCC,inset 0 1px 0 #FFFFFF
 }
-</code>
-</pre>
+</code></pre>
 
       <h4>正确示例：</h4>
       <pre class="prettyprint linenums">
@@ -276,8 +270,7 @@ dev
     background-color: rgba(0,0,0,.5);
     box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
-</code>
-</pre>
+</code></pre>
 
 
       <p>常见的CSS术语，请参见 <a target="_blank" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a>
@@ -315,8 +308,7 @@ dev
     /* Misc 其他 */
     opacity: 1;
 }
-</code>
-</pre>
+</code></pre>
 
       <p>相关属性应放在一起，将定位与盒模型属性写在最前面，其次是排版和视觉效果的属性。</p>
       <p>关于属性顺序的完整列表，请参考 <a target="_blank" href="http://twitter.github.com/recess">Recess</a>.</p>
@@ -335,8 +327,7 @@ dev
      -moz-border-radius: 3px;
           border-radius: 3px;
 }
-</code>
-</pre>
+</code></pre>
 
       <p>注：<code>-khtml-border-radius: 3px;</code> 是苹果的那个浏览器的，现在使用 <code>-webkit-</code></p>
       <p>在 Textmate、Sublime Text 2 以及 notepad++等工具中, 都支持多行编辑。</p>
@@ -359,8 +350,7 @@ dev
 .icon           { background-position: 0 0; }
 .icon-home      { background-position: 0 -20px; }
 .icon-account   { background-position: 0 -40px; }
-</code>
-</pre>
+</code></pre>
 
       <h3>可读性</h3>
       <p>代码是由人来书写和维护的。确保你的代码有很好的注释描述，以便他人使用。</p>
@@ -375,8 +365,7 @@ dev
 .modal-header {
   ...
 }
-</code>
-</pre>
+</code></pre>
 
       <p>Good example:</p>
       <pre class="prettyprint linenums">
@@ -385,8 +374,7 @@ dev
 .modal-header {
   ...
 }
-</code>
-</pre>
+</code></pre>
 
       <h4>类名与命名</h4>
       <ul>
@@ -404,8 +392,7 @@ dev
 .t { ... }
 .red { ... }
 .header { ... }
-</code>
-</pre>
+</code></pre>
 
       <p>Good example:</p>
       <pre class="prettyprint linenums">
@@ -413,8 +400,7 @@ dev
 .tweet { ... }
 .important { ... }
 .tweet-header { ... }
-</code>
-</pre>
+</code></pre>
 
       <h4>选择器</h4>
       <ul>
@@ -429,8 +415,7 @@ dev
 span { ... }
 .page-container #stream .stream-item .tweet .tweet-header .username { ... }
 .avatar { ... }
-</code>
-</pre>
+</code></pre>
 
       <p>Good example:</p>
       <pre class="prettyprint linenums">
@@ -438,8 +423,7 @@ span { ... }
 .avatar { ... }
 .tweet-header .username { ... }
 .tweet .avatar { ... }
-</code>
-</pre>
+</code></pre>
 
       <h3>组织</h3>
       <ul>
@@ -462,16 +446,14 @@ span { ... }
 if (true) {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
 if (true) {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <h3>1.2 行的长度</h3>
       <p>每行长度不应该超过80个字符。如果一行多于80个字符，应当在一个运算符（逗号，加号等）后换行。下一行应当增加两级缩进（8个字符）</p>
       <p>Bad example:</p>
@@ -482,15 +464,13 @@ doSomething(argument1, argument2, argument3, argument4,
 
 doSomething(argument1, argument2, argument3, argument4
         ,argument5);
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
 doSomething(argument1, argument2, argument3, argument4,
         argument5);
-</code>
-</pre>
+</code></pre>
       <h3>1.3 原始值</h3>
       <p>字符串应当始终使用双引号（避免使用单引号）且保持一行。避免在字符串中使用斜线另起一行。（如果一行放不下请用+连接）。</p>
       <p>Bad example:</p>
@@ -502,8 +482,7 @@ var name = 'John.Chen';
 //不好的写法：字符串结束之前换行
 var longString = "Here's the story, of a man\
 named Brady";
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -511,8 +490,7 @@ var name = "John.Chen";
 
 var longString = "Here's the story, of a man"+
                  "named Brady";
-</code>
-</pre>
+</code></pre>
       <p>数字应当使用十进制整数，科学计数法标示整数，十六进制整数，或者十进制浮点小数，小数点前后应当至少保留一位数字。避免使用八进制直接量。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -525,8 +503,7 @@ var price = .1;
 
 //不好的写法：八进制（base 8）写法已废弃
 var num = 010;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -538,8 +515,7 @@ var price = 10.00;
 var num = 0xA2;
 
 var num = le23;
-</code>
-</pre>
+</code></pre>
       <p>特殊值 null 除了下述情况下应当避免使用</p>
       <ul>
         <li>用来初始化一个变量，这个变量可能被赋值为一个对象。</li>
@@ -562,8 +538,7 @@ function doSomething(arg1, arg2, arg3, arg4){
         doSomethingElse();
     }
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -581,8 +556,7 @@ var person = getPerson();
 if (person !== null) {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <p>避免使用特殊值 undefined。判断一个变量是否定义应当使用 typeof 操作符。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -597,8 +571,7 @@ if (variable == undefined){
 if (typeof variable === "undefined"){
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <h3>1.4 运算符间距</h3>
       <p>二元运算符前后必须使用一个空格来保持表达式的整洁。操作符包括赋值运算符合逻辑运算符。</p>
       <p>Bad example:</p>
@@ -610,8 +583,7 @@ var found =(values[i]===item);
 if (found&&(count>10)){
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -620,8 +592,7 @@ var found = (values[i] === item);
 if (found && (count > 10)){
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <h3>1.5 括号间距</h3>
       <p>当使用括号时，紧接左括号之后和紧接右括号之前不应该有空格</p>
       <p>Bad example:</p>
@@ -632,8 +603,7 @@ var found = ( values[i] === item );
 if ( found && ( count > 10 ) ){
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -642,8 +612,7 @@ var found = (values[i] === item);
 if (found && (count > 10)){
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <h3>1.6 对象直接量</h3>
       <p>对象直接应当使用如下格式</p>
       <ul>
@@ -672,8 +641,7 @@ var object ={
     },
     key3:value3
 };
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -688,16 +656,14 @@ var object = {
 
     key3: value3
 };
-</code>
-</pre>
+</code></pre>
       <p>当对象字面量作为函数参数时，如果值是变量，起始花括号应当同函数名在同一行。所有其余先前列出的规则同样适用。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
 <code>
 //不好的写法：所有代码在一行上
 doSomething({ key1: value1, key2: value2});
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -705,8 +671,7 @@ doSomething({
     key1: value1,
     key2: value2
 });
-</code>
-</pre>
+</code></pre>
       <h3>1.7 注释</h3>
       <p>频繁地使用注释有助于他人理解你的代码。如下情况应当使用注释。</p>
       <ul>
@@ -748,8 +713,7 @@ if (true) {
     // 如果代码执行到这里，则表明通过了所以的安全性检查
     allowed();
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -758,30 +722,26 @@ if (true) {
     // 如果代码执行到这里，则表明通过了所以的安全性检查
     allowed();
 }
-</code>
-</pre>
+</code></pre>
       <p>对于代码行尾单行注释的情况，应确保代码结尾同注释之间至少一个缩进。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
 <code>
 // 不好的写法：代码和注释间没有足够的空格
 var result = something + somethingElse;// somethingElse will never be null;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
 var result = something + somethingElse; // somethingElse will never be null;
-</code>
-</pre>
+</code></pre>
       <p>注释一个代码块时在连续多行使用单行注释是唯一可以接受的情况。多行注释不应当在这种情况下使用。</p>
       <pre class="prettyprint linenums">
 <code>
 // if (true) {
 //     doSomething();
 // }
-</code>
-</pre>
+</code></pre>
       <h4>1.7.2 多行注释</h4>
       <p>多行注释应当在代码需要更多文字去解释的时候使用。每个多行注释都至少有如下三行</p>
       <ul>
@@ -826,8 +786,7 @@ if (true) {
 
 // 不好的写法：代码尾部注释不要用多行注释格式
 var result = something + somethingElse; /* somethingElse will never be null */;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -839,8 +798,7 @@ if (true) {
      */
      allowed();
 }
-</code>
-</pre>
+</code></pre>
       <h4>1.7.3 注释声明</h4>
       <p>注释有时候也可以用来给一段代码声明额外的信息。这些声明的格式以单个单词打头并紧跟一个冒号。可使用的声明如下</p>
       <p>TODO</p>
@@ -866,8 +824,7 @@ doSomething();
 if (document.all) {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
@@ -886,8 +843,7 @@ if (document.all) {
 if (document.all) {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
 
       <h4>1.7.4 变量声明</h4>
       <p>所有的变量在使用前都应当事先定义。变量定义应当放在函数开头，使用一个var表达式每行一个变量。除了首行，所有行都应当多一次缩进以使变量名能够垂直
@@ -919,16 +875,14 @@ var empty,
 var count = 10,
     name= "John.Chen";
 var empty;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>
 var count = 10,
     name = "John.Chen",
     empty;
-</code>
-</pre>
+</code></pre>
 
       <h4>1.7.5 函数声明</h4>
       <p>函数应当在使用提前定义。一个不是作为方法的函数（也就是说没有作为一个对象的属性）应当使用函数定义的格式（不是函数表达式和 Function 构造器格式）。
@@ -956,15 +910,13 @@ function doSomething(arg1, arg2)
 
 //错误的写法：使用了 Function 构造器
 var doSomething = new Function("arg1", "arg2", "return arg1 + arg2;");
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>function doSomething(arg1, arg2) {
     return arg1 + arg2;
 }
-</code>
-</pre>
+</code></pre>
       <p>其他函数内部定义的函数应当在 var 语句后立即定义。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -977,8 +929,7 @@ function outer() {
         name = "John.Chen";
     //调用 inner() 代码
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>function outer() {
@@ -989,8 +940,7 @@ function outer() {
     }
     //调用 inner() 代码
 }
-</code>
-</pre>
+</code></pre>
       <p>匿名函数可能作为方法赋值给对象，或者作为其他函数的参数。function 关键字同开始括号之间不应有空格。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -998,15 +948,13 @@ function outer() {
 object.method = function () {
     //  code
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>object.method = function() {
     //  code
 }
-</code>
-</pre>
+</code></pre>
       <p>立即被调用的函数应当在函数调用的外层圆括号包裹。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -1027,8 +975,7 @@ var value = (function() {
         message: "Hi"
     };
 })();
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var value = (function() {
@@ -1038,8 +985,7 @@ var value = (function() {
         message: "Hi"
     };
 }());
-</code>
-</pre>
+</code></pre>
 
       <h4>1.7.6 命名</h4>
       <p>变量和函数在命名时应当小心。命名应仅限于数字字母字符，某些情况下也可以使用下划线。最好不要在任何命名中使用美元符号（$）或者反斜杠（\）。</p>
@@ -1054,13 +1000,11 @@ var getAccountNumber = "8401-1";
 
 //不好的写法：使用下划线
 var account_number = "8401-1";
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var accountNumber = "8401-1";
-</code>
-</pre>
+</code></pre>
       <p>函数命名也应当采用驼峰命名格式。函数名的第一个单词应当是动词（而非名词）来避免同变量混淆。函数名中最好不要使用下划线。</p>
       <pre class="prettyprint linenums">
 <code>// 不好的写法：大写字母开头
@@ -1077,15 +1021,13 @@ function car() {
 function do_something() {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>function doSomething() {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>构造函数——通过 new 运算符创建新对象的函数——也应当以驼峰格式命名并且首字符大写。构造函数名词应当以非动词开头，因为 new 代表着创建一个对象实例的操作。</p>
       <pre class="prettyprint linenums">
 <code>// 不好的写法：小写字母开头
@@ -1102,15 +1044,13 @@ function My_Object() {
 function getMyObject() {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>function MyObject() {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>常量（值不会被改变的变量）的命名应当是所有字母大写，不同单词之间用单个下划线隔开。</p>
       <pre class="prettyprint linenums">
 <code>// 不好的写法：驼峰形式
@@ -1118,13 +1058,11 @@ var totalCount = 10;
 
 // 不好的写法：混合形式
 var total_COUNT = 10;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var TOTAL_COUNT = 10;
-</code>
-</pre>
+</code></pre>
       <p>对象的属性同变量的命名规则相同。对象的方法同函数的命名规则相同。如果属性或者方法是私有的，应当在之前加一个下划线。</p>
       <pre class="prettyprint linenums">
 <code>var object = {
@@ -1134,8 +1072,7 @@ var total_COUNT = 10;
         return this._count;
     }
 }
-</code>
-</pre>
+</code></pre>
       <h4>1.7.7 严格模式</h4>
       <p>严格模式应当仅限在函数内部使用，千万不要在全局使用。</p>
       <p>Bad example:</p>
@@ -1146,8 +1083,7 @@ var total_COUNT = 10;
 function doSomething() {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>function doSomething() {
@@ -1155,8 +1091,7 @@ function doSomething() {
 
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>如果你期望在多个函数中使用严格模式而不需要多次声明 "use strict" ，可以使用立即被调用的函数。</p>
       <pre class="prettyprint linenums">
 <code>(function() {
@@ -1166,47 +1101,40 @@ function doSomething() {
         //code
     }
 }());
-</code>
-</pre>
+</code></pre>
       <h4>1.7.8 赋值</h4>
       <p>当给变量赋值时，如果右侧是含有比较语句的表达式，需要用圆括号包裹。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
 <code>// 不好的写法：遗漏圆括号
 var same = i < count;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var same = (i < count);
-</code>
-</pre>
+</code></pre>
       <h4>1.7.9 符号运算符</h4>
       <p>使用 === （严格相等） 和 ！== （严格不相等）代替 == （相等）和 ！= （不等）来避免弱类型转换错误。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
 <code>// 不好的写法：使用 ==
 var same = (a == b);
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var same = (a === b);
-</code>
-</pre>
+</code></pre>
       <h4>1.7.10 三元操作符</h4>
       <p>三元运算符应当仅仅用在条件赋值语句中， 而不要作为 if 语句的替代品</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
 <code>// 不好的写法：没有赋值，应当使用 if 表达式
 condition ? doSomething() : doSomethingElse();
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var value = condition ? value1 : value2;
-</code>
-</pre>
+</code></pre>
 
       <h4>1.7.11 语句</h4>
       <h6>简单语句</h6>
@@ -1215,14 +1143,12 @@ condition ? doSomething() : doSomethingElse();
       <pre class="prettyprint linenums">
 <code>// 不好的写法： 多个表达式写在一行
 count++; a = b;
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>count++;
 a = b;
-</code>
-</pre>
+</code></pre>
       <h6>返回语句</h6>
       <p>返回语句当返回一个值的时候不应当使用圆括号包裹，除非在某些情况下这么做可以让返回值更容易理解。</p>
       <pre class="prettyprint linenums">
@@ -1231,8 +1157,7 @@ a = b;
 return collection.size();
 
 return (size > 0 ? size : defaultSize);
-</code>
-</pre>
+</code></pre>
       <h6>复合语句</h6>
       <p>复合语句是大括号括起来的语句列表。</p>
       <ul>
@@ -1261,8 +1186,7 @@ if (true) {
 } else {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <p>绝不允许在if语句省略花括号。</p>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -1280,15 +1204,13 @@ if (true) { doSomething(); }
 
 // 不好的写法：所有代码卸载一行且没有花括号
 if (true) doSomething();
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>if (true) {
     doSomething();
 }
-</code>
-</pre>
+</code></pre>
       <h6>for 语句</h6>
       <p>for 类型的语句应当是下面的格式</p>
       <pre class="prettyprint linenums">
@@ -1299,8 +1221,7 @@ if (true) doSomething();
 for (variable in object) {
     statements;
 }
-</code>
-</pre>
+</code></pre>
       <P>for 语句的初始化不应当有变量声明</P>
       <p>Bad example:</p>
       <pre class="prettyprint linenums">
@@ -1313,8 +1234,7 @@ for (var i = 0, len = 10; i < len; i++) {
 for (var prop in object) {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>Good example:</p>
       <pre class="prettyprint linenums">
 <code>var i,
@@ -1322,8 +1242,7 @@ for (var prop in object) {
 for (i = 0, len = 10; i < len; i++) {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <p>注：当使用 for-in 语句时，记得使用 hasOwnProperty() 进行双重检查来过滤出对象的成员</p>
       <h6>while 语句</h6>
       <p>while 类的语句应当是下面的格式。</p>
@@ -1331,16 +1250,14 @@ for (i = 0, len = 10; i < len; i++) {
 <code>while (true) {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <h6>do 语句</h6>
       <p>do 类的语句应当是下面的格式。</p>
       <pre class="prettyprint linenums">
 <code>do {
     //code
 } while (true)
-</code>
-</pre>
+</code></pre>
       <h6>switch 语句</h6>
       <p>switch 类的语句应当是如下格式。</p>
       <pre class="prettyprint linenums">
@@ -1350,8 +1267,7 @@ for (i = 0, len = 10; i < len; i++) {
     default:
         //code
 }
-</code>
-</pre>
+</code></pre>
       <p>
         注：switch 下的每一个 case 都应当保持一个缩进。除第一个之外包括 default 在内的每一个 case 都应当在之前保持一个空行。每一组语句（除了 default）都应当以 break、return、throw 结尾，或者用一行注释表示跳过、</p>
       <p>Good example:</p>
@@ -1370,8 +1286,7 @@ for (i = 0, len = 10; i < len; i++) {
     default:
         throw new Error("This shouldn't happen.");
 }
-</code>
-</pre>
+</code></pre>
       <p>如果一个 switch 语句不包含 default 情况， 应当用一行注释代替。</p>
       <pre class="prettyprint linenums">
 <code>switch (value) {
@@ -1387,8 +1302,7 @@ for (i = 0, len = 10; i < len; i++) {
 
     //没有 default
 }
-</code>
-</pre>
+</code></pre>
       <h6>try 语句</h6>
       <p>try 类的语句应当格式如下。</p>
       <pre class="prettyprint linenums">
@@ -1405,8 +1319,7 @@ try {
 } finally {
     //code
 }
-</code>
-</pre>
+</code></pre>
       <h4>1.7.12 留白</h4>
       <p>在逻辑相关的代码块之间添加空行可以提高代码的可读性。</p>
       <p>两行空行仅限在如下情况中使用。</p>

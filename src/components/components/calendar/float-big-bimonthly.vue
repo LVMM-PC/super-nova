@@ -13,8 +13,7 @@ var floatBigBimonthlyCalendar = lv.calendar({
     sourceFn: fillData,  //见日历3文档
     bimonthly: true
 });
-</code>
-</pre>
+</code></pre>
 
   </div>
 

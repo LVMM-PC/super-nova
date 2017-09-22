@@ -15,8 +15,7 @@ var distributionCalendar = lv.calendar({
     bimonthly: true,
     wrapClass: "ui-calendar-blue"
 });
-</code>
-</pre>
+</code></pre>
 
     <pre>
 <code class="js">
@@ -264,8 +263,7 @@ function distributionFillData() {
     }
 
 }
-</code>
-</pre>
+</code></pre>
 
   </div>
 
