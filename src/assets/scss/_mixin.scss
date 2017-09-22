@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/**
+ * author: Sheng JIANG
+ * date: 2017-09-22
+ */
+
+//<editor-fold desc="函数">
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//</editor-fold>

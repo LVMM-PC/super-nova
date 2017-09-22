@@ -4,6 +4,8 @@
  * date: 2017-09-18
  */
 
+@import "mixin";
+
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
