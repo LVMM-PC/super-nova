@@ -6,13 +6,13 @@
         <em>NOVA</em>
       </a>
       <ul class="super-menu">
-        <li v-bind:class="{active:this.$route.path === '/components'}">
+        <li v-bind:class="{active:this.$route && this.$route.path === '/components'}">
           <a href="/components">组件</a>
         </li>
-        <li v-bind:class="{active:this.$route.path === '/reference'}">
+        <li v-bind:class="{active:this.$route && this.$route.path === '/reference'}">
           <a href="/reference">参考</a>
         </li>
-        <li v-bind:class="{active:this.$route.path === '/guide'}">
+        <li v-bind:class="{active:this.$route && this.$route.path === '/guide'}">
           <a href="/guide">指南</a>
         </li>
       </ul>
@@ -21,6 +21,14 @@
     <footer class="super-footer">
       <p>Copyright © 2017 <a href="http://c.lvmama.com" target="_blank">c.lvmama.com</a></p>
     </footer>
+    <ul class="super-toolbar">
+      <li class="top">
+        <a href="#"><em>顶部</em><i></i></a>
+      </li>
+      <li class="issue">
+        <a href="https://github.com/LVMM-PC/super-nova/issues" target="_blank"><em>反馈</em><i></i></a>
+      </li>
+    </ul>
   </div>
 </template>
 

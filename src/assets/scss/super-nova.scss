@@ -3,12 +3,20 @@
  * author: Sheng JIANG
  * date: 2017-09-18
  */
-
 @import "mixin";
 
+@keyframes logo-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar-corner,
@@ -19,8 +27,7 @@
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  //background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-corner,
@@ -35,6 +42,7 @@ body {
   margin: 0;
   background-color: #f5f5f5;
   font-family: "Helvetica Neue", "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif;
+  line-height: 20px;
 }
 
 ol, ul, p {
@@ -57,11 +65,10 @@ li {
 }
 
 a {
+  padding: 0 2px;
   color: #2299ee;
   text-decoration: none;
-  &:hover {
 
-  }
 }
 
 //</editor-fold>
@@ -79,6 +86,15 @@ a {
   .super-logo {
     display: flex;
     align-items: center;
+    padding: 5px;
+    width: 200px;
+    box-sizing: border-box;
+    &:hover {
+      background-color: rgba(34, 158, 238, 0.4);
+      .super-svg {
+        animation: logo-rotate linear 2s infinite;
+      }
+    }
   }
   .super-svg {
     background-image: url(assets/img/nova-logo.svg);
@@ -107,13 +123,21 @@ a {
       padding: 0 20px;
       height: 100%;
       line-height: 80-4px;
+      &:hover {
+        color: #2299ee;
+        background-color: transparent;
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      height: 0;
+      transition: height 75ms;
+      background-color: #2299ee;
     }
     &:hover:after,
     &.active:after {
-      content: "";
-      display: block;
       height: 4px;
-      background-color: #2299ee;
     }
   }
 }
@@ -132,20 +156,24 @@ a {
 }
 
 .super-sidebar {
-  padding: 10px 0;
   box-sizing: border-box;
   border-right: 1px solid #eee;
   margin-right: 40px;
   color: #999;
   width: 200px;
   .list {
+    padding: 10px 0 30px 0;
+    box-sizing: border-box;
     top: 0;
     position: sticky;
     font-size: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   a {
     font-size: 1.25rem;
     color: #333;
+    border-radius: 0;
     &:hover {
       color: #2299ee;
       background-color: rgba(34, 158, 238, 0.1);
@@ -188,12 +216,16 @@ a {
   display: block;
   height: 30px;
   line-height: 30px;
+  small {
+    color: #999999;
+    font-size: 0.75rem;
+  }
 }
 
 .super-sidebar-dropdown {
 }
 
-#navigator {
+#navigation {
   width: 200px;
   margin-left: 40px;
   border-left: 1px solid #eee;
@@ -205,6 +237,7 @@ a {
 #everything {
   width: 200px;
   flex-grow: 1;
+  padding-bottom: 40px;
 }
 
 //</editor-fold>
@@ -223,7 +256,87 @@ a {
   }
   a {
     margin-left: 10px;
+    transition: all 100ms;
+    &:hover {
+      background-color: #2299ee;
+      color: #fff;
+      border-radius: 4px;
+    }
   }
 }
 
 //</editor-fold>
+
+.super-toolbar {
+  width: 30px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  li {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    &:first-child {
+      a {
+        border-radius: 4px 0 0 0;
+      }
+    }
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  a {
+    width: 30px;
+    height: 30px;
+
+    background-color: rgba(34, 158, 238, 0.4);
+    display: block;
+    &:hover {
+      background-color: rgba(34, 158, 238, 1);
+      em {
+        width: 60px;
+        overflow: hidden;
+        margin-left: -60px;
+      }
+    }
+  }
+  em {
+    position: absolute;
+    z-index: -1;
+    transition: margin-left 275ms;
+    display: block;
+    margin-left: 0;
+    background-color: rgba(34, 158, 238, 1);
+    font-style: normal;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    height: 30px;
+  }
+  .top {
+    em {
+      border-radius: 4px 0 0 4px;
+    }
+    i {
+      background-image: url(assets/img/top.svg);
+    }
+  }
+  .issue {
+    em {
+      border-radius: 4px 0 0 0;
+    }
+    i {
+      background-image: url(assets/img/issue.svg);
+    }
+
+  }
+}

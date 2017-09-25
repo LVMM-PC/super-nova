@@ -3,7 +3,7 @@
     <div class="super-detail">
       <guide-sidebar></guide-sidebar>
       <router-view></router-view>
-      <div id="navigator"></div>
+      <div id="navigation"></div>
     </div>
   </section>
 </template>

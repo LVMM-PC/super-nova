@@ -20,7 +20,7 @@
           path: 'components',
           children: [
             {
-              name: 'Icon', value: 'icon', link: 'icon'
+              name: 'Icon', value: 'icon <small>图标</small>', link: 'icon'
             },
             {
               name: 'Button', value: 'button', link: 'button'

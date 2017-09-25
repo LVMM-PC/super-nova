@@ -252,6 +252,8 @@
   }
 
   .btn-group {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
     font-size: 0;
   }

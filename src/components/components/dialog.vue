@@ -525,7 +525,7 @@ $.ajax({
 
       <p><span class="btn JS_dialog_iframe_load">iframe调用</span></p>
       <pre>
-<code>
+<code class="js">
 nova.dialog({
     url: true,
     content: "/components/dialog/iframe",
