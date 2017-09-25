@@ -29,25 +29,23 @@
     </div>
 
     <pre>
-<code class="js">
+<code class="js">//API实例 详见API文档
 
-    //API实例 详见API文档
+//使用日历对象获取选择的日历值
 
-    //使用日历对象获取选择的日历值
+var select = lv.calendar.getSelect();
+console.log(select)
 
-    var select = lv.calendar.getSelect();
-    console.log(select)
+//返回值
+[]  //未选中
+["2016-06-28"]  //单选日历
+["2016-06-28", "2016-06-29", "2016-06-30"]  //复选日历
 
-    //返回值
-    []  //未选中
-    ["2016-06-28"]  //单选日历
-    ["2016-06-28", "2016-06-29", "2016-06-30"]  //复选日历
+//日期格式化
+lv.calendar.dateFormat(new Date(), "yyyy-MM-dd");  //2016-12-16
 
-    //日期格式化
-    lv.calendar.dateFormat(new Date(), "yyyy-MM-dd");  //2016-12-16
-
-    //格式化日期Date化
-    lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2016, 12-1, 16);
+//格式化日期Date化
+lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2016, 12-1, 16);
 </code></pre>
 
     <h2>实例</h2>

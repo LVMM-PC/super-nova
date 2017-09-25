@@ -12,7 +12,6 @@
     <p><b>头部默认搜索分类设置：</b><span class="orange">$.searchType.showType('TICKET');</span>
       TICKET：门票，FREETOUR：自由行，ROUTE：旅游线路，HOTEL:酒店，SHIP:邮轮</p>
     <pre class="prettyprint linenums">
-
 <strong>公共头部CSS,已包含重置样式和公共底部样式。</strong>
  常用快捷样式：
   1、清除浮动：clearfix
@@ -29,10 +28,8 @@
   删除：$.xcookie.deleteCookie('名称');
   </pre>
 
-
     <h2 class="red" id="header2">修改公共头部</h2>
     <pre class="prettyprint linenums">
-
 一、改导航的SVN文件(仅需修改这一个)：
   1、focus/branches/chanpinbu/pet/lvmama_common/src/main/config/template/header_nav.htm    //java,PHP的页面都调用这一个导航模板
 
@@ -41,18 +38,15 @@
   2、focus/branches/chanpinbu/pet/lvmama_common/src/main/config/template/header_new_lvwww2.htm   //所有带搜索的头部
 
 <b class="orange">注意：</b>如果发现有的头部和其他不一样，请让开发引入最新头部，引入方法见上一条API。
-    </pre>
-
+</pre>
     <h2 class="red" id="footer">引入公共底部</h2>
     <p><strong>CSS：</strong> <a href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css" target="_blank">http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css</a>
     </p>
     <p><strong>JS：</strong> <a href="http://pic.lvmama.com/js/v6/public/footer.js" target="_blank">&lt;script src="http://pic.lvmama.com/js/v6/public/footer.js"&gt;&lt;/script&gt;</a>
     </p>
     <pre class="prettyprint linenums">
-
 公共底部footer.js，直接放在页面底部位置，就可以在对应的位置创建出底部html结构。
-    </pre>
-
+</pre>
     <h2 class="red" id="login">引入登录弹出框</h2>
     <p><strong>CSS：</strong> <a
       href="http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/dialog.css,/styles/common/poplogin.css"
@@ -63,7 +57,6 @@
       target="_blank">http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-dialog.js,/js/common/poplogin.js</a>
     </p>
     <pre class="prettyprint linenums">
-
 <b>调用方法一：</b>
     传回调函数：
     var aaa = function(){ alert(1) }
@@ -74,7 +67,7 @@
 
 <b>调用方法二：</b>
     loginURL('http://www.lvmama.com');   //登陆后跳转url
-    </pre>
+</pre>
   </div>
 </template>
 

@@ -18,14 +18,9 @@
 
     <h2>预览</h2>
     <div class="section">
-        <pre>
-<code>
-
-    var ui = nova.ui();
-    ui.render();
-
-</code>
-        </pre>
+        <pre><code class="js">var ui = nova.ui();
+ui.render();
+</code></pre>
 
     </div>
     <div class="section">
@@ -51,9 +46,7 @@
         </dl>
       </form>
 
-      <pre>
-<code>
-&lt;label class="nova-checkbox-label"&gt;
+      <pre><code class="html">&lt;label class="nova-checkbox-label"&gt;
     &lt;input type="checkbox" name="lens" checked value="superWideAngle"&gt;超广角
 &lt;/label&gt;
 &lt;label class="nova-checkbox-label"&gt;
@@ -65,8 +58,7 @@
 &lt;label class="nova-checkbox-label"&gt;
     &lt;input type="checkbox" name="lens" value="telephoto"&gt;长焦
 &lt;/label&gt;
-</code>
-        </pre>
+</code></pre>
     </div>
 
 
@@ -93,20 +85,15 @@
         </dl>
       </form>
 
-      <pre>
-<code>
-&lt;label class="nova-checkbox-label nova-checkbox-label-orange"&gt;
+      <pre><code class="html">&lt;label class="nova-checkbox-label nova-checkbox-label-orange"&gt;
     &lt;input type="checkbox" name="lens" checked value="superWideAngle"&gt;超广角
 &lt;/label&gt;
-
-</code>
-        </pre>
+</code></pre>
 
     </div>
 
     <div class="section">
       <form>
-
 
         <dl class="clearfix">
           <dt>性别：</dt>
@@ -127,9 +114,7 @@
         </dl>
       </form>
 
-      <pre>
-<code>
-&lt;label class="nova-radio-label"&gt;
+      <pre><code class="html">&lt;label class="nova-radio-label"&gt;
     &lt;input type="radio" name="sex" disabled checked value="male"&gt;男
 &lt;/label&gt;
 &lt;label class="nova-radio-label"&gt;
@@ -141,11 +126,8 @@
 &lt;label class="nova-radio-label"&gt;
     &lt;input type="radio" name="sex" disabled value="other"&gt;其他
 &lt;/label&gt;
-</code>
-        </pre>
-
+</code></pre>
     </div>
-
 
     <div class="section">
       <form>
@@ -168,17 +150,13 @@
           </dd>
         </dl>
       </form>
-      <pre>
-<code>
-&lt;label class="nova-radio-label nova-radio-label-orange"&gt;
+      <pre><code class="html">&lt;label class="nova-radio-label nova-radio-label-orange"&gt;
     &lt;input type="radio" name="sex" disabled checked value="male"&gt;男
 &lt;/label&gt;
-</code>
-        </pre>
+</code></pre>
     </div>
 
     <div class="section">
-
 
       <form>
 
@@ -335,41 +313,6 @@
             </div>
           </dd>
         </dl>
-        <!--<dl class="clearfix">
-            <dt>请选择需要发送的签注材料类型：</dt>
-            <dd>
-                <label class="nova-checkbox-label nova-checkbox-label-bordered">
-                    <input type="checkbox" name="type" value="0">
-                    <span class="nova-checkbox-text">
-                    在职人员
-                </span>
-                </label>
-                <label class="nova-checkbox-label nova-checkbox-label-bordered">
-                    <input type="checkbox" name="type" value="1">
-                    <span class="nova-checkbox-text">
-                    退休人员
-                </span>
-                </label>
-                <label class="nova-checkbox-label nova-checkbox-label-bordered">
-                    <input type="checkbox" name="type" value="2">
-                    <span class="nova-checkbox-text">
-                    在校学生
-                </span>
-                </label>
-                <label class="nova-checkbox-label nova-checkbox-label-bordered">
-                    <input type="checkbox" name="type" value="3">
-                    <span class="nova-checkbox-text">
-                    自由职业者
-                </span>
-                </label>
-                <label class="nova-checkbox-label nova-checkbox-label-bordered">
-                    <input type="checkbox" name="type" value="4">
-                    <span class="nova-checkbox-text">
-                    学龄前儿童
-                </span>
-                </label>
-            </dd>
-        </dl>-->
         <dl class="clearfix">
           <dt>单选：</dt>
           <dd>
@@ -418,9 +361,7 @@
       </form>
     </div>
     <div class="section">
-<pre>
-<code>
-&lt;div class="nova-number-box"&gt;
+<pre><code class="html">&lt;div class="nova-number-box"&gt;
     &lt;div class="nova-number-box-subtract"&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
     &lt;input value="9" type="text" data-max="9" data-min="0"&gt;
     &lt;div class="nova-number-box-add"&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;

@@ -14,31 +14,28 @@
 
     <h2>调用方式</h2>
     <pre>
-            <code class="js">
-            var py = novaPinyin();
+<code class="js">var py = novaPinyin();
 
-            //1.获取汉字拼音：默认不支持多音字、以空格分隔
-            py.getPinyin("我知道那些夏天就像青春一样回不来");
-            // wo zhi dao na xie xia tian jiu xiang qing chun yi yang hui bu lai
+//1.获取汉字拼音：默认不支持多音字、以空格分隔
+py.getPinyin("我知道那些夏天就像青春一样回不来");
+// wo zhi dao na xie xia tian jiu xiang qing chun yi yang hui bu lai
 
-            //2.获取汉字拼音：默认不支持多音字，不分隔
-            py.getPinyin("代替梦想的也只能是勉为其难", { separator : "" });
-            //daitimengxiangdeyezhinengshimianweiqinan
+//2.获取汉字拼音：默认不支持多音字，不分隔
+py.getPinyin("代替梦想的也只能是勉为其难", { separator : "" });
+//daitimengxiangdeyezhinengshimianweiqinan
 
-            //3.获取汉字拼音：默认不支持多音字，以"-"分隔
-            py.getPinyin("我知道这个世界每天都有太多遗憾", { separator : "-" });
-            // wo-zhi-dao-zhe-ge-shi-jie-mei-tian-dou-you-tai-duo-yi-han
+//3.获取汉字拼音：默认不支持多音字，以"-"分隔
+py.getPinyin("我知道这个世界每天都有太多遗憾", { separator : "-" });
+// wo-zhi-dao-zhe-ge-shi-jie-mei-tian-dou-you-tai-duo-yi-han
 
-            //4.获取汉字拼音：支持多音字、返回每个字的所有拼音
-            py.getPinyin("所以你好再见", { isPolyphone : true });
-            // [{"所":"suo"},{"以":"yi"},{"你":"ni"},{"好":"hao"},{"再":"zai"},{"见":"xian,jian"}]
+//4.获取汉字拼音：支持多音字、返回每个字的所有拼音
+py.getPinyin("所以你好再见", { isPolyphone : true });
+// [{"所":"suo"},{"以":"yi"},{"你":"ni"},{"好":"hao"},{"再":"zai"},{"见":"xian,jian"}]
 
-            //5.测试复姓：若为复姓返回复姓拼音，若为单姓返回空字符串
-            py.getFuxingPinyin("令狐冲");
-            // linghu
-
-            </code>
-        </pre>
+//5.测试复姓：若为复姓返回复姓拼音，若为单姓返回空字符串
+py.getFuxingPinyin("令狐冲");
+// linghu
+</code></pre>
 
     <h2>实例</h2>
     <h3>汉字转拼音：不支持多音字</h3>

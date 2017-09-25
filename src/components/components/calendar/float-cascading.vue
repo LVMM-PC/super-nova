@@ -4,8 +4,7 @@
 
     <h1>Calendar</h1>
     <pre>
-<code class="js">
-var floatCascadingCalendar = lv.calendar({
+<code class="js">var floatCascadingCalendar = lv.calendar({
     autoRender: false,
     trigger: ".floatCascadingInput",
     triggerEvent: "click",

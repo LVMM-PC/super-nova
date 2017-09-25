@@ -4,8 +4,7 @@
 
     <h1>Calendar</h1>
     <pre>
-<code class="js">
-var mySmallBimonthlyCalendar = lv.calendar({
+<code class="js">var mySmallBimonthlyCalendar = lv.calendar({
     autoRender: true,
     trigger: "#mySmallBimonthlyCalendar",
     triggerEvent: "click",

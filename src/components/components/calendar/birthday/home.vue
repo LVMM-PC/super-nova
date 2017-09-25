@@ -3,9 +3,7 @@
   <div id="everything">
 
 <pre>
-<code class="js">
-
-//生日日历
+<code class="js">//生日日历
 var birthdayCalendar = lv.calendar({
     date: "1980-01-01",
     autoRender: false,
@@ -20,7 +18,6 @@ var birthdayCalendar = lv.calendar({
     dayPrev: -1,
     dayNext: 0
 });
-
 </code></pre>
 
   </div>

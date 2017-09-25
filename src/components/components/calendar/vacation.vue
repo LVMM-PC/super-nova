@@ -4,8 +4,7 @@
 
     <h1>Calendar</h1>
     <pre>
-<code class="js">
-//度假酒店
+<code class="js">//度假酒店
 var vacationCalendar = lv.calendar({
     autoRender: false,
     trigger: ".vacationInput",
@@ -19,7 +18,6 @@ var vacationCalendar = lv.calendar({
 </code></pre>
 
   </div>
-
 
 </template>
 

@@ -15,8 +15,7 @@
     <section>
       <div class="lvmama-logo lvmama-logo-retina"></div>
     </section>
-    <pre>
-        <code>
+    <pre><code>
 .lvmama-logo {
     background-image: url(../img/logo-61.png);
     width: 330px;
@@ -33,8 +32,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     }
 
 }
-        </code>
-    </pre>
+</code></pre>
 
   </div>
 </template>

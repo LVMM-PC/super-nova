@@ -25,8 +25,7 @@
       </ul>
       <p>否定伪类（negation pseudo-class）（:not()）中的选择器计算规则与以上规则一致，但是否定伪类本身不会影响优先级。</p>
       <p>比较2个选择器的A的大小，如果相同，则比较B的大小，如果A与B均相同，则比较C的大小。例子如下所示。</p>
-      <pre><code>
-Examples:
+      <pre><code>Examples:
 
 *               /* a=0 b=0 c=0 -> specificity =   0 */
 LI              /* a=0 b=0 c=1 -> specificity =   1 */

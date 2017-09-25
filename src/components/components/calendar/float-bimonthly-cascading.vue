@@ -4,8 +4,7 @@
 
     <h1>Calendar</h1>
     <pre>
-<code class="js">
-var floatBimonthlyCascadingCalendar = lv.calendar({
+<code class="js">var floatBimonthlyCascadingCalendar = lv.calendar({
     autoRender: false,  //弹出后渲染
     trigger: ".floatBimonthlyCascadingInput",  //目标元素选择器
     triggerEvent: "click",  //触发事件

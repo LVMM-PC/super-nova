@@ -5,16 +5,13 @@
     <h1>Calendar</h1>
 
     <pre>
-<code class="js">
-
-var myBigBimonthlyCalendar = lv.calendar({
+<code class="js">var myBigBimonthlyCalendar = lv.calendar({
     autoRender: true,
     trigger: "#myBigBimonthlyCalendar",
     triggerEvent: "click",
     sourceFn: fillData,  //见日历3文档
     bimonthly: true
 });
-
 </code></pre>
 
   </div>

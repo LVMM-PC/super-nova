@@ -1,12 +1,10 @@
 <template>
 
-
   <div id="everything">
     <h1>Calendar</h1>
 
     <pre>
-<code class="js">
-//分销
+<code class="js">//分销
 var distributionCalendar = lv.calendar({
     autoRender: false,
     trigger: "#distributionInput",
@@ -18,8 +16,7 @@ var distributionCalendar = lv.calendar({
 </code></pre>
 
     <pre>
-<code class="js">
-function distributionFillData() {
+<code class="js">function distributionFillData() {
     var self = this;
 
     function getStoreHTML(inventory, oversold) {

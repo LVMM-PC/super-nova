@@ -4,8 +4,7 @@
     <h1>Calendar</h1>
 
     <pre>
-<code class="js">
-//特卖会
+<code class="js">//特卖会
 var grouponCalendar = lv.calendar({
     autoRender: false,
     trigger: "#GrouponInput",

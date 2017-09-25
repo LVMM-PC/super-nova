@@ -10,9 +10,7 @@
         <a href="https://github.com/thx/cube/blob/gh-pages/build/neat.css" target="_blank">https://github.com/thx/cube/blob/gh-pages/build/neat.css</a>
         <a href="http://www.uisdc.com/debug-for-smartisan-website" target="_blank">http://www.uisdc.com/debug-for-smartisan-website</a>
       </blockquote>
-      <pre>
-<code class="css">
-/**
+      <pre><code class="css">/**
  * 非称线字体
  * 中文优先使用苹方(macOS)、微软雅黑(Windows)
     Helvetica Neue
@@ -26,8 +24,7 @@
 }
 </code></pre>
       <pre>
-<code class="css">
-/**
+<code class="css">/**
  * 称线字体，无宋体系统使用非称线
  */
 .serif {
@@ -36,8 +33,7 @@
 }
 </code></pre>
       <pre>
-<code class="css">
-/**
+<code class="css">/**
  * 数字字体
  */
 .arial {

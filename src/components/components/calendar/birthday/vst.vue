@@ -3,8 +3,7 @@
   <div id="everything">
 
 <pre>
-<code class="js">
-//VST日历
+<code class="js">//VST日历
 var vstCalendar = lv.calendar({
     cascadingCallback: function (self, $dom) {
         console.log(this);

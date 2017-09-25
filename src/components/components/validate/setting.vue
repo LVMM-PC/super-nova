@@ -3,8 +3,7 @@
   <div id="everything">
     <h1>Validate</h1>
 <pre>
-<code class="js">
-var myValidate = nova.validate({
+<code class="js">var myValidate = nova.validate({
     //验证规则
     rules: {
         ".JS_non_empty": {

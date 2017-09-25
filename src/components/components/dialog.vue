@@ -46,8 +46,7 @@
         &lt;span class="btn btn-orange"&gt;确认&lt;/span&gt;
         &lt;span class="btn"&gt;取消&lt;/span&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
 
     <h3>调用方式</h3>
     <div class="section">
@@ -55,9 +54,7 @@
     </div>
     <h3>1 简单模式</h3>
     <div class="section">
-<pre>
-<code class="js">
-//1.模拟原生的alert()方法，向用户显示一条消息并等待用户关闭对话框
+<pre><code class="js">//1.模拟原生的alert()方法，向用户显示一条消息并等待用户关闭对话框
 nova.alert("这个类似原生alert方法");
 
 //2.提示保存成功，若干毫秒后自动关闭（2000ms为默认值）
@@ -69,7 +66,6 @@ nova.confirm("你确定要删除吗？", function() {
 },function() {
     //取消操作的事件
 });
-
 </code></pre>
     </div>
     <h4>1.1 模拟alert()的消息提醒</h4>
@@ -88,14 +84,11 @@ nova.confirm("你确定要删除吗？", function() {
 
     </div>
     <div class="section">
-<pre>
-<code class="js">
-nova.alert("实现一个alert的模态提醒");
+<pre><code class="js">nova.alert("实现一个alert的模态提醒");
 nova.dialog({
     content: "实现一个alert的模态提醒",
     okCallback: true
-});
-</code></pre>
+});</code></pre>
     </div>
     <h4>1.2 定时信息</h4>
     <div class="section">
@@ -148,9 +141,7 @@ nova.dialog({
         </tr>
         </tbody>
       </table>
-      <pre>
-<code class="js">
-nova.confirm(
+      <pre><code class="js">nova.confirm(
     "你再也不相信爱情了么？",
     function () {
         nova.alert("相信");
@@ -167,8 +158,7 @@ nova.confirm(
     }, function () {
 
     }
-);
-</code></pre>
+);</code></pre>
     </div>
 
     <h4>1.4 中间状态Loading效果</h4>
@@ -190,14 +180,11 @@ nova.confirm(
       </p>
       在iframe中使用
       <iframe class="dialog-iframe" src="/components/dialog/iframe" frameborder="0"></iframe>
-      <pre>
-<code class="js">
-//遮罩当前页面，在iframe中时，不能遮罩iframe的父级页面
+      <pre><code class="js">//遮罩当前页面，在iframe中时，不能遮罩iframe的父级页面
 nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt;br&gt;正在加载中...&lt;/div&gt;');
 
 //遮罩祖先级页面，在iframe中时，可以遮罩iframe的祖先级页面
-top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt;br&gt;正在加载中...&lt;/div&gt;');
-</code></pre>
+top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt;br&gt;正在加载中...&lt;/div&gt;');</code></pre>
     </div>
 
     <h3>2 标准模式参数</h3>
@@ -206,8 +193,7 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
       options参数较多，请参考下列文档
 
       <pre>
-<code>
-nova.dialog({
+<code>nova.dialog({
 
     showClose: true,  //是否显示关闭按钮
     button: null,  //按钮组
@@ -246,8 +232,7 @@ nova.dialog({
 
     zIndex: null  //z-index
 
-});
-</code></pre>
+});</code></pre>
 
     </div>
 
@@ -260,49 +245,36 @@ nova.dialog({
       <p>
         <span class="btn JS_dialog_no_title">无标题</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     title: "自定义标题",
     content: "标准模式，可以自定义提醒标题和内容，默认不显示确定 取消的按钮"
-});
-</code></pre>
+});</code></pre>
       <p>
         <span class="btn JS_dialog_button">显示弹窗按钮</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: "显示弹窗按钮，若未指定按钮的回调函数，则默认关闭",
     okCallback: true,
     cancelCallback: true
-});
-</code></pre>
+});</code></pre>
 
       <p>
         <span class="btn JS_dialog_height_overflow">弹窗内容高过窗口</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。N多换行后，再高的内容，我也能看到内容最下面的部分",
     width: 400,
     height: 4000
-})
-</code></pre>
+})</code></pre>
 
       <p>
         <span class="btn JS_dialog_dom">指定DOM对象将其代码显示到弹窗</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: $("#elemBack")
-})
-</code></pre>
+})</code></pre>
       <pre>
-<code class="html">
-&lt;!--
+<code class="html">&lt;!--
 测试页面元素及其原绑定事件
 事件不能写在将要显示在弹层的内容中
 --&gt;
@@ -310,8 +282,7 @@ nova.dialog({
     &lt;p&gt;传入指定element对象（这里传入 $("#elemBack") 显示其内容(含其本身盒子)，同时保存其原有事件&lt;/p&gt;
     &lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;原事件不能以 &lt;code&gt;&lt;script&gt;&lt;/code&gt; 标签包含在 #elemBack 盒子内，否则事件会重复绑定&lt;/p&gt;
     &lt;button id="testbtn" class="btn"&gt;点此测试事件&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <h4>3.2 自定义按钮</h4>
@@ -320,9 +291,7 @@ nova.dialog({
       <p>
         <span class="btn JS_dialog_btn">更改默认按钮</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件",
     okCallback: function () {
         nova.msg("保存成功");
@@ -331,14 +300,11 @@ nova.dialog({
     okText: "保存修改",
     cancelCallback: true,
     cancelText: "不保存"
-});
-</code></pre>
+});</code></pre>
       <p>
         <span class="btn JS_dialog_rewrite">重写提示内容</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: "点击“重写提示”按钮，将使用链式操作重写弹窗的提醒内容！",
     okText: "重写提示",
     okCallback: function () {
@@ -349,14 +315,11 @@ nova.dialog({
     },
     cancelText: "关闭",
     cancelCallback: true
-});
-</code></pre>
+});</code></pre>
       <p>
         <span class="btn JS_dialog_btn_group">实现多个按钮</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: '&lt;h4&gt;您对模态窗口满意吗？&lt;/h4&gt;' +
     '&lt;p&gt;说明：使用模态窗口，能实现全站的弹窗统一，外观能够控制，方便修改，功能上也可定制，实在是统一网页设计弹窗的必备武器！&lt;/p&gt;',
     button: [
@@ -382,8 +345,7 @@ nova.dialog({
             }
         }
     ]
-});
-</code></pre>
+});</code></pre>
     </div>
 
     <h4>3.3 弹窗高度检测</h4>
@@ -392,14 +354,11 @@ nova.dialog({
       <p>
         <span class="btn JS_dialog_auto">弹窗高度检测</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: $(".dialog-auto"),
     topFixed: true,
     topOffset: 60
-});
-</code></pre>
+});</code></pre>
       <pre>
 <code class="html">
 &lt;div class="dialog-auto"&gt;
@@ -411,8 +370,7 @@ nova.dialog({
         &lt;div class="pane active da-recommend"&gt;往返推荐内容&lt;/div&gt;
         &lt;div class="pane da-free"&gt;自由组合内容&lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <h4>3.4 复杂交互</h4>
@@ -431,15 +389,12 @@ nova.dialog({
         <span class="btn JS_dialog_initialize">弹窗初始化后执行方法</span>
       </p>
 
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     content: "弹窗未初始化完成",
     initCallback: function () {
         this.content("弹窗初始化完成");
     }
-});
-</code></pre>
+});</code></pre>
     </div>
     <h4>3.6 关闭对话框前执行函数</h4>
 
@@ -451,9 +406,7 @@ nova.dialog({
       <p>
         <span class="btn JS_dialog_beforeunload">关闭弹窗前执行方法</span>
       </p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     height: 300,
     title: "关闭对话框前执行方法",
     content: "用户填写了信息但未保存，提醒用户是否保存",
@@ -473,8 +426,7 @@ nova.dialog({
         });
         return false;
     }
-});
-</code></pre>
+});</code></pre>
     </div>
 
     <h3>4 Ajax调用</h3>
@@ -482,9 +434,7 @@ nova.dialog({
     <div class="section">
 
       <p><span class="btn JS_dialog_ajax_load">Ajax调用</span></p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     width: 600,
     wrapClass: "nova-dialog-custom",
     initCallback: function () {
@@ -502,21 +452,17 @@ nova.dialog({
             self.content("加载失败");
         });
     }
-});
-</code></pre>
+});</code></pre>
 
       <p><span class="btn JS_dialog_ajax_save">Ajax保存</span></p>
-      <pre>
-<code class="js">
-$.ajax({
+      <pre><code class="js">$.ajax({
     url: "dialog/dialog-ajax.html",
     dataType: "html"
 }).done(function () {
     nova.msg("保存成功");
 }).fail(function () {
     nova.msg("保存失败");
-});
-</code></pre>
+});</code></pre>
     </div>
 
     <h3>5 iframe调用</h3>
@@ -524,16 +470,13 @@ $.ajax({
     <div class="section">
 
       <p><span class="btn JS_dialog_iframe_load">iframe调用</span></p>
-      <pre>
-<code class="js">
-nova.dialog({
+      <pre><code class="js">nova.dialog({
     url: true,
     content: "/components/dialog/iframe",
     width: 600,
     initHeight: 300  //设置iframe的高度
     //height: 300,  //同时设置了iframe与dialog的高度后，iframe可能会溢出
-})
-</code></pre>
+})</code></pre>
 
     </div>
 

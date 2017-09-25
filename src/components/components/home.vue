@@ -10,12 +10,12 @@
     <section>
       <p>实现一个现代风格的蓝色大按钮，仅仅使用预设样式组合即可：</p>
       <div class="demo-box">
-        <div class="btn btn-blue btn-lg">橙色按钮</div>
+        <div class="btn btn-blue btn-lg">蓝色按钮</div>
       </div>
 
       <pre>
 <code class="html">
-&lt;div class="btn btn-orange btn-lg"&gt;橙色按钮&lt;/div&gt;
+&lt;div class="btn btn-orange btn-lg"&gt;蓝色按钮&lt;/div&gt;
 </code>
 </pre>
     </section>

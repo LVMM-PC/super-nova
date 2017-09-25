@@ -5,8 +5,7 @@
     <h1>Calendar</h1>
 
     <pre>
-<code class="js">
-var floatSmallBimonthlyCalendar = lv.calendar({
+<code class="js">var floatSmallBimonthlyCalendar = lv.calendar({
     date: "2016-02-13",
     autoRender: false,
     trigger: "#floatSmallBimonthlyInput",

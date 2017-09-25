@@ -1,12 +1,10 @@
 <template>
 
-
   <div id="everything">
     <h1>Calendar</h1>
 
     <pre>
-<code class="js">
-var floatBigBimonthlyCalendar = lv.calendar({
+<code class="js">var floatBigBimonthlyCalendar = lv.calendar({
     autoRender: false,
     trigger: "#floatBigBimonthlyInput",
     triggerEvent: "click",
