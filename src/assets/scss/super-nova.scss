@@ -340,3 +340,24 @@ a {
 
   }
 }
+
+.super-nova-logo-big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  .svg {
+    background-image: url(assets/img/nova-logo.svg);
+    background-size: cover;
+    background-position: center center;
+    width: 200px;
+    height: 200px;
+    margin-right: 40px;
+  }
+  em {
+    line-height: 100px;
+    color: #29e;
+    font-style: normal;
+    font-size: 90px;
+  }
+}
