@@ -7,7 +7,7 @@
     <div>
       <ul>
         <li>
-          <a href="http://pic.lvmama.com/js/lv/nav-scroll.css" target="_blank">http://pic.lvmama.com/min/index.php?f=/js/lv/nav-scroll.css</a>
+          <a href="http://pic.lvmama.com/js/lv/nav-scroll.js" target="_blank">http://pic.lvmama.com/min/index.php?f=/js/lv/nav-scroll.js</a>
         </li>
       </ul>
     </div>
@@ -80,11 +80,6 @@
       </div>
 
     </div>
-
-    <ul class="left_nav js_fixed3">
-      <li data-id="nav1">第一个导航</li>
-      <li data-id="zy">第二个导航</li>
-    </ul>
 
     <h2>配置</h2>
     <h3>JavaScript</h3>
@@ -229,7 +224,6 @@ nova.navScroll({
   }
 
   .main_all {
-    width: 1000px;
     margin: 0 auto;
   }
 
