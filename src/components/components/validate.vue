@@ -392,4 +392,8 @@
   @import "/static/assert/css/tips.css";
   @import "/static/assert/css/icons.css";
 
+  .radio {
+    margin-top: 8px;
+  }
+
 </style>

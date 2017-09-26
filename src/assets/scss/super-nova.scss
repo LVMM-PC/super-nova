@@ -15,6 +15,39 @@
   }
 }
 
+@keyframes color-breathe {
+  0% {
+    fill: hsl(0, 50%, 50%);
+  }
+  16.67% {
+    fill: hsl(60, 50%, 50%);
+  }
+  33.33% {
+    fill: hsl(120, 50%, 50%);
+  }
+  50% {
+    fill: hsl(180, 50%, 50%);
+  }
+  66.67% {
+    fill: hsl(240, 50%, 50%);
+  }
+  83.33% {
+    fill: hsl(300, 50%, 50%);
+  }
+  100% {
+    fill: hsl(360, 50%, 50%);
+  }
+}
+
+@keyframes light-breathe {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -91,9 +124,6 @@ a {
     box-sizing: border-box;
     &:hover {
       background-color: rgba(34, 158, 238, 0.4);
-      .super-svg {
-        animation: logo-rotate linear 2s infinite;
-      }
     }
   }
   .super-svg {
@@ -162,6 +192,7 @@ a {
   color: #999;
   width: 200px;
   .list {
+    width: 200px;
     padding: 10px 0 30px 0;
     box-sizing: border-box;
     top: 0;
@@ -177,6 +208,9 @@ a {
     &:hover {
       color: #2299ee;
       background-color: rgba(34, 158, 238, 0.1);
+      small {
+        color: #2299ee;
+      }
     }
   }
   li {
@@ -186,6 +220,9 @@ a {
       margin-right: -1px;
       a {
         color: #2299ee;
+      }
+      i {
+        display: none;
       }
       background-color: rgba(34, 158, 238, 0.2);
     }
@@ -213,12 +250,33 @@ a {
 }
 
 .super-sidebar-toggle {
-  display: block;
+  display: flex;
+  align-items: center;
+  position: relative;
   height: 30px;
   line-height: 30px;
+  width: 200px;
+  box-sizing: border-box;
   small {
+    margin-left: 10px;
     color: #999999;
     font-size: 0.75rem;
+  }
+  i {
+    margin-left: 0;
+    margin-top: -10px;
+    font-size: 12px;
+    color: #fff;
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    text-shadow: none;
+    text-align: center;
+    line-height: 15px;
+    font-style: normal;
+    background-color: #f00;
+    display: block;
+    opacity: 0.5;
   }
 }
 
@@ -342,17 +400,24 @@ a {
 }
 
 .super-nova-logo-big {
+  width: 600px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.5;
+  transition: opacity 1s;
   .svg {
-    background-image: url(assets/img/nova-logo.svg);
-    background-size: cover;
-    background-position: center center;
     width: 200px;
     height: 200px;
     margin-right: 40px;
+  }
+  .logo-triangle {
+    transform-origin: 100px;
+  }
+  .logo-main {
+    transform-origin: 100px;
+    animation: logo-rotate linear 10s infinite reverse;
   }
   em {
     line-height: 100px;

@@ -20,13 +20,13 @@
           path: 'components',
           children: [
             {
-              name: 'Icon', value: 'icon <small>图标</small>', link: 'icon'
+              name: 'Icon', value: 'Icon<small>图标</small>', link: 'icon'
             },
             {
-              name: 'Button', value: 'button', link: 'button'
+              name: 'Button', value: 'Button<small>按钮</small>', link: 'button'
             },
             {
-              name: 'Tips', value: 'tips', link: 'tips'
+              name: 'Tips', value: 'Tips<small>提示</small>', link: 'tips'
             }]
         },
         {
@@ -35,10 +35,10 @@
           path: 'components',
           children: [
             {
-              name: 'Calendar', value: 'calendar', link: 'calendar'
+              name: 'Calendar', value: 'Calendar<small>日历</small>', link: 'calendar'
             },
             {
-              name: 'UI', value: 'ui', link: 'ui'
+              name: 'UI', value: 'UI<small>控件</small>', link: 'ui'
             }
           ]
         },
@@ -48,7 +48,7 @@
           path: 'components',
           children: [
             {
-              name: 'Dialog', value: 'dialog', link: 'dialog'
+              name: 'Dialog', value: 'Dialog<small>弹框</small>', link: 'dialog'
             }
           ]
         },
@@ -58,10 +58,13 @@
           path: 'components',
           children: [
             {
-              name: 'Validate', value: 'validate', link: 'validate'
+              name: 'Validate', value: 'Validate<small>表单验证</small>', link: 'validate'
             },
             {
-              name: 'Pinyin', value: 'pinyin', link: 'pinyin'
+              name: 'Pinyin', value: 'Pinyin<small>拼音</small>', link: 'pinyin'
+            },
+            {
+              name: 'NavScroll', value: 'Nav scroll<i></i><small>导航跟随</small>', link: 'nav-scroll'
             }
           ]
         }
@@ -73,10 +76,10 @@
       path: 'components',
       children: [
         {
-          name: 'Font Family', value: 'font family', link: 'font-family'
+          name: 'Font Family', value: 'Font family<small>字体</small>', link: 'font-family'
         },
         {
-          name: 'Retina', value: 'retina', link: 'retina'
+          name: 'Retina', value: 'Retina<small>高分屏</small>', link: 'retina'
         }
       ]
     }

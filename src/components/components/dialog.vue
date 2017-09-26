@@ -48,7 +48,7 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <h3>调用方式</h3>
+    <h2>配置</h2>
     <div class="section">
       nova.dialog有两种调用模式
     </div>

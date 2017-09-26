@@ -4,5 +4,5 @@
  */
 
 export function superNova () {
-  console.log('superNova')
+  // console.log('superNova')
 }

@@ -338,11 +338,11 @@ $(function () {
         completeCallback: function () {
             var newNow = this.now;
             if (now.getFullYear() === newNow.getFullYear() && now.getMonth() === newNow.getMonth()) {
-                console.log("yes");
+                // console.log("yes");
                 this.options.dayOffset = date - 1 - index;
                 this.render(true)
             } else {
-                console.log("no");
+                // console.log("no");
                 this.options.dayOffset = 0;
                 this.render(true)
             }

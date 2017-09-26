@@ -23,6 +23,7 @@ import calendarFloatCascading from '@/components/components/calendar/float-casca
 import calendarVacation from '@/components/components/calendar/vacation'
 import calendarDistribution from '@/components/components/calendar/distribution'
 import calendarGroupon from '@/components/components/calendar/groupon'
+import navScroll from '@/components/components/nav-scroll'
 import dialog from '@/components/components/dialog'
 import dialogIframe from '@/components/components/dialog/iframe'
 import fontFamily from '@/components/components/font-family'
@@ -84,6 +85,7 @@ export default new Router({
         {path: 'calendar/vacation', component: calendarVacation},
         {path: 'calendar/distribution', component: calendarDistribution},
         {path: 'calendar/groupon', component: calendarGroupon},
+        {path: 'nav-scroll', component: navScroll},
         {path: 'dialog', component: dialog},
         {path: 'font-family', component: fontFamily},
         {path: 'icon', component: icon},

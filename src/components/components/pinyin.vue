@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <h2>调用方式</h2>
+    <h2>配置</h2>
     <pre>
 <code class="js">var py = novaPinyin();
 
@@ -37,7 +37,7 @@ py.getFuxingPinyin("令狐冲");
 // linghu
 </code></pre>
 
-    <h2>实例</h2>
+    <h2>预览</h2>
     <h3>汉字转拼音：不支持多音字</h3>
     <div class="section">
       <input type="text" class="pinyin-input" value="我知道那些夏天就像青春一样回不来">
