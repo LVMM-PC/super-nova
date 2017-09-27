@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import componentsHome from '@/components/components/home'
+import NotFoundComponent from '@/components/NotFoundComponent'
+
 import components from '@/components/components'
+import componentsHome from '@/components/components/home'
 import button from '@/components/components/button'
 import calendar from '@/components/components/calendar'
 import calendarSetting from '@/components/components/calendar/setting'
@@ -114,6 +116,7 @@ export default new Router({
         {path: '', component: referenceHome},
         {path: 'selectors-level-3', component: referenceSelectorsLevel3}
       ]
-    }
+    },
+    { path: '*', component: NotFoundComponent }
   ]
 })
