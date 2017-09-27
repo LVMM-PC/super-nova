@@ -199,19 +199,16 @@ td {
 }
 
 .i-header {
-  position: relative;
   &:hover{
     a{
-      display: block;
+      color: #29e;
     }
   }
   a {
-    display: none;
+    color: #ccc;
     width: 30px;
-    padding: 0;
-    position: absolute;
-    left: -30px;
     text-align: center;
-    top: 0;
+    position: static;
+    display: inline-block;
   }
 }

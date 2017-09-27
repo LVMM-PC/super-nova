@@ -2,7 +2,7 @@
   <div id="everything">
 
     <ih1 :model="{value: '公共模块'}"></ih1>
-    <h2 class="red" id="header1">引入公共头部</h2>
+    <h2 id="header1">引入公共头部</h2>
     <p><strong>CSS：</strong> <a href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css" target="_blank">http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css</a>
     </p>
     <p><strong>JS：</strong> <a
@@ -28,7 +28,7 @@
   删除：$.xcookie.deleteCookie('名称');
   </pre>
 
-    <h2 class="red" id="header2">修改公共头部</h2>
+    <h2 id="header2">修改公共头部</h2>
     <pre class="prettyprint linenums">
 一、改导航的SVN文件(仅需修改这一个)：
   1、focus/branches/chanpinbu/pet/lvmama_common/src/main/config/template/header_nav.htm    //java,PHP的页面都调用这一个导航模板
@@ -39,7 +39,7 @@
 
 <b class="orange">注意：</b>如果发现有的头部和其他不一样，请让开发引入最新头部，引入方法见上一条API。
 </pre>
-    <h2 class="red" id="footer">引入公共底部</h2>
+    <h2 id="footer">引入公共底部</h2>
     <p><strong>CSS：</strong> <a href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css" target="_blank">http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css</a>
     </p>
     <p><strong>JS：</strong> <a href="http://pic.lvmama.com/js/v6/public/footer.js" target="_blank">&lt;script src="http://pic.lvmama.com/js/v6/public/footer.js"&gt;&lt;/script&gt;</a>
@@ -47,7 +47,7 @@
     <pre class="prettyprint linenums">
 公共底部footer.js，直接放在页面底部位置，就可以在对应的位置创建出底部html结构。
 </pre>
-    <h2 class="red" id="login">引入登录弹出框</h2>
+    <h2 id="login">引入登录弹出框</h2>
     <p><strong>CSS：</strong> <a
       href="http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/dialog.css,/styles/common/poplogin.css"
       target="_blank">http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/dialog.css,/styles/common/poplogin.css</a>

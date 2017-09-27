@@ -20,19 +20,21 @@
 
     <ih2 :model="{value: '预览'}"></ih2>
     <ih3 :model="{value: '默认提示框'}"></ih3>
-    <div class="section" style="overflow:visible;">
-      <div class="nova-dialog-static" style="position:relative;">
-        <div class="nova-dialog-close"><i></i></div>
-        <div class="nova-dialog-header">消息提醒</div>
-        <div class="nova-dialog-body">
-          提示文本信息-这是弹出框的内容一般提示文本-也可以是较为复杂的布局，此默认提示框宽度400px。布局，此默认提示框宽度420px布局，此默认提示框宽度420px。
-        </div>
-        <div class="nova-dialog-footer">
-          <span class="btn btn-orange">确认</span>
-          <span class="btn">取消</span>
+    <section>
+      <div class="section" style="overflow:visible;">
+        <div class="nova-dialog-static" style="position:relative;">
+          <div class="nova-dialog-close"><i></i></div>
+          <div class="nova-dialog-header">消息提醒</div>
+          <div class="nova-dialog-body">
+            提示文本信息-这是弹出框的内容一般提示文本-也可以是较为复杂的布局，此默认提示框宽度400px。布局，此默认提示框宽度420px布局，此默认提示框宽度420px。
+          </div>
+          <div class="nova-dialog-footer">
+            <span class="btn btn-orange">确认</span>
+            <span class="btn">取消</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <pre>
 <code class="html">
 &lt;!--弹窗结构--&gt;
