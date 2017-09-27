@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Font Family</h1>
+    <ih1 :model="{value: 'Font Family'}"></ih1>
 
-    <h2>建议</h2>
+    <ih2 :model="{value: '建议'}"></ih2>
     <section>
       <blockquote>
         参考文档：
@@ -46,10 +46,18 @@
 </template>
 
 <script>
-  export default {
-    name: 'font-family'
-  }
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
 
+  export default {
+    name: 'font-family',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
+  }
 </script>
 
 <style lang="scss">

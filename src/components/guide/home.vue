@@ -1,7 +1,7 @@
 <template>
   <div id="everything">
 
-    <h1>前端指南</h1>
+    <ih1 :model="{value: '前端指南'}"></ih1>
     <div>
       <div class="super-nova-logo-big">
         <div class="svg">
@@ -33,8 +33,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'button'
+    name: 'button',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

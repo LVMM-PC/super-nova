@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>UI</h1>
+    <ih1 :model="{value: 'UI'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <div>
       <ul>
         <li>
@@ -16,7 +16,7 @@
       </ul>
     </div>
 
-    <h2>预览</h2>
+    <ih2 :model="{value: '预览'}"></ih2>
     <div class="section">
         <pre><code class="js">var ui = nova.ui();
 ui.render();
@@ -392,8 +392,17 @@ ui.render();
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'ui'
+    name: 'ui',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 
   require('script-loader!../../../static/js/ui')

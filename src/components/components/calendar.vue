@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Calendar</h1>
+    <ih1 :model="{value: 'Calendar'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
 
     <div>
       <ul>
@@ -16,16 +16,14 @@
       </ul>
     </div>
 
-    <h2>
-      配置
-    </h2>
+    <ih2 :model="{value: '配置'}"></ih2>
     <div>
       <blockquote>.ui-calendar层级（z-index）需自定义</blockquote>
       <blockquote>自定义.ui-calendar层级后, 如需在级联日历中显示“n晚”信息，需要设置.cal-number-of-days层级大于.ui-calendar</blockquote>
       <h3><a href="/components/calendar/settings" target="_blank">配置文档</a></h3>
       <h3><a href="/components/calendar/api" target="_blank">API文档</a></h3>
       <h3><a href="/components/calendar/birthday" target="_blank">生日日历</a></h3>
-      <!--<h3><a href="/components/calendar/four-month" target="_blank">4个月日历</a></h3>-->
+      <!--<ih3 :model="{value: '<a href="/components/calendar/four-month" target="_blank">4个月日历</a>'}"></ih3>-->
     </div>
 
     <pre>
@@ -48,9 +46,9 @@ lv.calendar.dateFormat(new Date(), "yyyy-MM-dd");  //2016-12-16
 lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2016, 12-1, 16);
 </code></pre>
 
-    <h2>实例</h2>
+    <ih2 :model="{value: '实例'}"></ih2>
 
-    <h3>单月小日历</h3>
+    <ih3 :model="{value: '单月小日历'}"></ih3>
 
     <div class="section">
       <span id="mySmallCalendar"></span>
@@ -60,7 +58,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>双月小日历</h3>
+    <ih3 :model="{value: '双月小日历'}"></ih3>
     <div class="section">
       <span id="mySmallBimonthlyCalendar"></span>
       <p>
@@ -68,7 +66,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>单月大日历</h3>
+    <ih3 :model="{value: '单月大日历'}"></ih3>
     <div class="section">
       <span id="myBigCalendar"></span>
       <p>
@@ -81,7 +79,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>双月大日历</h3>
+    <ih3 :model="{value: '双月大日历'}"></ih3>
     <div class="section">
       <div id="myBigBimonthlyCalendar"></div>
       <p>
@@ -90,7 +88,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>小日历控件浮层</h3>
+    <ih3 :model="{value: '小日历控件浮层'}"></ih3>
     <div class="section">
       <input type="text" class="floatSmallInput" readonly="readonly" value="2016-07-28">
       <span id="floatSmallText"></span>
@@ -99,7 +97,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>小日历双月控件浮层</h3>
+    <ih3 :model="{value: '小日历双月控件浮层'}"></ih3>
     <div class="section">
       <input type="text" id="floatSmallBimonthlyInput" readonly="readonly">
       <span id="floatSmallBimonthlyText"></span>
@@ -118,7 +116,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
 
     <!--TODO-->
 
-    <h3>日历控件浮层</h3>
+    <ih3 :model="{value: '日历控件浮层'}"></ih3>
     <p>［门票订单填写页］</p>
     <div class="section">
       <input type="text" id="floatBigBimonthlyInput" readonly="readonly">
@@ -129,7 +127,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>区间日历控件浮层</h3>
+    <ih3 :model="{value: '区间日历控件浮层'}"></ih3>
     <div class="section">
       <input type="text" class="floatBimonthlyCascadingInput" readonly="readonly" value="2016-07-15">
       <span class="floatBimonthlyCascadingText"></span>
@@ -144,7 +142,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       <button class="btn" id="floatBimonthlyCascadingBtn">获取</button>
     </div>
 
-    <h3>区间日历单月控件</h3>
+    <ih3 :model="{value: '区间日历单月控件'}"></ih3>
     <div class="section">
       <input type="text" class="floatCascadingInput" readonly="readonly">
       <input type="text" class="floatCascadingInput" readonly="readonly">
@@ -153,7 +151,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>度假酒店日历控件样式</h3>
+    <ih3 :model="{value: '度假酒店日历控件样式'}"></ih3>
     <div class="section">
       <input type="text" class="vacationInput" readonly="readonly">
       <input type="text" class="vacationInput" readonly="readonly">
@@ -162,7 +160,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>分销日历控件</h3>
+    <ih3 :model="{value: '分销日历控件'}"></ih3>
     <div class="section">
       <input type="text" id="distributionInput" readonly="readonly">
       <a id="distributionClearCache">清缓存</a>
@@ -173,7 +171,7 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       </p>
     </div>
 
-    <h3>特卖会线路弹层</h3>
+    <ih3 :model="{value: '特卖会线路弹层'}"></ih3>
     <div class="section">
       <input type="text" id="GrouponInput" readonly="readonly">
       <span id="GrouponText"></span>
@@ -187,18 +185,18 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
 
     </div>
 
-    <h3>Offset margin</h3>
+    <ih3 :model="{value: 'Offset margin'}"></ih3>
     <div class="section">
       <input type="text" id="offsetInput" readonly="readonly">
     </div>
 
-    <h3>大日历级联</h3>
+    <ih3 :model="{value: '大日历级联'}"></ih3>
     <div class="section">
       <input type="text" class="bigCascadingInput">
       <input type="text" class="bigCascadingInput">
     </div>
 
-    <h3>今天起几日不可选</h3>
+    <ih3 :model="{value: '今天起几日不可选'}"></ih3>
     <div class="section">
       <input type="text" class="dayDisableNextInput">
     </div>
@@ -206,12 +204,12 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
       <input type="text" class="dayDisableNextInput">
     </div>
 
-    <h3>区间单日历</h3>
+    <ih3 :model="{value: '区间单日历'}"></ih3>
     <div class="section">
       <div class="sectionCalendar"></div>
     </div>
 
-    <h3>星期偏移</h3>
+    <ih3 :model="{value: '星期偏移'}"></ih3>
     <div class="section">
       <div class="weekOffsetCalendar"></div>
     </div>
@@ -220,8 +218,17 @@ lv.calendar.getDateFromFormattedString("2016-12-16", "yyyy-MM-dd")  //new Date(2
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'calendar'
+    name: 'calendar',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 
   require('script-loader!../../../static/js/calendar')

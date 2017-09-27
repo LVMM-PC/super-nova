@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Dialog</h1>
+    <ih1 :model="{value: 'Dialog'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <div>
       <ul>
         <li>
@@ -18,8 +18,8 @@
       </ul>
     </div>
 
-    <h2>预览</h2>
-    <h3>默认提示框</h3>
+    <ih2 :model="{value: '预览'}"></ih2>
+    <ih3 :model="{value: '默认提示框'}"></ih3>
     <div class="section" style="overflow:visible;">
       <div class="nova-dialog-static" style="position:relative;">
         <div class="nova-dialog-close"><i></i></div>
@@ -48,11 +48,11 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <h2>配置</h2>
+    <ih2 :model="{value: '配置'}"></ih2>
     <div class="section">
       nova.dialog有两种调用模式
     </div>
-    <h3>1 简单模式</h3>
+    <ih3 :model="{value: '1 简单模式'}"></ih3>
     <div class="section">
 <pre><code class="js">//1.模拟原生的alert()方法，向用户显示一条消息并等待用户关闭对话框
 nova.alert("这个类似原生alert方法");
@@ -187,7 +187,7 @@ nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt
 top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt;&lt;br&gt;正在加载中...&lt;/div&gt;');</code></pre>
     </div>
 
-    <h3>2 标准模式参数</h3>
+    <ih3 :model="{value: '2 标准模式参数'}"></ih3>
     <div class="section">
 
       options参数较多，请参考下列文档
@@ -236,7 +236,7 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
 
     </div>
 
-    <h3>3 标准模式实例</h3>
+    <ih3 :model="{value: '3 标准模式实例'}"></ih3>
     <h4>3.1 基础实例</h4>
     <div class="section">
       <p>
@@ -429,7 +429,7 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
 });</code></pre>
     </div>
 
-    <h3>4 Ajax调用</h3>
+    <ih3 :model="{value: '4 Ajax调用'}"></ih3>
 
     <div class="section">
 
@@ -465,7 +465,7 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
 });</code></pre>
     </div>
 
-    <h3>5 iframe调用</h3>
+    <ih3 :model="{value: '5 iframe调用'}"></ih3>
 
     <div class="section">
 
@@ -505,9 +505,19 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'dialog'
+    name: 'dialog',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
+
   require('script-loader!../../../static/js/dialog')
   require('script-loader!../../../static/doc/dialog')
 </script>

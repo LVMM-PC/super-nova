@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Tips</h1>
+    <ih1 :model="{value: 'Tips'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <section>
       <ul>
         <li>
@@ -15,7 +15,7 @@
       </ul>
     </section>
 
-    <h2>预览</h2>
+    <ih2 :model="{value: '预览'}"></ih2>
 
     <div>
       <h3>
@@ -23,7 +23,7 @@
       </h3>
     </div>
 
-    <h3>1 提示文本</h3>
+    <ih3 :model="{value: '1 提示文本'}"></ih3>
     <section>
 
       <code>.nova-tip</code>
@@ -90,7 +90,7 @@
 
     </section>
 
-    <h3>2 信息提示框</h3>
+    <ih3 :model="{value: '2 信息提示框'}"></ih3>
     <section>
       <code>nova-tip-info</code>
       <div>
@@ -107,7 +107,7 @@
       </div>
     </section>
 
-    <h3>3 表单提示信息</h3>
+    <ih3 :model="{value: '3 表单提示信息'}"></ih3>
     <section class="tip-doc">
       <code>nova-tip</code>
       <dl class="clearfix">
@@ -248,8 +248,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'tips'
+    name: 'tips',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="everything">
 
-    <h1>loading 图标</h1>
+    <ih1 :model="{value: 'loading 图标'}"></ih1>
     <p>延迟加载的图片或内容使用的 loading 图标：
       <small>两种尺寸</small>
     </p>
@@ -17,8 +17,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'button'
+    name: 'button',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

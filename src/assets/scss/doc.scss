@@ -10,7 +10,8 @@ body {
 }
 
 #everything,
-#everything > section {
+#everything > section,
+#everything > header {
   > h1 {
     font-size: 2rem;
   }
@@ -60,7 +61,6 @@ body {
   code {
     font-size: 14px;
     font-family: Monaco, Consolas, "Microsoft Yahei", monospace;
-    margin: 5px;
     border-radius: 4px;
     vertical-align: middle;
     display: inline-block;
@@ -147,8 +147,7 @@ td {
   .h3,
   .h4,
   .h5,
-  .h6
-  {
+  .h6 {
 
     @include ellipsis;
   }
@@ -196,5 +195,23 @@ td {
   em,
   i {
     font-style: normal;
+  }
+}
+
+.i-header {
+  position: relative;
+  &:hover{
+    a{
+      display: block;
+    }
+  }
+  a {
+    display: none;
+    width: 30px;
+    padding: 0;
+    position: absolute;
+    left: -30px;
+    text-align: center;
+    top: 0;
   }
 }

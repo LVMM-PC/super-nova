@@ -1,20 +1,20 @@
 <template>
 
   <div id="everything">
-    <h1>Calendar</h1>
-    <h2>配置文档</h2>
+    <ih1 :model="{value: 'Calendar'}"></ih1>
+    <ih2 :model="{value: '配置文档'}"></ih2>
 
-    <h3>默认值</h3>
+    <ih3 :model="{value: '默认值'}"></ih3>
     <pre>
 <code class="js">{{js1}}
 </code></pre>
 
-    <h3>节假日</h3>
+    <ih3 :model="{value: '节假日'}"></ih3>
     <pre>
 <code class="js">{{js2}}
 </code></pre>
 
-    <h3>日历模板</h3>
+    <ih3 :model="{value: '日历模板'}"></ih3>
     <pre>
 <code>{{js3}}
 </code></pre>
@@ -24,8 +24,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
     name: 'setting',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    },
     data () {
       return {
         js1: `//默认值

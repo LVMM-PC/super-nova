@@ -3,9 +3,9 @@
   <div id="everything">
 
 
-    <h1>Calendar</h1>
-    <h2>API文档</h2>
-    <h3>静态方法</h3>
+    <ih1 :model="{value: 'Calendar'}"></ih1>
+    <ih2 :model="{value: 'API文档'}"></ih2>
+    <ih3 :model="{value: '静态方法'}"></ih3>
 
     <div class="section">
 <pre>
@@ -145,7 +145,7 @@ Calendar.dayToMS = function (days) {};
 </code></pre>
     </div>
 
-    <h3>实例方法</h3>
+    <ih3 :model="{value: '实例方法'}"></ih3>
     <div class="section">
 <pre><code>/**
  * 获取单日class
@@ -173,8 +173,17 @@ loaded: function () {}
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'setting'
+    name: 'setting',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

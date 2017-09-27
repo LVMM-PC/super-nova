@@ -1,17 +1,17 @@
 <template>
   <div id="everything">
 
-    <h1>Retina</h1>
+    <ih1 :model="{value: 'Retina'}"></ih1>
 
-    <h2>建议</h2>
+    <ih2 :model="{value: '建议'}"></ih2>
     <blockquote>
       Ctrl + = 放大屏幕显示比例到200%或使用高分屏显示器以查看效果
     </blockquote>
-    <h3>普通图片</h3>
+    <ih3 :model="{value: '普通图片'}"></ih3>
     <section>
       <div class="lvmama-logo"></div>
     </section>
-    <h3>高分屏适配图片</h3>
+    <ih3 :model="{value: '高分屏适配图片'}"></ih3>
     <section>
       <div class="lvmama-logo lvmama-logo-retina"></div>
     </section>
@@ -38,8 +38,17 @@ only screen and (min-device-pixel-ratio: 1.5) {
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'retina'
+    name: 'retina',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 
 </script>

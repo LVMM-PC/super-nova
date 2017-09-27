@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>NAV SCROLL</h1>
+    <ih1 :model="{value: 'NAV SCROLL'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <div>
       <ul>
         <li>
@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <h2>预览</h2>
+    <ih2 :model="{value: '预览'}"></ih2>
 
     <div class="main_all">
       <div class="fixed_parent" id="nav1">
@@ -81,8 +81,8 @@
 
     </div>
 
-    <h2>配置</h2>
-    <h3>JavaScript</h3>
+    <ih2 :model="{value: '配置'}"></ih2>
+    <ih3 :model="{value: 'JavaScript'}"></ih3>
     <pre><code class="js">//主导航
 nova.navScroll({
     fixedObj: $(".js_fixed"),
@@ -129,7 +129,7 @@ nova.navScroll({
     }
 });
 </code></pre>
-    <h3>HTML</h3>
+    <ih3 :model="{value: 'HTML'}"></ih3>
     <pre><code class="html">&lt;div class=&quot;main_all&quot;&gt;
   &lt;div class=&quot;fixed_parent&quot; id=&quot;nav1&quot;&gt;
     &lt;ul class=&quot;fixed_ul js_fixed&quot;&gt;
@@ -207,8 +207,17 @@ nova.navScroll({
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'navScroll'
+    name: 'navScroll',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
   require('script-loader!../../../static/js/nav-scroll')
   require('script-loader!../../../static/doc/nav-scroll')

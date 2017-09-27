@@ -2,8 +2,8 @@
 
   <div id="everything">
 
-    <h1>Calendar</h1>
-    <h2>4个月日历</h2>
+    <ih1 :model="{value: 'Calendar'}"></ih1>
+    <ih2 :model="{value: '4个月日历'}"></ih2>
 
     <div class="section">
       <div>
@@ -20,8 +20,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'setting'
+    name: 'setting',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
   // require('script-loader!../../../../static/doc/calendar-month.js')
 </script>

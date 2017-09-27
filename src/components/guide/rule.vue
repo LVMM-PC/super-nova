@@ -1,11 +1,11 @@
 <template>
   <div id="everything">
 
-    <h1>Rule</h1>
+    <ih1 :model="{value: 'Rule'}"></ih1>
 
-    <h2>Github版本规范</h2>
+    <ih2 :model="{value: 'Github版本规范'}"></ih2>
     <section>
-      <h3>驴妈妈PC开发规范</h3>
+      <ih3 :model="{value: '驴妈妈PC开发规范'}"></ih3>
       <a target="_blank" href="https://github.com/LVMM-PC/fed-style-guide">
         https://github.com/LVMM-PC/fed-style-guide
       </a>
@@ -53,7 +53,7 @@ dev
 └── README.md
 </code></pre>
 
-      <h3>目录、文档结构</h3>
+      <ih3 :model="{value: '目录、文档结构'}"></ih3>
       <ol>
         <li>文件和目录名只能包含 (小写字母、数字、以及连接符)[a-z\d-]，并以英文字母开头</li>
         <li>首选合适的英文单词 </li>
@@ -84,8 +84,8 @@ dev
           </ul>
         </li>
       </ol>
-      <h3>常用词命名统一表</h3>
-      <h3>规则：</h3>
+      <ih3 :model="{value: '常用词命名统一表'}"></ih3>
+      <ih3 :model="{value: '规则：'}"></ih3>
 
 
     </section>
@@ -93,7 +93,7 @@ dev
     <h2 id="html">HTML书写规范</h2>
     <section>
 
-      <h3>* 第一行统一使用HTML5标准：&lt;!DOCTYPE html&gt;</h3>
+      <ih3 :model="{value: '* 第一行统一使用HTML5标准：&lt;!DOCTYPE html&gt;'}"></ih3>
       <p>HTML5 头部声明简单有效，故在每个HTML页面强制执行此标准模式。</p>
       <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -109,7 +109,7 @@ dev
 &lt;/html&gt;
 </code></pre>
 
-      <h3>Meta 的使用：（需根据具体项目选择）参考 cool-head</h3>
+      <ih3 :model="{value: 'Meta 的使用：（需根据具体项目选择）参考 cool-head'}"></ih3>
       <ul>
         <li><a target="_blank" href="https://github.com/webcoding/cool-head">cool-head</a></li>
         <li><code>&lt;img&gt;</code> 标签默认缺省格式：<code>&lt;img src="xxx.png" alt="缺省时文字" /&gt;</code> 避免出现 <a
@@ -129,7 +129,7 @@ dev
         <li>避免使用 <code>style="xxx:xxx;"</code> 的内联样式表</li>
         <li>特殊符号使用参考 <a target="_blank" href="http://www.w3school.com.cn/html/html_entities.asp">HTML 符号实体</a></li>
       </ul>
-      <h3>HTML 书写规范</h3>
+      <ih3 :model="{value: 'HTML 书写规范'}"></ih3>
       <ul>
         <li>无特殊说明，编码统一为utf-8；</li>
       </ul>
@@ -148,7 +148,7 @@ dev
         </li>
       </ul>
 
-      <h3>书写规范</h3>
+      <ih3 :model="{value: '书写规范'}"></ih3>
       <ul>
         <li>使用四个空格的 soft-tabs 缩进</li>
         <li><code>body</code> 里应每层嵌套元素缩进一次（4个空格）</li>
@@ -156,10 +156,10 @@ dev
         <li>不要自闭元素包括一个斜线</li>
       </ul>
 
-      <h3>实用大于语义</h3>
+      <ih3 :model="{value: '实用大于语义'}"></ih3>
       <p>努力保持HTML的标准和语义，但不要牺牲实用性。用最少的复杂度尽可能少的标签实现需求。</p>
 
-      <h3>属性顺序</h3>
+      <ih3 :model="{value: '属性顺序'}"></ih3>
       <p>HTML 属性应该遵循特定的顺序，以便能更易阅读代码。</p>
       <ul>
         <li>class</li>
@@ -177,7 +177,7 @@ dev
       <p>外部CSS引用，必须使用如下格式( rel 在前，href 在后，无 type="text/css" 及 charset )：</p>
       <pre><code>&lt;link rel="stylesheet" href="http://pic.lvmama.com/styles/v3/combo.css" &gt;
 </code></pre>
-      <h3>CSS 注意事项</h3>
+      <ih3 :model="{value: 'CSS 注意事项'}"></ih3>
       <ul>
         <li>无特殊说明，编码统一为utf-8；</li>
         <li>
@@ -194,7 +194,7 @@ dev
         <li>代码缩进与格式：请参照以下 CSS 书写规范；</li>
       </ul>
 
-      <h3>CSS 书写规范</h3>
+      <ih3 :model="{value: 'CSS 书写规范'}"></ih3>
       <p>以下书写规范针对组件开发使用，非组件书写格式建议使用单行式排版。</p>
       <ul>
         <li>使用四个空格的 soft-tabs 缩进</li>
@@ -262,7 +262,7 @@ dev
       <p>常见的CSS术语，请参见 <a target="_blank" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a>
         on Wikipedia.</p>
 
-      <h3>属性顺序</h3>
+      <ih3 :model="{value: '属性顺序'}"></ih3>
       <pre><code>.declaration-order {
     /* Positioning 定位 */
     position: absolute;
@@ -297,7 +297,7 @@ dev
       <p>相关属性应放在一起，将定位与盒模型属性写在最前面，其次是排版和视觉效果的属性。</p>
       <p>关于属性顺序的完整列表，请参考 <a target="_blank" href="http://twitter.github.com/recess">Recess</a>.</p>
 
-      <h3>格式化例外</h3>
+      <ih3 :model="{value: '格式化例外'}"></ih3>
       <p>某些情况下，这是有道理的，稍微偏离默认的 <a href="#css">语法</a>.</p>
 
       <h4>前缀属性</h4>
@@ -332,7 +332,7 @@ dev
 .icon-account   { background-position: 0 -40px; }
 </code></pre>
 
-      <h3>可读性</h3>
+      <ih3 :model="{value: '可读性'}"></ih3>
       <p>代码是由人来书写和维护的。确保你的代码有很好的注释描述，以便他人使用。</p>
 
       <h4>注释</h4>
@@ -393,7 +393,7 @@ dev
 .tweet .avatar { ... }
 </code></pre>
 
-      <h3>组织</h3>
+      <ih3 :model="{value: '组织'}"></ih3>
       <ul>
         <li>组织代码段的组成部分</li>
         <li>指定一个一致的注释层次结构</li>
@@ -406,7 +406,7 @@ dev
 
     <h2 id="javascript">JavaScript 编码风格</h2>
     <section>
-      <h3>1.1 缩进层级</h3>
+      <ih3 :model="{value: '1.1 缩进层级'}"></ih3>
       <p>每一行的层级由4个空格组成，避免使用制表符（Tab）进行缩进</p>
       <p>Bad example:</p>
       <pre><code>if (true) {
@@ -418,7 +418,7 @@ dev
     doSomething();
 }
 </code></pre>
-      <h3>1.2 行的长度</h3>
+      <ih3 :model="{value: '1.2 行的长度'}"></ih3>
       <p>每行长度不应该超过80个字符。如果一行多于80个字符，应当在一个运算符（逗号，加号等）后换行。下一行应当增加两级缩进（8个字符）</p>
       <p>Bad example:</p>
       <pre><code>doSomething(argument1, argument2, argument3, argument4,
@@ -431,7 +431,7 @@ doSomething(argument1, argument2, argument3, argument4
       <pre><code>doSomething(argument1, argument2, argument3, argument4,
         argument5);
 </code></pre>
-      <h3>1.3 原始值</h3>
+      <ih3 :model="{value: '1.3 原始值'}"></ih3>
       <p>字符串应当始终使用双引号（避免使用单引号）且保持一行。避免在字符串中使用斜线另起一行。（如果一行放不下请用+连接）。</p>
       <p>Bad example:</p>
       <pre><code>//不好的写法：单引号
@@ -518,7 +518,7 @@ if (variable == undefined){
     doSomething();
 }
 </code></pre>
-      <h3>1.4 运算符间距</h3>
+      <ih3 :model="{value: '1.4 运算符间距'}"></ih3>
       <p>二元运算符前后必须使用一个空格来保持表达式的整洁。操作符包括赋值运算符合逻辑运算符。</p>
       <p>Bad example:</p>
       <pre><code>//不好的写法： 丢失了空格
@@ -535,7 +535,7 @@ if (found && (count > 10)){
     doSomething();
 }
 </code></pre>
-      <h3>1.5 括号间距</h3>
+      <ih3 :model="{value: '1.5 括号间距'}"></ih3>
       <p>当使用括号时，紧接左括号之后和紧接右括号之前不应该有空格</p>
       <p>Bad example:</p>
       <pre><code>var found = ( values[i] === item );
@@ -551,7 +551,7 @@ if (found && (count > 10)){
     doSomething();
 }
 </code></pre>
-      <h3>1.6 对象直接量</h3>
+      <ih3 :model="{value: '1.6 对象直接量'}"></ih3>
       <p>对象直接应当使用如下格式</p>
       <ul>
         <li>起始做花括号应当同表达式保持一行</li>
@@ -602,7 +602,7 @@ doSomething({ key1: value1, key2: value2});
     key2: value2
 });
 </code></pre>
-      <h3>1.7 注释</h3>
+      <ih3 :model="{value: '1.7 注释'}"></ih3>
       <p>频繁地使用注释有助于他人理解你的代码。如下情况应当使用注释。</p>
       <ul>
         <li>代码晦涩难懂。</li>
@@ -1291,8 +1291,17 @@ try {
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'button'
+    name: 'button',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

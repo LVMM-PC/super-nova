@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Validate</h1>
+    <ih1 :model="{value: 'Validate'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <section>
       <ul>
         <li>
@@ -12,12 +12,12 @@
       </ul>
     </section>
 
-    <h2>配置</h2>
+    <ih2 :model="{value: '配置'}"></ih2>
     <div>
       <h3><a href="/components/validate/setting" target="_blank">配置文档</a></h3>
     </div>
 
-    <h2>预览</h2>
+    <ih2 :model="{value: '预览'}"></ih2>
 
     <h3>
 
@@ -378,8 +378,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'validate'
+    name: 'validate',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 
   require('script-loader!../../../static/js/validate')

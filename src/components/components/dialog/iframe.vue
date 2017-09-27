@@ -20,8 +20,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'iframe'
+    name: 'iframe',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
   require('script-loader!../../../../static/js/dialog')
   require('script-loader!../../../../static/doc/dialog')

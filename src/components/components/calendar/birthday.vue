@@ -2,9 +2,9 @@
 
   <div id="everything">
 
-    <h1>Calendar</h1>
+    <ih1 :model="{value: 'Calendar'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
 
     <div>
       <ul>
@@ -20,9 +20,9 @@
       </ul>
     </div>
 
-    <h2>实例</h2>
+    <ih2 :model="{value: '实例'}"></ih2>
 
-    <h3>前台日历控件浮层－出生日期</h3>
+    <ih3 :model="{value: '前台日历控件浮层－出生日期'}"></ih3>
 
     <div>
       <input type="text" id="birthdayInput" readonly="readonly">
@@ -32,7 +32,7 @@
       <a href="/components/calendar/birthday/home" target="_blank">调用文档</a>
     </p>
 
-    <h3>VST后台区间日历控件</h3>
+    <ih3 :model="{value: 'VST后台区间日历控件'}"></ih3>
     <div>
       <input type="text" class="vstInput" readonly="readonly">
       <span class="vstText"></span>
@@ -43,7 +43,7 @@
       <a href="/components/calendar/birthday/vst" target="_blank">调用文档</a>
     </p>
 
-    <h3>VST后台区间日历时间控件</h3>
+    <ih3 :model="{value: 'VST后台区间日历时间控件'}"></ih3>
     <div>
 
       <input type="text" class="vstHasTimeInput" readonly="readonly">
@@ -60,8 +60,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'setting'
+    name: 'setting',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

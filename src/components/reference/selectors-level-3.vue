@@ -1,7 +1,7 @@
 <template>
   <div id="everything">
 
-    <h1>Selectors Level 3</h1>
+    <ih1 :model="{value: 'Selectors Level 3'}"></ih1>
 
     <blockquote>
       参考文档：
@@ -43,8 +43,17 @@ LI.red.level    /* a=0 b=2 c=1 -> specificity =  21 */
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'home'
+    name: 'selectorsLevel3',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

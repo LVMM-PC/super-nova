@@ -1,11 +1,7 @@
 <template>
-  <div id="everything">
-
-    <ih1 :model="{value: '参考文档'}"></ih1>
-    <div>
-      <div class="super-nova-logo-big">
-        <div class="svg">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+  <div class="super-nova-logo-big">
+    <div class="svg">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
 <g>
 	<g>
@@ -23,27 +19,14 @@
 	</g>
 </g>
 </svg>
-        </div>
-        <em>NOVA</em>
-      </div>
-      <p>点击左侧导航开始探索吧</p>
     </div>
-
+    <em>NOVA</em>
   </div>
 </template>
 
 <script>
-  import ih1 from '@/components/ih1'
-  import ih2 from '@/components/ih2'
-  import ih3 from '@/components/ih3'
-
   export default {
-    name: 'home',
-    components: {
-      ih1,
-      ih2,
-      ih3
-    }
+    name: 'bigLogo'
   }
 </script>
 

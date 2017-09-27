@@ -5,17 +5,33 @@ $(function () {
   var $document = $(document)
   var $window = $(window)
   var SCROLL_DELAY = 16
+  var HEADER_MARGIN_TOP = 0
 
   var navigationSingle = {
     init: function () {
 
-      var $headers = $('#everything>:header,#everything>section>:header')
+      var $headers = $('#everything>:header,#everything>section>:header,#everything>header>:header')
       this.$headers = $headers
 
       this.renderNav()
       this.highlight()
       this.writeHeaderTop()
       this.bindEvent()
+      this.scrollToHash()
+    },
+    scrollToHash: function () {
+      var hash = window.location.hash
+      if (!hash) {
+        return
+      }
+      var $location = $(hash)
+      if ($location.length === 0) {
+        return
+      }
+      setTimeout(function () {
+        var top = $location.offset().top - HEADER_MARGIN_TOP
+        $('html,body').stop().scrollTop(top)
+      }, 0)
     },
     bindEvent: function () {
       var $headers = this.$headers
@@ -32,7 +48,7 @@ $(function () {
         var $this = $(this)
         var index = $this.index()
         var $header = $headers.eq(index)
-        var top = $header.offset().top
+        var top = $header.offset().top - HEADER_MARGIN_TOP
         $('html,body').stop().animate({
           'scrollTop': top
         }, 200, function () {
@@ -68,6 +84,22 @@ $(function () {
         }, SCROLL_DELAY)
       })
 
+      // $document.on('click', '.i-header a', function (e) {
+      //   e.preventDefault()
+      //   var $this = $(this)
+      //   var hash = $this.attr('href')
+      //   console.log(hash)
+      //
+      //   console.log(window.location)
+      //   history.replaceState(null, document.title, window.location.origin + window.location.pathname + hash)
+      //
+      //   var top = $this.parent().offset().top - HEADER_MARGIN_TOP
+      //
+      //   $('html,body').stop().animate({
+      //     'scrollTop': top
+      //   }, 200)
+      // })
+
       $('.super-toolbar .top').on('click', function (e) {
         $('html,body').stop().animate({
           'scrollTop': 0
@@ -82,9 +114,10 @@ $(function () {
 
       for (var i = 0; i < size; i++) {
         var $header = $headers.eq(i)
+        var top = $header.offset().top - HEADER_MARGIN_TOP
         headerTopList.push({
           $header: $header,
-          top: $header.offset().top
+          top: top
         })
       }
 
@@ -121,7 +154,7 @@ $(function () {
         $navigationLinkList.removeClass('active')
         var $active = $navigationLinkList.eq(lo)
         $active.addClass('active')
-        var navigationTop = $active.position().top
+        var navigationTop = $active.position().top - HEADER_MARGIN_TOP
         var st = this.$navigation.scrollTop()
         var newTop = navigationTop + st - $window.height() / 2
         this.$navigation.scrollTop(newTop)
@@ -148,7 +181,9 @@ $(function () {
 
         $header.data('header-index', i)
         var tagName = $header.get(0).tagName.toLocaleLowerCase()
-        $tempA = $('<a title="' + $header.text() + '" class="' + tagName + '">' + $header.text() + '</a>')
+        var text = $header.text()
+        text = text.replace('¶', '')
+        $tempA = $('<a title="' + text + '" class="' + tagName + '">' + text + '</a>')
         $links.append($tempA)
       }
 

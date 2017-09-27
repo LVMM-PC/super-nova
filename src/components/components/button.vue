@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Buttons</h1>
+    <ih1 :model="{value: 'Buttons'}">Buttons</ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <div>
       <ul>
         <li>
@@ -12,11 +12,9 @@
       </ul>
     </div>
 
-    <h2>预览</h2>
+    <ih2 :model="{value: '预览'}"></ih2>
 
-    <h3>
-      超大按钮 height: 42px;
-    </h3>
+    <ih3 :model="{value: '超大按钮 height: 42px;'}"></ih3>
     <section>
       <div class="btn-group">
         <a class="btn btn-xl btn-pink">超大按钮</a>
@@ -55,9 +53,7 @@
       </div>
     </section>
 
-    <h3>
-      大型按钮 height: 36px;
-    </h3>
+    <ih3 :model="{value: '大型按钮 height: 36px;'}"></ih3>
     <section>
       <div class="btn-group">
         <a class="btn btn-lg btn-pink">大型按钮</a>
@@ -86,9 +82,7 @@
       </div>
     </section>
 
-    <h3>
-      中型按钮 height: 30px;
-    </h3>
+    <ih3 :model="{value: '中型按钮 height: 30px;'}"></ih3>
     <section>
       <div class="btn-group">
         <a class="btn btn-pink">中型按钮</a>
@@ -110,9 +104,7 @@
       </div>
     </section>
 
-    <h3>
-      小按钮 height: 26px;
-    </h3>
+    <ih3 :model="{value: '小按钮 height: 26px;'}"></ih3>
     <section>
       <div class="btn-group">
         <a class="btn btn-sm btn-pink">小按钮</a>
@@ -134,9 +126,7 @@
       </div>
     </section>
 
-    <h3>
-      超小按钮 height: 22px;
-    </h3>
+    <ih3 :model="{value: '超小按钮 height: 22px;'}"></ih3>
     <section>
       <div class="btn-group">
         <a class="btn btn-xs btn-pink">超小按钮</a>
@@ -158,7 +148,7 @@
       </div>
     </section>
 
-    <h3>按钮</h3>
+    <ih3 :model="{value: '按钮'}"></ih3>
     <section>
       <div class="btn-group">
         <button class="btn btn-pink">中型按钮</button>
@@ -169,7 +159,7 @@
       </div>
     </section>
 
-    <h3>链接</h3>
+    <ih3 :model="{value: '链接'}"></ih3>
     <section>
       <div class="btn-group">
         <a class="btn btn-pink">中型按钮</a>
@@ -180,7 +170,7 @@
       </div>
     </section>
 
-    <h3>行内</h3>
+    <ih3 :model="{value: '行内'}"></ih3>
     <section>
       <div class="btn-group">
         <span class="btn btn-pink">中型按钮</span>
@@ -191,7 +181,7 @@
       </div>
     </section>
 
-    <h3>输入按钮</h3>
+    <ih3 :model="{value: '输入按钮'}"></ih3>
     <section>
       <div class="btn-group">
         <input class="btn btn-pink" type="button" value="中型按钮">
@@ -209,7 +199,7 @@
       </div>
     </section>
 
-    <h3>块级按钮</h3>
+    <ih3 :model="{value: '块级按钮'}"></ih3>
     <section>
       <div class="btn-group" style="width: 200px;">
         <a class="btn btn-block btn-pink">中型按钮</a>
@@ -232,8 +222,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'button'
+    name: 'button',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 
@@ -245,6 +244,10 @@
     background-color: #666666;
   }
 
+  .btn {
+    margin: 5px 0;
+  }
+
   .btn-pink .icon,
   .btn-orange .icon,
   .btn-blue .icon {
@@ -253,8 +256,8 @@
 
   .btn-group {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 10px;
     font-size: 0;
   }
 

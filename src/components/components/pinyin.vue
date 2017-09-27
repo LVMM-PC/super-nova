@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Pinyin</h1>
+    <ih1 :model="{value: 'Pinyin'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <div>
       <ul>
         <li>
@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <h2>配置</h2>
+    <ih2 :model="{value: '配置'}"></ih2>
     <pre>
 <code class="js">var py = novaPinyin();
 
@@ -37,27 +37,27 @@ py.getFuxingPinyin("令狐冲");
 // linghu
 </code></pre>
 
-    <h2>预览</h2>
-    <h3>汉字转拼音：不支持多音字</h3>
+    <ih2 :model="{value: '预览'}"></ih2>
+    <ih3 :model="{value: '汉字转拼音：不支持多音字'}"></ih3>
     <div class="section">
       <input type="text" class="pinyin-input" value="我知道那些夏天就像青春一样回不来">
       <p class="pinyin-result">wo zhi dao na xie xia tian jiu xiang qing chun yi yang hui bu lai</p>
     </div>
 
-    <h3>汉字转拼音：支持多音字</h3>
+    <ih3 :model="{value: '汉字转拼音：支持多音字'}"></ih3>
     <div class="section">
       <input type="text" class="pinyin-polyphone-input" value="所以你好再见">
       <p class="pinyin-polyphone-result">
         [{"所":"suo"},{"以":"yi"},{"你":"ni"},{"好":"hao"},{"再":"zai"},{"见":"xian,jian"}]</p>
     </div>
 
-    <h3>复姓测试</h3>
+    <ih3 :model="{value: '复姓测试'}"></ih3>
     <div class="section">
       <input type="text" class="fuxing-input" value="令狐冲">
       <p class="fuxing-result">复姓：linghu</p>
     </div>
 
-    <h3>姓名处理（支持多音字选择）</h3>
+    <ih3 :model="{value: '姓名处理（支持多音字选择）'}"></ih3>
     <div class="section">
       <input type="text" class="name-input" value="令狐冲">
       <p>
@@ -70,8 +70,17 @@ py.getFuxingPinyin("令狐冲");
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'pinyin'
+    name: 'pinyin',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 
   require('script-loader!../../../static/js/pinyin')

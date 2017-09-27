@@ -1,7 +1,7 @@
 <template>
   <div id="everything">
 
-    <h1>公共模块</h1>
+    <ih1 :model="{value: '公共模块'}"></ih1>
     <h2 class="red" id="header1">引入公共头部</h2>
     <p><strong>CSS：</strong> <a href="http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css" target="_blank">http://pic.lvmama.com/min/index.php?f=/styles/v6/header_new.css</a>
     </p>
@@ -72,8 +72,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'button'
+    name: 'common',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 

@@ -64,7 +64,7 @@
               name: 'Pinyin', value: 'Pinyin<small>拼音</small>', link: 'pinyin'
             },
             {
-              name: 'NavScroll', value: 'Nav scroll<i></i><small>导航跟随</small>', link: 'nav-scroll'
+              name: 'NavScroll', value: 'Nav scroll<small>导航跟随</small>', link: 'nav-scroll'
             }
           ]
         }

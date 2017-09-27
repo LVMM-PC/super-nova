@@ -1,9 +1,9 @@
 <template>
   <div id="everything">
 
-    <h1>Icons</h1>
+    <ih1 :model="{value: 'Icons'}"></ih1>
 
-    <h2>引用</h2>
+    <ih2 :model="{value: '引用'}"></ih2>
     <section>
       <ul>
         <li>
@@ -12,9 +12,9 @@
       </ul>
     </section>
 
-    <h2>预览</h2>
+    <ih2 :model="{value: '预览'}"></ih2>
 
-    <h3>警示类图标</h3>
+    <ih3 :model="{value: '警示类图标'}"></ih3>
     <section>
 
       <h4>48*48</h4>
@@ -230,8 +230,17 @@
 </template>
 
 <script>
+  import ih1 from '@/components/ih1'
+  import ih2 from '@/components/ih2'
+  import ih3 from '@/components/ih3'
+
   export default {
-    name: 'icon'
+    name: 'icon',
+    components: {
+      ih1,
+      ih2,
+      ih3
+    }
   }
 </script>
 
