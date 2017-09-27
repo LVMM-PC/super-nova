@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-input {
-  *position: relative;
-  *top: -3px;
-}
-
 .nova-tip-form {
   display: inline-block;
   padding: 6px 10px 6px 19px;
