@@ -1,5 +1,5 @@
 <template>
-  <section class="super-main">
+  <section class="super-main super-main-404">
     <div class="super-detail">
       <div id="everything">
         <h1>错误</h1>
@@ -44,13 +44,15 @@
 </script>
 
 <style lang="scss">
-  .super-nova-logo-big {
-    em {
-      font-size: 200px;
-      line-height: 1em;
-    }
-    .logo-main {
-      animation: none;
+  .super-main-404 {
+    .super-nova-logo-big {
+      em {
+        font-size: 200px;
+        line-height: 1em;
+      }
+      .logo-main {
+        animation: none;
+      }
     }
   }
 
