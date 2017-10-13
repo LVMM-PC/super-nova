@@ -65,6 +65,9 @@
             },
             {
               name: 'NavScroll', value: 'Nav scroll<small>导航跟随</small>', link: 'nav-scroll'
+            },
+            {
+              name: 'map', value: 'Map<small>地图</small>', link: 'map'
             }
           ]
         }
