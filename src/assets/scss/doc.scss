@@ -49,7 +49,7 @@ body {
     transition: all 200ms;
     &.hover {
       color: #2299ee;
-      background-color: rgba(34, 158, 238, 0.2);
+      //background-color: rgba(34, 158, 238, 0.2);
     }
   }
   p {
@@ -110,7 +110,7 @@ td {
 
 .navigation {
   box-sizing: border-box;
-  padding: 10px 10px 30px 10px;
+  padding: 30px 10px 30px 20px;
   line-height: 20px;
   z-index: 1;
   position: sticky;
@@ -118,6 +118,7 @@ td {
   max-height: 500px;
   overflow: auto;
   a {
+    line-height: 2;
     border-radius: 0;
     display: block;
     cursor: pointer;
@@ -125,7 +126,7 @@ td {
     &:hover,
     &.active {
       color: #29e;
-      background: rgba(34, 158, 238, 0.2)
+      //background: rgba(34, 158, 238, 0.2)
     }
   }
 
@@ -152,37 +153,32 @@ td {
     @include ellipsis;
   }
   .h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 2rem;
   }
 
   .h2 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
     padding-left: 10px;
   }
 
   .h3 {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.875rem;
     padding-left: 20px;
   }
 
   .h4 {
     font-size: 0.75rem;
-    line-height: 1.25rem;
     padding-left: 30px;
   }
 
   .h5 {
     font-size: 0.75rem;
-    line-height: 1.25rem;
     padding-left: 40px;
   }
 
   .h6 {
     font-size: 0.75rem;
-    line-height: 1.25rem;
     padding-left: 50px;
   }
 
@@ -206,7 +202,7 @@ td {
   }
   a {
     color: #eee;
-    width: 30px;
+    font-size: 1.25rem;
     text-align: center;
     position: static;
     display: inline-block;
