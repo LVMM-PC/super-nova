@@ -28,10 +28,8 @@ import calendarGroupon from '@/components/components/calendar/groupon'
 import navScroll from '@/components/components/nav-scroll'
 import dialog from '@/components/components/dialog'
 import dialogIframe from '@/components/components/dialog/iframe'
-import fontFamily from '@/components/components/font-family'
 import icon from '@/components/components/icon'
 import pinyin from '@/components/components/pinyin'
-import retina from '@/components/components/retina'
 import tips from '@/components/components/tips'
 import ui from '@/components/components/ui'
 import validate from '@/components/components/validate'
@@ -42,6 +40,8 @@ import guideHome from '@/components/guide/home'
 import guideCommon from '@/components/guide/common'
 import guideRule from '@/components/guide/rule'
 import guideLoadingIcon from '@/components/guide/loading-icon'
+import retina from '@/components/guide/retina'
+import fontFamily from '@/components/guide/font-family'
 
 import reference from '@/components/reference'
 import referenceHome from '@/components/reference/home'
@@ -89,10 +89,8 @@ export default new Router({
         {path: 'calendar/groupon', component: calendarGroupon},
         {path: 'nav-scroll', component: navScroll},
         {path: 'dialog', component: dialog},
-        {path: 'font-family', component: fontFamily},
         {path: 'icon', component: icon},
         {path: 'pinyin', component: pinyin},
-        {path: 'retina', component: retina},
         {path: 'tips', component: tips},
         {path: 'ui', component: ui},
         {path: 'validate', component: validate},
@@ -106,7 +104,9 @@ export default new Router({
         {path: '', component: guideHome},
         {path: 'common', component: guideCommon},
         {path: 'rule', component: guideRule},
-        {path: 'loading-icon', component: guideLoadingIcon}
+        {path: 'loading-icon', component: guideLoadingIcon},
+        {path: 'font-family', component: fontFamily},
+        {path: 'retina', component: retina}
       ]
     },
     {

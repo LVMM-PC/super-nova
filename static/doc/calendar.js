@@ -824,8 +824,10 @@ $(function () {
         hasTime: true,
         dayPrev: -1,
         monthPrev: -1,
-        minLimit: "1990-06",
-        maxLimit: "2017-06"
+        dayNext: -1,
+        monthNext: -1,
+        // minLimit: "1990-06",
+        // maxLimit: "2050-06"
     });
 
     $(".bigChange").on("click", function () {

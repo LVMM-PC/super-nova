@@ -69,19 +69,6 @@
           ]
         }
       ]
-    },
-    {
-      name: 'Solution',
-      value: '解决方案',
-      path: 'components',
-      children: [
-        {
-          name: 'Font Family', value: 'Font family<small>字体</small>', link: 'font-family'
-        },
-        {
-          name: 'Retina', value: 'Retina<small>高分屏</small>', link: 'retina'
-        }
-      ]
     }
   ]
   export default {

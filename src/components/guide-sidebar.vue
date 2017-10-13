@@ -17,21 +17,27 @@
       children: [
         {
           name: 'Common',
-          value: '公共模块',
+          value: 'Common<small>公共模块</small>',
           path: 'common',
           link: 'common'
         },
         {
           name: 'Rule',
-          value: '规范',
+          value: 'Rule<small>规范</small>',
           path: 'rule',
           link: 'rule'
         },
         {
           name: 'loading-icon',
-          value: 'loading图标',
+          value: 'Loading Icon<small>加载图标</small>',
           path: 'loading-icon',
           link: 'loading-icon'
+        },
+        {
+          name: 'Font Family', value: 'Font family<small>字体</small>', link: 'font-family'
+        },
+        {
+          name: 'Retina', value: 'Retina<small>高分屏</small>', link: 'retina'
         }
       ]
     }
