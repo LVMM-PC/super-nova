@@ -405,7 +405,8 @@ $(function () {
         trigger: "#floatBigBimonthlyInput",
         triggerEvent: "click",
         sourceFn: fillData,
-        bimonthly: true
+        bimonthly: true,
+        zIndex: 2
     });
 
     var floatBimonthlyCascadingCalendar = lv.calendar({
@@ -432,7 +433,8 @@ $(function () {
             console.log(dayOfWeek)
             console.log(this.options.trigger)
 
-        }
+        },
+        zIndex: 2
     });
 
     $("#floatBimonthlyCascadingBtn").on("click", function () {
@@ -475,7 +477,8 @@ $(function () {
         template: "small",
         wrapClass: "ui-calendar-orange",
         cascading: true,
-        showNumberOfDays: true
+        showNumberOfDays: true,
+        zIndex: 2
     });
 
     //分销
@@ -485,7 +488,8 @@ $(function () {
         triggerEvent: "click",
         sourceFn: distributionFillData,
         bimonthly: true,
-        wrapClass: "ui-calendar-blue"
+        wrapClass: "ui-calendar-blue",
+        zIndex: 2
     });
 
     //缓存
@@ -760,7 +764,8 @@ $(function () {
         triggerEvent: "click",
         sourceFn: fillData,
         bimonthly: true,
-        wrapClass: "ui-calendar-groupon"
+        wrapClass: "ui-calendar-groupon",
+        zIndex: 2
     });
 
     //生日日历
@@ -856,7 +861,8 @@ $(function () {
         cascading: true,  //级联日历
         autoRender: false,
         triggerEvent: "click",
-        cascadingEndNotShowStart: true
+        cascadingEndNotShowStart: true,
+        zIndex: 2
     });
 
     //16 今天起几日不可选
