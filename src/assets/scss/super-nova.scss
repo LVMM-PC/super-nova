@@ -203,7 +203,7 @@ a {
     overflow-x: hidden;
   }
   a {
-    font-size: 1.25rem;
+    font-size: 0.75rem;
     color: #333;
     border-radius: 0;
     &:hover {
@@ -230,21 +230,26 @@ a {
   }
   .list > li {
     > .super-sidebar-toggle {
-      padding-left: 10px;
-      height: 40px;
-      line-height: 40px;
+      padding-left: 20px;
+      height: 30px;
+      line-height: 30px;
+      display: none;
     }
     font-size: 1.25rem;
   }
   .list > li > ul > li {
     > .super-sidebar-toggle {
-      padding-left: 20px;
+      padding-left: 25px;
+      height:32px;
+      line-height: 32px;
+      margin-top:10px;
     }
-    font-size: 1rem;
+    font-size: 0.875rem;
+    color:rgba(0,0,0,.65);
   }
   .list > li > ul > li > ul > li {
     > .super-sidebar-toggle {
-      padding-left: 30px;
+      padding-left: 40px;
     }
     font-size: 1rem;
   }
@@ -254,8 +259,8 @@ a {
   display: flex;
   align-items: center;
   position: relative;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   width: 200px;
   box-sizing: border-box;
   small {
