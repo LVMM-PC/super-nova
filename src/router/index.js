@@ -27,6 +27,7 @@ import calendarDistribution from '@/components/components/calendar/distribution'
 import calendarGroupon from '@/components/components/calendar/groupon'
 import navScroll from '@/components/components/nav-scroll'
 import dialog from '@/components/components/dialog'
+import map from '@/components/components/map'
 import dialogIframe from '@/components/components/dialog/iframe'
 import icon from '@/components/components/icon'
 import pinyin from '@/components/components/pinyin'
@@ -89,6 +90,7 @@ export default new Router({
         {path: 'calendar/groupon', component: calendarGroupon},
         {path: 'nav-scroll', component: navScroll},
         {path: 'dialog', component: dialog},
+        {path: 'map', component: map},
         {path: 'icon', component: icon},
         {path: 'pinyin', component: pinyin},
         {path: 'tips', component: tips},
