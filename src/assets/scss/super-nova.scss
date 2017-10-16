@@ -98,6 +98,8 @@ input[type="text"]{
   outline:none;
 }
 
+
+
 h1,
 h2,
 h3,
@@ -319,10 +321,9 @@ a {
 //<editor-fold desc="footer">
 .super-footer {
   display: flex;
-  font-size: 16px;
-  padding: 0 50px 100px 50px;
+  font-size: 14px;
+  padding: 30px;
   background-color: #fff;
-  height: 80px;
   p {
     display: flex;
     align-items: center;
