@@ -9,8 +9,8 @@
         <li v-bind:class="{active:this.$route && this.$route.path === '/components'}">
           <a href="/components">组件</a>
         </li>
-        <li v-bind:class="{active:this.$route && this.$route.path === '/guide'}">
-          <a href="/guide">规范</a>
+        <li v-bind:class="{active:this.$route && this.$route.path === '/guide/rule'}">
+          <a href="/guide/rule">规范</a>
         </li>
       </ul>
     </header>

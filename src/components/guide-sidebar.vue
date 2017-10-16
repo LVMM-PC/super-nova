@@ -16,16 +16,16 @@
       path: 'guide',
       children: [
         {
-          name: 'Common',
-          value: 'Common<small>公共模块</small>',
-          path: 'common',
-          link: 'common'
-        },
-        {
           name: 'Rule',
           value: 'Rule<small>规范</small>',
           path: 'rule',
           link: 'rule'
+        },
+        {
+          name: 'Common',
+          value: 'Common<small>公共模块</small>',
+          path: 'common',
+          link: 'common'
         },
         {
           name: 'loading-icon',
