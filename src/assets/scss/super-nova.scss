@@ -139,14 +139,24 @@ a {
     box-sizing: border-box;
     border-radius: 5px;
     &:hover {
-      background-color: rgba(34, 158, 238, 0.4);
+      .logo-main {
+        transform-origin: 100px;
+        animation: logo-rotate linear 6s infinite reverse;
+      }
+    }
+  }
+  .svg {
+    margin-right: 10px;
+    svg {
+      width: 40px;
+      height: 40px;
     }
   }
   .super-svg {
     background-image: url(assets/img/nova-logo.svg);
     background-size: cover;
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
   }
   em {
