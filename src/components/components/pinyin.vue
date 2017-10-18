@@ -88,6 +88,33 @@ py.getFuxingPinyin("令狐冲");
 </script>
 
 <style lang="scss">
-
+    .pinyin-select-part {
+      display: none;
+      position: absolute;
+      width: 240px;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+    .pinyin-select-part dl {
+      overflow: hidden;
+      padding: 5px 20px;
+      font-size: 14px;
+    }
+    .pinyin-select-part dd, .pinyin-select-part dt {
+      float: left;
+    }
+    .pinyin-select-part dt {
+      width: 40px;
+    }
+    .pinyin-select-part dd {
+      width: 160px;
+    }
+    .radio {
+      margin-top: 4px;
+    }
+    .radio-label {
+      display: inline-block;
+      width: 70px;
+    }
 
 </style>
