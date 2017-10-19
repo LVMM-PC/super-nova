@@ -102,6 +102,7 @@ py.getFuxingPinyin("令狐冲");
     }
     .pinyin-select-part dd, .pinyin-select-part dt {
       float: left;
+      margin: 0;
     }
     .pinyin-select-part dt {
       width: 40px;
