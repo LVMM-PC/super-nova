@@ -48,7 +48,9 @@
     Factory.defaults = {
         target: "body",
         template: template,
-        radioClassName: ''
+        radioClassName: '',
+        selectOpenCallback: null,
+        zIndex: null
     };
 
     function UI(options) {
@@ -80,6 +82,8 @@
 
         init: function (options) {
             this.options = options;
+            this.selectOpenCallback = options.selectOpenCallback;
+
             this.defaults = Factory.defaults;
             this.bindEvent();
         },
@@ -159,6 +163,10 @@
                 var $dropdown = $label.find(".nova-select-dropdown");
                 $dropdown.data("label", $label);
                 $label.data("dropdown", $dropdown);
+
+                if (self.options.zIndex) {
+                    $dropdown.css("zIndex", self.options.zIndex)
+                }
             })
 
         },
@@ -373,7 +381,8 @@
 
         },
 
-        selectClickHandler: function () {
+        selectClickHandler: function (e) {
+            var self = e.data.self;
             var $this = $(this);
             var $select = $this.parent(".nova-select");
             var $label = $select.parents(".nova-select-label");
@@ -403,7 +412,15 @@
                     top: top + height,
                     left: left,
                     width: width
-                }).show()
+                }).show();
+
+                if (self.selectOpenCallback) {
+                    self.selectOpenCallback.call(self, {
+                        $select: $select,
+                        $dropdown: $dropdown,
+                        $label: $label
+                    })
+                }
             } else {
                 $select.append($dropdown.hide());
             }

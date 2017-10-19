@@ -21,8 +21,7 @@
         speed: 300, //点击导航页面的滚动速度
         zIndex: 9, //导航浮动层级
         callback: null, //页面滚动回调
-        endCallback: null, //滚完最后一个模块后的回调
-        hideError: false  //隐藏错误提示
+        endCallback: null //滚完最后一个模块后的回调
     };
 
     //创建新的对象
@@ -72,9 +71,7 @@
                     //如果没有找到id模块，当前导航高亮状态默认为前一个和后一个之间的位置时高亮
                     navTopArr.push({'idName': '', 'top': oldTopAll + 1, 'index': i, 'height': 0});
                     //$navList.eq(i).remove();
-                    if(!options.hideError) {
-                      console.log('组件navScroll对应的ID：' + idName + '，未找到！');
-                    }
+                    console.log('组件navScroll对应的ID：' + idName + '，未找到！');
                 }
             }
             return navTopArr;
