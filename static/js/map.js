@@ -14,7 +14,7 @@
         mapType : 'baidu',
         mapID : null,
         pointData : [
-            {title:'北京天安门',point:{"lng":116.404,"lat":39.905},number:''}
+            {title:'北京天安门',point:{"lng":116.404,"lat":39.915},number:''}
         ],
         fullViewport : false,
         pointLine : false,
@@ -358,7 +358,7 @@
             //获取所有覆盖物的中心和最佳缩放比例
             var centerSize = this.getViewport(this.pointArr);
             setTimeout(function(){
-                map.setZoom(parseInt(centerSize.zoom)-1);
+                map.setZoom(parseInt(centerSize.zoom));
                 map.panTo(centerSize.center);
             },200);
         },
