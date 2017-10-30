@@ -13,10 +13,8 @@
     var defalt = {
         mapType : 'baidu',
         mapID : null,
-        pointData : [
-            {title:'北京天安门',point:{"lng":116.404,"lat":39.915},number:''}
-        ],
-        fullViewport : false,
+        number : '',
+        pointData : null,
         pointLine : false,
         scrollWheelZoom : true,
         showControl : true,
@@ -100,14 +98,12 @@
                                 tags = thisData.tags;
 
                             //检索的数据筛选出真正的机场、火车站、汽车站数据
-                            if (/机场/.test(results.keyword) || /车站/.test(results.keyword) || /公交/.test(results.keyword)) {
+                            if (/机场/.test(results.keyword) || /车站/.test(results.keyword)) {
                                 if ( tags && tags.length && /机场/.test(tags.join(',')) ) {
                                     resultArr.push(thisData);
                                 }else if( /火车站/.test(results.keyword) && tags && tags.length && /火车站/.test(tags.join(',')) ){
                                     resultArr.push(thisData);
                                 }else if( /汽车站/.test(results.keyword) && tags && tags.length && /汽车站/.test(tags.join(',')) ){
-                                    resultArr.push(thisData);
-                                }else if( /公交/.test(results.keyword) && tags && tags.length && /公交车站/.test(tags.join(',')) ){
                                     resultArr.push(thisData);
                                 };  
                             }else{ //其他检索
@@ -140,17 +136,15 @@
 
             //搜索多个关键字
             if (!data.distance) {
-                if ( /车站|机场/.test(data.keyArr.join(',')) ) {
-                    data.distance  =  100000; //机场车站为100公里范围内
-                }else{
-                    data.distance = 5000;//默认5公里范围内
-                };
+                data.distance = 5000;//默认5公里范围内
             };
             for (var i = 0; i < data.keyArr.length; i++) {
                 //local.search(keyArr[i]);//普通检索
-                
+                if ( /车站|机场/.test(data.keyArr.join(',')) ) {
+                    data.distance  =  100000; //机场车站为100公里范围内
+                };
                 //范围检索
-                local.searchNearby(data.keyArr[i],this.point,parseInt(data.distance));
+                local.searchNearby(data.keyArr[i],this.point,data.distance);
             };
             
             
@@ -243,9 +237,6 @@
             ComplexCustomOverlay.prototype.draw = function(){
               var map = this._map;
               var pixel = map.pointToOverlayPixel(this._point);
-              this._div.style.position = 'absolute';
-              this._div.style.width = "1px";
-              this._div.style.height  = "1px";
               this._div.style.left = pixel.x + "px";
               this._div.style.top  = pixel.y + "px";
               this._div.style.zIndex = data.zIndex;
@@ -299,10 +290,6 @@
 
 
                 
-                if (options.fullViewport) {
-                    //获取所有覆盖物的中心和最佳缩放比例
-                    this.moveCenter();    
-                };
                 
 
 
@@ -334,7 +321,9 @@
             this.overlayList(data);
 
             //获取所有覆盖物的中心和最佳缩放比例
-            this.moveCenter();
+            var centerSize = this.getViewport(this.pointArr);
+            map.setZoom(centerSize.zoom);
+            map.panTo(centerSize.center);
         },
         replaceAll: function (str, obj) {
             for (var i in obj) {
@@ -360,15 +349,6 @@
             };
             
         },
-        moveCenter:function(){
-            var map = this.map;
-            //获取所有覆盖物的中心和最佳缩放比例
-            var centerSize = this.getViewport(this.pointArr);
-            setTimeout(function(){
-                map.setZoom(parseInt(centerSize.zoom));
-                map.panTo(centerSize.center);
-            },100);
-        },
         //设置地图缩放尺寸
         setZoom:function(size){
             this.map.setZoom(size);
@@ -381,7 +361,7 @@
         getCenter:function(){
             return this.map.getCenter();
         },
-        //返回两个经纬度之间的距离，单位：米
+        //返回两个经纬度之间的距离
         getDistance:function(startPoint,endPoint){
             var sPoint = new BMap.Point(startPoint.lng,startPoint.lat),
                 ePoint = new BMap.Point(endPoint.lng,endPoint.lat);
