@@ -84,6 +84,7 @@ detailMap.options.scrollWheelZoom = false; //开启或关闭滚轮缩放
 
 
 
+
     <ih3 :model="{value: '2、覆盖物渲染示例'}"></ih3>
     <div class="section">
     <!-- 地图渲染 -->
