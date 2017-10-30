@@ -211,12 +211,12 @@
                 self.resize();
                 //显示弹窗
                 self.wrap.show();
-            }, 0);
 
-            //执行初始化完成方法
-            if (typeof options.initCallback === "function") {
-                options.initCallback.call(this);
-            }
+                //执行初始化完成方法
+                if (typeof options.initCallback === "function") {
+                    options.initCallback.call(self);
+                }
+            }, 0);
 
         },
 
@@ -438,7 +438,7 @@
             }
             if (!contentClone) {
                 //var content = this.options.content;
-                if(this._elemBack){
+                if (this._elemBack) {
                     this._elemBack();
                 }
             }
@@ -468,7 +468,7 @@
 
             var self = this;
 
-            if(this._elemBack){
+            if (this._elemBack) {
                 this._elemBack();
             }
 
@@ -699,4 +699,4 @@
         }
     }
 
-})(window, jQuery || $, window.nova || {});
+})(window, jQuery, window.nova || {});
