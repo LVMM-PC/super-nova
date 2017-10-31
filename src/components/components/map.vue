@@ -21,6 +21,14 @@
       <!-- 地图渲染 -->
 	  <div class="detail_map" id="detail_map1"></div>
     </section>
+    <pre class="mt10"><code class="css">
+/* 默认地标覆盖物CSS */
+.map_icon{ display: inline-block; background:url(http://pic.lvmama.com/img/detail/hotel/main/hotel_map.png) no-repeat 9999px 9999px;}
+.map_tip_box{ position: absolute; z-index: 8;height: 1px; }
+.map_tip_box .map_icon_position{ position: absolute; font-size: 14px; text-align: center; line-height: 22px; color: #000; left:-15px; bottom: -2px; width:30px; height:41px; background-position:-27px -51px; cursor: pointer; z-index: 2; font-size:16px;}
+.map_tip_box p{ position: absolute; left: 0; bottom: 7px;  text-overflow:ellipsis; white-space:nowrap; display: block; padding:0 10px 0 20px; height: 30px; line-height: 30px; border-radius:0 15px 15px 0; border:#999 solid 1px; color: #333; background-color: #fff; font-size: 14px; font-weight: bold;  box-shadow: 1px 1px 5px #aaa;}
+    </code></pre>
+
     <pre class="mt10"><code class="html">
 &lt;div class="detail_map" id="detail_map"&gt;&lt;/div&gt;
     </code></pre>
@@ -81,7 +89,6 @@ detailMap.options.scrollWheelZoom = false; //开启或关闭滚轮缩放
 </code></pre>
 
     </div>
-
 
 
 
@@ -218,7 +225,7 @@ $(document).on('mouseout','.map_list li',function(e){
 <pre><code>
 //查询公交路线
 detailMap2.transit({
-    id : 'map_list2', //交通详情渲染的位置
+    id : 'map_list2', //交通详情Html渲染的位置
     start : '天安门广场', //开始地点
     end : '北京大学', //目的地
     num : 0 //查询类型,0:时间最少，1：换乘最少，2：步行最少，3：不乘地铁。
@@ -239,9 +246,9 @@ detailMap2.transit({
 
 //驾车路线
 detailMap2.driving({
-    id : 'car_info_detail',
-    start : '天安门广场',
-    end : '北京大学'
+    id : 'car_info_detail', //交通详情Html渲染的位置
+    start : '天安门广场', //开始地点
+    end : '北京大学' //目的地
 });
 
 </code></pre>
@@ -259,9 +266,9 @@ detailMap2.driving({
 
 //步行路线
 detailMap2.walking({
-    id : 'walk_info_detail',
-    start : '天安门广场',
-    end : '北京大学'
+    id : 'walk_info_detail', //交通详情Html渲染的位置
+    start : '天安门广场', //开始地点
+    end : '北京大学' //目的地
 });
 
 </code></pre>
