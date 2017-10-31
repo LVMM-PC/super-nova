@@ -21,8 +21,7 @@
       <!-- 地图渲染 -->
 	  <div class="detail_map" id="detail_map1"></div>
     </section>
-    <pre class="mt10"><code class="css">
-/* 默认地标覆盖物CSS */
+    <pre class="mt10"><code class="css">/* 默认地标覆盖物CSS */
 .map_icon{ display: inline-block; background:url(http://pic.lvmama.com/img/detail/hotel/main/hotel_map.png) no-repeat 9999px 9999px;}
 .map_tip_box{ position: absolute; z-index: 8;height: 1px; }
 .map_tip_box .map_icon_position{ position: absolute; font-size: 14px; text-align: center; line-height: 22px; color: #000; left:-15px; bottom: -2px; width:30px; height:41px; background-position:-27px -51px; cursor: pointer; z-index: 2; font-size:16px;}
