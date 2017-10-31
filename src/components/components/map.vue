@@ -154,7 +154,7 @@ detailMap.search({
         <div class="map_list" style="position:absolute; right:0; top:0; width:300px;"></div>
     </div>
     <div class="section">
-<pre><code>
+<pre><code class="js" id="">
 
 var trafficHtml = '',
 	pointData = [];
@@ -174,8 +174,8 @@ for (var i = 0; i < data.length; i++) {
 detailMap.overlayLine({
     pointData: pointData, //经纬度数据，
     className : "map_tip_box2", //自定义覆盖物的className
-    template : '&lt;span class="map_icon map_icon_position">{ {number}}&lt;/span>'
-            + '&lt;p>{ {title}}&lt;span class="map_icon map_icon_arrow_b">&lt;/span>&lt;/p>' //自定义覆盖物的内容模板
+    template : '&lt;span class="map_icon map_icon_position">{{number}<i></i>}&lt;/span>'
+            + '&lt;p>{{title}<i></i>}&lt;span class="map_icon map_icon_arrow_b">&lt;/span>&lt;/p>' //自定义覆盖物的内容模板，和pointData的字段一致的数据皆可渲染。
 });
 
 //hover覆盖物地标，出现标题内容。可以针对className下的p标签做hover样式为 display: block;
