@@ -390,6 +390,9 @@
             this.pointArr = [];
             //清除所有覆盖物
             this.map.clearOverlays();
+        },
+        enableScrollWheelZoom:function(bool){
+            this.map.enableScrollWheelZoom(bool);
         }
 
     };

@@ -69,6 +69,9 @@ var detailMap = nova.map({
 
 });
 
+
+/*内置方法*/
+
 detailMap.overlayLine(data); //添加自定义覆盖物，data为覆盖物信息，具体用法参见3.2
 
 detailMap.moveTo(point); //平移视角，point对象示例：{"lng":122.43,"lat":32.04}
@@ -82,7 +85,7 @@ detailMap.getCenter(); //获取当前地图中心点的经纬度
 detailMap.getDistance(startPoint,endPoint); //获取两个经纬度之间的距离
 
 
-detailMap.options.scrollWheelZoom = false; //开启或关闭滚轮缩放
+detailMap.enableScrollWheelZoom(true); //开启或关闭滚轮缩放
 
 
 </code></pre>
