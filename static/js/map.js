@@ -13,8 +13,10 @@
     var defalt = {
         mapType : 'baidu',
         mapID : null,
-        number : '',
-        pointData : null,
+        pointData : [
+            {title:'北京天安门',point:{"lng":116.404,"lat":39.915},number:''}
+        ],
+        fullViewport : false,
         pointLine : false,
         scrollWheelZoom : true,
         showControl : true,
@@ -98,12 +100,14 @@
                                 tags = thisData.tags;
 
                             //检索的数据筛选出真正的机场、火车站、汽车站数据
-                            if (/机场/.test(results.keyword) || /车站/.test(results.keyword)) {
+                            if (/机场/.test(results.keyword) || /车站/.test(results.keyword) || /公交/.test(results.keyword)) {
                                 if ( tags && tags.length && /机场/.test(tags.join(',')) ) {
                                     resultArr.push(thisData);
                                 }else if( /火车站/.test(results.keyword) && tags && tags.length && /火车站/.test(tags.join(',')) ){
                                     resultArr.push(thisData);
                                 }else if( /汽车站/.test(results.keyword) && tags && tags.length && /汽车站/.test(tags.join(',')) ){
+                                    resultArr.push(thisData);
+                                }else if( /公交/.test(results.keyword) && tags && tags.length && /公交车站/.test(tags.join(',')) ){
                                     resultArr.push(thisData);
                                 };  
                             }else{ //其他检索
@@ -239,6 +243,8 @@
               var pixel = map.pointToOverlayPixel(this._point);
               this._div.style.left = pixel.x + "px";
               this._div.style.top  = pixel.y + "px";
+              this._div.style.width  = "1px";
+              this._div.style.height  = "1px";
               this._div.style.zIndex = data.zIndex;
             }
             
@@ -289,7 +295,10 @@
                 };
 
 
-                
+                if (options.fullViewport) {
+                    //获取所有覆盖物的中心和最佳缩放比例
+                    this.moveCenter();    
+                };
                 
 
 
@@ -348,6 +357,15 @@
                 map.panTo(this.options.point);
             };
             
+        },
+        moveCenter:function(){
+            var map = this.map;
+            //获取所有覆盖物的中心和最佳缩放比例
+            var centerSize = this.getViewport(this.pointArr);
+            setTimeout(function(){
+                map.setZoom(parseInt(centerSize.zoom));
+                map.panTo(centerSize.center);
+            },200);
         },
         //设置地图缩放尺寸
         setZoom:function(size){
