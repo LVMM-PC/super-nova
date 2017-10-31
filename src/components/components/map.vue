@@ -61,7 +61,7 @@ var detailMap = nova.map({
     pointLine : false, //是否连线
     pointLineColor : '#e38', //连线的颜色
 
-    scrollWheelZoom : true, //是否开启滚轮滑动
+    scrollWheelZoom : true, //是否开启滚轮缩放
     showControl : true, //是否显示地图缩放、比例尺控件
 
     zIndex : 1, //地点覆盖物覆盖物层级
