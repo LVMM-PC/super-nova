@@ -1,5 +1,5 @@
 <template>
-  <div id="everything">
+  <div id="everything" class="everything-map">
 
     <ih1 :model="{value: 'Map'}"></ih1>
 
@@ -138,8 +138,8 @@ var detailMap = nova.map({
 detailMap.search({
     keyArr : ['公交站'], //检索的关键词，可同时检索多个关键词
     'distance' : '3000', //设置检索范围（单位：米），检索范围默认为5公里，机场长途汽车站默认为100公里
-    searchCallback : function(data){ 
-        
+    searchCallback : function(data){
+
         console.log(data); //检索的结果数据
 
     }
@@ -200,7 +200,7 @@ detailMap.overlayLine({
     $thisTip.css('z-index',999).find('p').show();
     //移动窗口到对应的位置
     detailMap.moveTo({'lng':point[0],'lat':point[1]});
-    
+
     setTimeout(function(){
         $thisTip.css('z-index',999);
     },500);

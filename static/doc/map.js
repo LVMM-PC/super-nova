@@ -4,6 +4,11 @@
 
 $(function () {
 
+  var isMapPage = $("#everything").is(".everything-map")
+  if(!isMapPage){
+    return false
+  }
+
     nova.map({
         mapID : 'detail_map1'
     });
@@ -81,7 +86,7 @@ $(function () {
         $thisTip.css('z-index',999).find('p').show();
         //移动窗口到对应的位置
         detailMap.moveTo({'lng':point[0],'lat':point[1]});
-        
+
         setTimeout(function(){
 			$thisTip.css('z-index',999);
 		},500);

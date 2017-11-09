@@ -56,6 +56,7 @@
 
   superNova()
 
+  require('script-loader!../static/doc/jquery-1.7.2.min')
   require('script-loader!../static/doc/highlight.pack')
   require('script-loader!../static/doc/navigation')
 </script>
