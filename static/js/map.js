@@ -77,6 +77,7 @@
             //添加默认调用的酒店覆盖物
             this.defaltOverlay();
 
+            $('body').append('<style>.tangram-suggestion-main{z-index:100;}</style>');
 
         },
         //google地图
@@ -130,6 +131,9 @@
                             //执行回调,传回检索数据
                             data.searchCallback(resultArr);
                         };
+                    }else{
+                        //执行回调,传回检索数据
+                        data.searchCallback([]);
                     };
                 }
             };
@@ -326,13 +330,21 @@
             this.clearOverlays();
             //重绘默认覆盖物
             this.defaltOverlay();
-            //绘制新的覆盖物
-            this.overlayList(data);
+            
 
-            //获取所有覆盖物的中心和最佳缩放比例
-            var centerSize = this.getViewport(this.pointArr);
-            map.setZoom(centerSize.zoom);
-            map.panTo(centerSize.center);
+            if (data.pointData.length) {
+                //绘制新的覆盖物
+                this.overlayList(data);
+
+                //获取所有覆盖物的中心和最佳缩放比例
+                var centerSize = this.getViewport(this.pointArr);
+                map.setZoom(centerSize.zoom);
+                map.panTo(centerSize.center);
+            }else{
+                this.moveTo();
+            };
+
+            
         },
         replaceAll: function (str, obj) {
             for (var i in obj) {
@@ -354,7 +366,7 @@
             if (point) {
                 map.panTo(new BMap.Point(point.lng,point.lat));
             }else{
-                map.panTo(this.options.point);
+                map.panTo(this.options.pointData[0].point);
             };
             
         },
