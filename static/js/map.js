@@ -41,13 +41,63 @@
     webMap.prototype = {
         constructor : webMap,
         init : function(options){
+            
             //共享参数
             this.options = options;
 
+            var self = this;
+            var script = document.createElement('script');
+
+            //检测是否加载地图api
+            var hasScript = {'baidu':false,'google':false};
+            var scriptTag = document.getElementsByTagName('script');
+            for (var i = 0; i < scriptTag.length; i++) {
+                var src = scriptTag[i].getAttribute('src');
+                if ( /api.map.baidu.com/.test(src) ) {
+                    hasScript.baidu = true;
+                }else if(/maps.google.cn/.test(src)){
+                    hasScript.google = true;
+                };
+            };
+            //百度地图
             if (options.mapType == 'baidu') {
-                this.baidu();
-            }else{
-                this.google(options.point.lng,options.point.lat);
+                //页面存在百度地图api
+                if (hasScript.baidu) {
+                      self.baidu();
+                }else{//不存在，则加载百度api
+                    var script = document.createElement("script");    
+                    script.src = 'http://api.map.baidu.com/getscript?v=2.0&ak=i2ccGvMLyR86WI0YcodIe7Lu';
+                    document.body.appendChild(script);
+                    script.onload = function(){
+                        self.baidu();
+                        //百度地图自动补全层级bug
+                        $('body').append('<style>.tangram-suggestion-main{z-index:199 !important;}</style>');
+                    }  
+                };
+                
+            }else{ //google地图
+                if (hasScript.google) {
+                      self.google();
+                }else{
+                    //获取当前url
+                    var hostname = location.hostname,
+                        key = '';
+                    //这3中类型的url用第一个key
+                    if (hostname=='ticket.lvmama.com' || hostname=='dujia.lvmama.com' || hostname=='super.lvmama.com' ) {
+                        key = 'AIzaSyAxD3V20_zKzgdCDZopmvj-NF4gX78TJ88';
+                    }else if(hostname=='www.lvmama.com' || hostname=='cms.lvmama.com'){ //这两种类型用第二个key
+                        key = 'AIzaSyDOLUU355I1oDAme7wqF_lz7wN1gp-mLmM';
+                    };
+
+                    //创建api
+                    var script = document.createElement("script");    
+                    script.src = 'http://ditu.google.cn/maps/api/js?sensor=false&language=zh-CN.js&key='+key;
+                    document.body.appendChild(script);
+                    script.onload = function(){
+                        self.google();
+                    }
+                };
+
             };
             
             
@@ -57,7 +107,7 @@
             var options = this.options,
                 centerData = options.pointData[0],
                 firstPoint = centerData.point;
-            this.centerData = centerData;
+            
             // 百度地图API功能
             this.map = new BMap.Map(options.mapID);
             this.point = new BMap.Point(firstPoint.lng,firstPoint.lat);
@@ -77,12 +127,40 @@
             //添加默认调用的酒店覆盖物
             this.defaltOverlay();
 
-            $('body').append('<style>.tangram-suggestion-main{z-index:100;}</style>');
+
 
         },
         //google地图
         google:function(){
-            console.log('组件暂不支持谷歌地图！');
+            //console.log('组件暂不支持谷歌地图！');
+            var options = this.options,
+                centerData = options.pointData[0],
+                firstPoint = centerData.point;
+            
+            var myLatlng = new google.maps.LatLng(firstPoint.lat,firstPoint.lng);
+            var mapOptions = {
+              zoom : options.zoom,
+              center : myLatlng,
+              zoomControl : options.showControl,
+              scrollwheel : options.scrollWheelZoom
+            };
+            this.map = new google.maps.Map(document.getElementById(options.mapID),mapOptions);
+
+            //是否显示在一个可视区
+            if (options.fullViewport) {
+                //获取所有覆盖物的中心和最佳缩放比例
+                this.moveCenter();    
+            };
+
+            //添加默认调用的酒店覆盖物
+            this.defaltOverlay();
+            
+            //获取经纬度
+            /*google.maps.event.addListener(this.map,'click',function(e){
+                console.log(e.latLng.toJSON());
+            });*/
+
+
         },
         //地图周边搜索接口，参数1：搜索关键词数组，参数2：回调函数，参数3：数据查找半径（单位米）
         search:function(data){
@@ -216,47 +294,127 @@
             var pointData = data.pointData;
 
 
-            // 复杂的自定义覆盖物
-            function ComplexCustomOverlay(point, text, mouseoverText){
-              this._point = point;
-              this._text = text;
-              this._overText = mouseoverText;
-            }
-            ComplexCustomOverlay.prototype = new BMap.Overlay();
-            ComplexCustomOverlay.prototype.initialize = function(map){
-                this._map = map;
+            if (this.options.mapType == 'baidu') {
+                // 复杂的自定义覆盖物
+                function ComplexCustomOverlay(point, text, mouseoverText){
+                  this._point = point;
+                  this._text = text;
+                  this._overText = mouseoverText;
+                }
+                ComplexCustomOverlay.prototype = new BMap.Overlay();
+                ComplexCustomOverlay.prototype.initialize = function(map){
+                    this._map = map;
 
-                //创建覆盖物div
-                var div = this._div = document.createElement("div");
+                    //创建覆盖物div
+                    var div = this._div = document.createElement("div");
+                    
+                    //给坐标覆盖物编号
+                    pointData.number = data.number===''?'':data.number;
+                    //创建覆盖物class
+                    div.className = data.className;
+                    div.setAttribute("data-zIndex",data.zIndex);
+                    //替换模板数据
+                    div.innerHTML = self.replaceAll(data.template,pointData);
+                    //添加覆盖物对象
+                    map.getPanes().labelPane.appendChild(div);
+
+                  //返回覆盖物对象
+                  return div;
+                }
+                ComplexCustomOverlay.prototype.draw = function(){
+                  var map = this._map;
+                  var pixel = map.pointToOverlayPixel(this._point);
+                  this._div.style.left = pixel.x + "px";
+                  this._div.style.top  = pixel.y + "px";
+                  this._div.style.width  = "1px";
+                  this._div.style.height  = "1px";
+                  this._div.style.zIndex = data.zIndex;
+                }
                 
-                //给坐标覆盖物编号
-                pointData.number = data.number===''?'':data.number;
-                //创建覆盖物class
-                div.className = data.className;
-                div.setAttribute("data-zIndex",data.zIndex);
-                //替换模板数据
-                div.innerHTML = self.replaceAll(data.template,pointData);
-                //添加覆盖物对象
-                map.getPanes().labelPane.appendChild(div);
 
-              //返回覆盖物对象
-              return div;
-            }
-            ComplexCustomOverlay.prototype.draw = function(){
-              var map = this._map;
-              var pixel = map.pointToOverlayPixel(this._point);
-              this._div.style.left = pixel.x + "px";
-              this._div.style.top  = pixel.y + "px";
-              this._div.style.width  = "1px";
-              this._div.style.height  = "1px";
-              this._div.style.zIndex = data.zIndex;
-            }
+                //获取覆盖物对象    
+                var myCompOverlay = new ComplexCustomOverlay(pointData.point);   
+
+                //添加覆盖物 
+                map.addOverlay(myCompOverlay);
+
+            }else{ //google
+
+                function USGSOverlay(bounds,  map){
+                    // Initialize all properties.
+                    this.bounds_ = bounds;
+                    this.map_ = map;
+                    this.div_ = null;
+                    this.setMap(map);
+                };
+                USGSOverlay.prototype = new google.maps.OverlayView();
+                USGSOverlay.prototype.onAdd = function() {
+                    var div = document.createElement('div');
+                    //给坐标覆盖物编号
+                    pointData.number = data.number===''?'':data.number;
+                    //创建覆盖物class
+                    div.className = data.className;
+                    div.setAttribute("data-zIndex",data.zIndex);
+                    //替换模板数据
+                    div.innerHTML = self.replaceAll(data.template,pointData);
+                    this.div_ = div;
+
+                    // Add the element to the "overlayLayer" pane.
+                    var panes = this.getPanes();
+                    panes.overlayLayer.appendChild(div);
+                };
+                USGSOverlay.prototype.draw = function() {
+                    var overlayProjection = this.getProjection();
+                    var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+                    var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+                    var div = this.div_;
+                    div.style.left = sw.x+1 + 'px';
+                    div.style.top = ne.y + 'px';
+                    div.style.width = (ne.x - sw.x)+1 + 'px';
+                    div.style.height = (sw.y - ne.y)+1 + 'px';
+                    div.style.zIndex = data.zIndex+30; //google地图画线的图层默认是30，设置的层级要+30
+                };
+                USGSOverlay.prototype.onRemove = function() {
+                    this.div_.parentNode.removeChild(this.div_);
+                    this.div_ = null;
+                };
+                // Set the visibility to 'hidden' or 'visible'.
+                USGSOverlay.prototype.hide = function() {
+                    if (this.div_) {
+                      // The visibility property must be a string enclosed in quotes.
+                      this.div_.style.visibility = 'hidden';
+                    }
+                };
+
+                USGSOverlay.prototype.show = function() {
+                    if (this.div_) {
+                      this.div_.style.visibility = 'visible';
+                    }
+                };
+
+                USGSOverlay.prototype.toggle = function() {
+                    if (this.div_) {
+                      if (this.div_.style.visibility === 'hidden') {
+                        this.show();
+                      } else {
+                        this.hide();
+                      }
+                    }
+                };
+                USGSOverlay.prototype.toggleDOM = function() {
+                    if (this.getMap()) {
+                        // Note: setMap(null) calls OverlayView.onRemove()
+                        this.setMap(null);
+                    } else {
+                        this.setMap(this.map_);
+                    }
+                };
+
+                var bounds = new google.maps.LatLngBounds(pointData.point);
+                new USGSOverlay(bounds,this.map);
+            };
             
-
-            //获取覆盖物对象    
-            var myCompOverlay = new ComplexCustomOverlay(pointData.point);
-            //添加覆盖物 
-            map.addOverlay(myCompOverlay);
+            
         },
         pointArr : [], //存储所有覆盖物的经纬度，用于计算最佳缩放比例和中心点
         overlayList:function(data){
@@ -276,23 +434,52 @@
             if (pointData) {
 
                 for (var i = 0; i < pointData.length; i++) {
-                    //创建覆盖物
-                    this.overlay({
-                        pointData : pointData[i] ,
-                        className : className , 
-                        number : pointData[i].number ,
-                        template : template,
-                        zIndex : data.zIndex
-                    });
-                    //连线
-                    if (i>0 && pointLine) {
+                    if (options.mapType =='baidu') {
+                        //创建覆盖物
+                        this.overlay({
+                            pointData : pointData[i] ,
+                            className : className , 
+                            number : pointData[i].number ,
+                            template : template,
+                            zIndex : data.zIndex
+                        });
+                        //连线
+                        if (i>0 && pointLine) {
+                            var polyline = new BMap.Polyline([
+                                new BMap.Point(pointData[i-1].point.lng, pointData[i-1].point.lat),
+                                new BMap.Point(pointData[i].point.lng, pointData[i].point.lat)
+                            ], {strokeColor:pointLineColor , strokeWeight:2, strokeOpacity:1});   //创建折线    
+                            this.map.addOverlay(polyline);   //增加折线
+                        };
+                    }else{
 
-                        var polyline = new BMap.Polyline([
-                            new BMap.Point(pointData[i-1].point.lng, pointData[i-1].point.lat),
-                            new BMap.Point(pointData[i].point.lng, pointData[i].point.lat)
-                        ], {strokeColor:pointLineColor , strokeWeight:2, strokeOpacity:1});   //创建折线    
-                        this.map.addOverlay(polyline);   //增加折线
-                    };
+                        /*var marker = new google.maps.Marker({
+                            position: pointData[i].point,
+                            map: this.map
+                        });*/
+                        //创建覆盖物
+                        this.overlay({
+                            pointData : pointData[i] ,
+                            className : className , 
+                            number : pointData[i].number ,
+                            template : template,
+                            zIndex : data.zIndex
+                        });
+
+                        //连线
+                        if (i>0 && pointLine) {
+                            new google.maps.Polyline({
+                                map: self.map,
+                                path: [
+                                    {'lng' : pointData[i-1].point.lng , 'lat':pointData[i-1].point.lat},
+                                    {'lng' : pointData[i].point.lng , 'lat':pointData[i].point.lat}
+                                ],
+                                strokeColor: pointLineColor,
+                                strokeOpacity : 1,
+                                strokeWeight : 2
+                            });
+                        }
+                    }
                     
                     //添加所有覆盖物的经纬度
                     this.pointArr.push(pointData[i].point);
@@ -372,12 +559,24 @@
         },
         moveCenter:function(){
             var map = this.map;
-            //获取所有覆盖物的中心和最佳缩放比例
-            var centerSize = this.getViewport(this.pointArr);
-            setTimeout(function(){
-                map.setZoom(parseInt(centerSize.zoom));
-                map.panTo(centerSize.center);
-            },200);
+            if (this.options.mapType == 'baidu') {
+                //获取所有覆盖物的中心和最佳缩放比例
+                var centerSize = this.getViewport(this.pointArr);
+                setTimeout(function(){
+                    map.setZoom(parseInt(centerSize.zoom));
+                    map.panTo(centerSize.center);
+                },200);
+            }else{
+                var pointData = this.options.pointData;
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < pointData.length; i++) {
+                  bounds.extend(pointData[i].point);
+                };
+                var centerpoint = bounds.getCenter();
+                this.map.setCenter(centerpoint.toJSON());
+                this.map.fitBounds(bounds);
+            };
+            
         },
         //设置地图缩放尺寸
         setZoom:function(size){
