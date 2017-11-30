@@ -91,7 +91,9 @@
 
                     //创建api
                     var script = document.createElement("script");    
-                    script.src = 'http://ditu.google.cn/maps/api/js?sensor=false&language=zh-CN.js&key='+key;
+                    script.src = 'http://ditu.google.cn/maps/api/js?hl=zh-CN&libraries=places&key='+key;
+                    //script.src = 'http://ditu.google.cn/maps/api/js?libraries=geometry&channel=HOTEL_H&language=zh-CN&client=gme-ctriphk';
+                    //script.src = 'http://ditu.google.cn/maps/api/js?libraries=geometry&channel=HOTEL_H&language=zh-CN&client=lvmamamap';
                     document.body.appendChild(script);
                     script.onload = function(){
                         self.google();
@@ -144,6 +146,9 @@
               zoomControl : options.showControl,
               scrollwheel : options.scrollWheelZoom
             };
+
+            //this.myLatlng = myLatlng;
+            this.point = myLatlng.toJSON();
             this.map = new google.maps.Map(document.getElementById(options.mapID),mapOptions);
 
             //是否显示在一个可视区
@@ -154,6 +159,10 @@
 
             //添加默认调用的酒店覆盖物
             this.defaltOverlay();
+
+
+
+
             
             //获取经纬度
             /*google.maps.event.addListener(this.map,'click',function(e){
@@ -166,72 +175,171 @@
         search:function(data){
             var map = this.map,
                 self = this,
+                options = this.options,
                 resultArr = [],
                 searchNum = 0;
 
-            var options = {
-                onSearchComplete: function(results){
-                    // 判断状态是否正确
-                    if (local.getStatus() == BMAP_STATUS_SUCCESS){
-                        //循环检索的数据
-                        for (var i = 0; i < results.getCurrentNumPois(); i ++){
-                            var thisData = results.getPoi(i),
-                                tags = thisData.tags;
 
-                            //检索的数据筛选出真正的机场、火车站、汽车站数据
-                            if (/机场/.test(results.keyword) || /车站/.test(results.keyword) || /公交/.test(results.keyword)) {
-                                if ( tags && tags.length && /机场/.test(tags.join(',')) ) {
+            if (options.mapType == 'baidu') {
+                var options = {
+                    onSearchComplete: function(results){
+                        // 判断状态是否正确
+                        if (local.getStatus() == BMAP_STATUS_SUCCESS){
+                            //循环检索的数据
+                            for (var i = 0; i < results.getCurrentNumPois(); i ++){
+                                var thisData = results.getPoi(i),
+                                    tags = thisData.tags;
+
+                                //检索的数据筛选出真正的机场、火车站、汽车站数据
+                                if (/机场/.test(results.keyword) || /车站/.test(results.keyword) || /公交/.test(results.keyword)) {
+                                    if ( tags && tags.length && /机场/.test(tags.join(',')) ) {
+                                        resultArr.push(thisData);
+                                    }else if( /火车站/.test(results.keyword) && tags && tags.length && /火车站/.test(tags.join(',')) ){
+                                        resultArr.push(thisData);
+                                    }else if( /汽车站/.test(results.keyword) && tags && tags.length && /汽车站/.test(tags.join(',')) ){
+                                        resultArr.push(thisData);
+                                    }else if( /公交/.test(results.keyword) && tags && tags.length && /公交车站/.test(tags.join(',')) ){
+                                        resultArr.push(thisData);
+                                    };  
+                                }else{ //其他检索
                                     resultArr.push(thisData);
-                                }else if( /火车站/.test(results.keyword) && tags && tags.length && /火车站/.test(tags.join(',')) ){
-                                    resultArr.push(thisData);
-                                }else if( /汽车站/.test(results.keyword) && tags && tags.length && /汽车站/.test(tags.join(',')) ){
-                                    resultArr.push(thisData);
-                                }else if( /公交/.test(results.keyword) && tags && tags.length && /公交车站/.test(tags.join(',')) ){
-                                    resultArr.push(thisData);
-                                };  
-                            }else{ //其他检索
-                                resultArr.push(thisData);
+                                };
+                                
+                            };
+
+                            searchNum++;
+                            //检索结果会添加到搜索对象中
+                            if (typeof data.searchCallback == 'function' && searchNum == data.keyArr.length) {
+                                //根据经纬度计算距离
+                                resultArr.sort(function(a,b){
+                                    var aDistance = map.getDistance(self.point,a.point),
+                                        bDistance = map.getDistance(self.point,b.point);
+                                    a.distance = aDistance;
+                                    b.distance = bDistance;
+                                    return aDistance - bDistance;
+                                });
+                                //执行回调,传回检索数据
+                                data.searchCallback(resultArr);
+                            };
+                        }else{
+                            //执行回调,传回检索数据
+                            data.searchCallback([]);
+                        };
+                    }
+                };
+
+                //调用搜索接口
+                var local = new BMap.LocalSearch(map, options);
+
+
+                //搜索多个关键字
+                if (!data.distance) {
+                    data.distance = 5000;//默认5公里范围内
+                };
+                for (var i = 0; i < data.keyArr.length; i++) {
+                    //local.search(keyArr[i]);//普通检索
+                    if ( /车站|机场/.test(data.keyArr.join(',')) ) {
+                        data.distance  =  100000; //机场车站为100公里范围内
+                    };
+                    //范围检索
+                    local.searchNearby(data.keyArr[i],this.point,data.distance);
+                };
+
+            }else{  //google搜索
+
+                //执行回调,传回检索数据
+                data.searchCallback([]);
+                return;
+
+                var places = new google.maps.places.PlacesService(map);
+
+
+                //搜索多个关键字
+                if (!data.distance) {
+                    data.distance = 5000;//默认5公里范围内
+                };
+                for (var i = 0; i < data.keyArr.length; i++) {
+                    //local.search(keyArr[i]);//普通检索
+                    if ( /车站|机场/.test(data.keyArr.join(',')) ) {
+                        data.distance  =  100000; //机场车站为100公里范围内
+                    };
+                    //范围检索
+                    //local.searchNearby(data.keyArr[i],this.point,data.distance);
+                    (function(thisKeyword){
+
+                        google.maps.places.RankBy.DISTANCE;
+                        places.nearbySearch({
+                            keyword : data.keyArr[i],
+                            location : self.point,
+                            radius : data.distance
+                        },function(results,status){
+                            if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+                                //循环检索的数据
+                                for (var j = 0; j < results.length; j ++){
+
+
+                                    var thisData = results[j],
+                                        tags = thisData.types,
+                                        thisPoint = thisData.geometry.location.toJSON();
+                                    
+                                    //计算两点的距离
+                                    var selfLatLng = new google.maps.LatLng({lat: self.point.lat, lng: self.point.lng}),
+                                        thisLatLng = new google.maps.LatLng({lat: thisPoint.lat, lng: thisPoint.lng}),
+                                        distance = google.maps.geometry.spherical.computeDistanceBetween(selfLatLng,thisLatLng);
+
+                                    thisData.point = thisPoint;
+                                    thisData.title = thisData.name;
+                                    thisData.distance = distance;
+                                    
+
+                                    //检索的数据筛选出真正的机场、火车站、汽车站数据
+                                    if (/机场/.test(thisKeyword) || /车站/.test(thisKeyword) || /公交/.test(thisKeyword)) {
+                                        if ( tags && tags.length && /机场/.test(tags.join(',')) ) {
+                                            resultArr.push(thisData);
+                                        }else if( /火车站/.test(thisKeyword) && tags && tags.length && /火车站/.test(tags.join(',')) ){
+                                            resultArr.push(thisData);
+                                        }else if( /汽车站/.test(thisKeyword) && tags && tags.length && /汽车站/.test(tags.join(',')) ){
+                                            resultArr.push(thisData);
+                                        }else if( /公交/.test(thisKeyword) && tags && tags.length && /公交车站/.test(tags.join(',')) ){
+                                            resultArr.push(thisData);
+                                        };  
+                                    }else{ //其他检索
+                                        resultArr.push(thisData);
+                                    };
+                                    
+                                };
+
+                                searchNum++;
+                                //检索结果会添加到搜索对象中
+                                if (typeof data.searchCallback == 'function' && searchNum == data.keyArr.length) {
+
+                                    resultArr.sort(function(a,b){
+                                        return a.distance - b.distance;
+                                    });
+
+                                    //执行回调,传回检索数据
+                                    data.searchCallback(resultArr);
+                                };    
+                            }else{
+                                //执行回调,传回检索数据
+                                data.searchCallback([]);
                             };
                             
-                        };
+                        });  
 
-                        searchNum++;
-                        //检索结果会添加到搜索对象中
-                        if (typeof data.searchCallback == 'function' && searchNum == data.keyArr.length) {
-                            //根据经纬度计算距离
-                            resultArr.sort(function(a,b){
-                                var aDistance = map.getDistance(self.point,a.point),
-                                    bDistance = map.getDistance(self.point,b.point);
-                                a.distance = aDistance;
-                                b.distance = bDistance;
-                                return aDistance - bDistance;
-                            });
-                            //执行回调,传回检索数据
-                            data.searchCallback(resultArr);
-                        };
-                    }else{
-                        //执行回调,传回检索数据
-                        data.searchCallback([]);
-                    };
-                }
-            };
-
-            //调用搜索接口
-            var local = new BMap.LocalSearch(map, options);
-
-
-            //搜索多个关键字
-            if (!data.distance) {
-                data.distance = 5000;//默认5公里范围内
-            };
-            for (var i = 0; i < data.keyArr.length; i++) {
-                //local.search(keyArr[i]);//普通检索
-                if ( /车站|机场/.test(data.keyArr.join(',')) ) {
-                    data.distance  =  100000; //机场车站为100公里范围内
+                    })(data.keyArr[i]);
                 };
-                //范围检索
-                local.searchNearby(data.keyArr[i],this.point,data.distance);
+
+
+                  
             };
+            
+            
+
+            
+
+            
             
             
 
@@ -249,7 +357,7 @@
             });
 
             //清除覆盖物
-            map.clearOverlays(); 
+            this.clearOverlays(); 
             
             //设置公交筛选条件
             if ( !data.num && data.num!=0 ) {
@@ -267,7 +375,7 @@
             var map = this.map;
             var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: data.id , autoViewport: true}});
             //清除覆盖物
-            map.clearOverlays(); 
+            this.clearOverlays(); 
             //搜索线路
             driving.search(data.start, data.end);
         },
@@ -276,7 +384,7 @@
             var map = this.map;
             var walking = new BMap.WalkingRoute(map, {renderOptions: {map: map, panel: data.id, autoViewport: true}});
             //清除覆盖物
-            map.clearOverlays();
+            this.clearOverlays();
             //搜索线路
             walking.search(data.start, data.end);
         },
@@ -362,6 +470,7 @@
                     // Add the element to the "overlayLayer" pane.
                     var panes = this.getPanes();
                     panes.overlayLayer.appendChild(div);
+                    self.overlayLayer = panes.overlayLayer;
                 };
                 USGSOverlay.prototype.draw = function() {
                     var overlayProjection = this.getProjection();
@@ -411,7 +520,7 @@
                 };
 
                 var bounds = new google.maps.LatLngBounds(pointData.point);
-                new USGSOverlay(bounds,this.map);
+                this.allOverlay = new USGSOverlay(bounds,this.map);
             };
             
             
@@ -429,6 +538,7 @@
                 className = data.className,
                 template = data.template;
 
+            this.pointArr = [];
 
             //创建覆盖物
             if (pointData) {
@@ -523,10 +633,13 @@
                 //绘制新的覆盖物
                 this.overlayList(data);
 
-                //获取所有覆盖物的中心和最佳缩放比例
-                var centerSize = this.getViewport(this.pointArr);
-                map.setZoom(centerSize.zoom);
-                map.panTo(centerSize.center);
+                if (this.options.mapType == 'baidu') {
+                    //获取所有覆盖物的中心和最佳缩放比例
+                    var centerSize = this.getViewport(this.pointArr);
+                    map.setZoom(centerSize.zoom);
+                    map.panTo(centerSize.center);    
+                };
+                
             }else{
                 this.moveTo();
             };
@@ -543,18 +656,38 @@
             return this.map.getViewport(this.pointArr);
         },
         //绘制线路
-        addOverlay:function(linePath){
+        /*addOverlay:function(linePath){
             var map = this.map;
             map.addOverlay(new BMap.Polyline(linePath));
-        },
+        },*/
         //视角平移到新的经纬度为中心点
         moveTo:function(point){ 
             var map = this.map;
-            if (point) {
-                map.panTo(new BMap.Point(point.lng,point.lat));
+
+            if (this.options.mapType == 'baidu') {
+                if (point) {
+                    map.panTo(new BMap.Point(point.lng,point.lat));
+                }else{
+                    map.panTo(this.options.pointData[0].point);
+                };
             }else{
-                map.panTo(this.options.pointData[0].point);
-            };
+
+                if (point) {
+                    map.setCenter(new google.maps.LatLng({lat: parseInt(point.lat), lng: parseInt(point.lng)}));
+                }else{
+                    map.setCenter(new google.maps.LatLng({lat: this.point.lat, lng: this.point.lng}));
+                }
+                
+
+                /*if (point) {
+                    map.panTo(new google.maps.LatLng({lat: parseInt(point.lat), lng: parseInt(point.lng)}));
+                }else{
+                    map.panTo(new google.maps.LatLng({lat: this.point.lat, lng: this.point.lng}));
+                };  */  
+            }
+            
+
+            
             
         },
         moveCenter:function(){
@@ -581,6 +714,8 @@
         //设置地图缩放尺寸
         setZoom:function(size){
             this.map.setZoom(size);
+            
+            
         },
         //返回当前地图的缩放级别
         getZoom:function(){
@@ -592,18 +727,44 @@
         },
         //返回两个经纬度之间的距离
         getDistance:function(startPoint,endPoint){
-            var sPoint = new BMap.Point(startPoint.lng,startPoint.lat),
-                ePoint = new BMap.Point(endPoint.lng,endPoint.lat);
-            return this.map.getDistance(sPoint,ePoint);
+            if (this.options.mapType == 'baidu') {
+                var sPoint = new BMap.Point(startPoint.lng,startPoint.lat),
+                    ePoint = new BMap.Point(endPoint.lng,endPoint.lat);
+                return this.map.getDistance(sPoint,ePoint);
+            }else{
+                //计算两点的距离
+                var startLatLng = new google.maps.LatLng({lat: startPoint.lat, lng: startPoint.lng}),
+                    endLatLng = new google.maps.LatLng({lat: endPoint.lat, lng: endPoint.lng}),
+                    distance = google.maps.geometry.spherical.computeDistanceBetween(startLatLng,endLatLng);
+                return distance;
+            };
+            
         },
         clearOverlays:function(){
             //清除覆盖物的经纬度
             this.pointArr = [];
-            //清除所有覆盖物
-            this.map.clearOverlays();
+
+            if (this.options.mapType == 'baidu') {
+                //清除所有覆盖物
+                this.map.clearOverlays();
+            }else{
+                //this.map.setOptions({noClear:false});
+                //this.allOverlay.onRemove();
+                //console.log(this.allOverlay.getPanes().overlayLayer());
+                this.overlayLayer.innerHTML = '';
+                //console.log(this.allOverlay);
+            };
+            
         },
         enableScrollWheelZoom:function(bool){
-            this.map.enableScrollWheelZoom(bool);
+            
+            if (this.options.mapType == 'baidu') {
+                //清除所有覆盖物
+                this.map.enableScrollWheelZoom(bool);
+            }else{
+                this.map.setOptions({scrollwheel:bool});
+            };
+            
         }
 
     };
