@@ -220,98 +220,6 @@
         hasTime: false,  //是否含时间
         clickDocumentHide: true,  //是点击
         festival: {
-            '2016-01-01': {
-                name: '元旦',
-                vacationName: '元旦'
-            },
-            '2016-02-07': {
-                name: '除夕',
-                vacationName: '除夕'
-            },
-            '2016-02-08': {
-                name: '春节',
-                vacationName: '春节'
-            },
-            '2016-02-09': {
-                vacationName: '春节假期'
-            },
-            '2016-02-10': {
-                vacationName: '春节假期'
-            },
-            '2016-02-11': {
-                vacationName: '春节假期'
-            },
-            '2016-02-12': {
-                vacationName: '春节假期'
-            },
-            '2016-02-13': {
-                vacationName: '春节假期'
-            },
-            '2016-04-02': {
-                vacationName: '清明节假期'
-            },
-            '2016-04-03': {
-                vacationName: '清明节假期'
-            },
-            '2016-04-04': {
-                name: '清明',
-                vacationName: '清明节'
-            },
-            '2016-04-30': {
-                vacationName: '劳动节假期'
-            },
-            '2016-05-01': {
-                name: '劳动',
-                vacationName: '劳动节'
-            },
-            '2016-05-02': {
-                vacationName: '劳动节假期'
-            },
-            '2016-06-09': {
-                name: '端午',
-                vacationName: '端午节'
-            },
-            '2016-06-10': {
-                vacationName: '端午节假期'
-            },
-            '2016-06-11': {
-                vacationName: '端午节假期'
-            },
-            '2016-09-15': {
-                name: '中秋',
-                vacationName: '中秋节假期'
-            },
-            '2016-09-16': {
-                vacationName: '中秋节假期'
-            },
-            '2016-09-17': {
-                vacationName: '中秋节'
-            },
-            '2016-10-01': {
-                name: '国庆',
-                vacationName: '国庆节'
-            },
-            '2016-10-02': {
-                vacationName: '国庆节假期'
-            },
-            '2016-10-03': {
-                vacationName: '国庆节假期'
-            },
-            '2016-10-04': {
-                vacationName: '国庆节假期'
-            },
-            '2016-10-05': {
-                vacationName: '国庆节假期'
-            },
-            '2016-10-06': {
-                vacationName: '国庆节假期'
-            },
-            '2016-10-07': {
-                vacationName: '国庆节假期'
-            },
-            '2016-12-31': {
-                vacationName: '元旦假期'
-            },
             '2017-01-01': {
                 name: '元旦',
                 vacationName: '元旦'
@@ -397,6 +305,101 @@
             },
             '2017-10-08': {
                 vacationName: '国庆节、中秋节假期'
+            },
+            '2017-12-30': {
+                vacationName: '元旦假期'
+            },
+            '2017-12-31': {
+                vacationName: '元旦假期'
+            },
+            '2018-01-01': {
+                name: '元旦',
+                vacationName: '元旦'
+            },
+            '2018-02-15': {
+                name: '除夕',
+                vacationName: '除夕'
+            },
+            '2018-02-16': {
+                name: '春节',
+                vacationName: '春节'
+            },
+            '2018-02-17': {
+                vacationName: '春节假期'
+            },
+            '2018-02-18': {
+                vacationName: '春节假期'
+            },
+            '2018-02-19': {
+                vacationName: '春节假期'
+            },
+            '2018-02-20': {
+                vacationName: '春节假期'
+            },
+            '2018-02-21': {
+                vacationName: '春节假期'
+            },
+            '2018-04-05': {
+                name: '清明',
+                vacationName: '清明节'
+            },
+            '2018-04-06': {
+                vacationName: '清明节假期'
+            },
+            '2018-04-07': {
+                vacationName: '清明节假期'
+            },
+            '2018-04-29': {
+                vacationName: '劳动节假期'
+            },
+            '2018-04-30': {
+                vacationName: '劳动节假期'
+            },
+            '2018-05-01': {
+                name: '劳动',
+                vacationName: '劳动节'
+            },
+            '2018-06-16': {
+                vacationName: '端午节假期'
+            },
+            '2018-06-17': {
+                vacationName: '端午节假期'
+            },
+            '2018-06-18': {
+                name: '端午',
+                vacationName: '端午节'
+            },
+            '2018-09-22': {
+                vacationName: '中秋节假期'
+            },
+            '2018-09-23': {
+                vacationName: '中秋节假期'
+            },
+            '2018-09-24': {
+                name: '中秋',
+                vacationName: '中秋节'
+            },
+            '2018-10-01': {
+                name: '国庆',
+                vacationName: '国庆节'
+            },
+            '2018-10-02': {
+                vacationName: '国庆节假期'
+            },
+            '2018-10-03': {
+                vacationName: '国庆节假期'
+            },
+            '2018-10-04': {
+                vacationName: '国庆节假期'
+            },
+            '2018-10-05': {
+                vacationName: '国庆节假期'
+            },
+            '2018-10-06': {
+                vacationName: '国庆节假期'
+            },
+            '2018-10-07': {
+                vacationName: '国庆节假期'
             }
         },
         cascadingEndNotShowStart: false,  //级联第二个日历不显示第一个选中元素,
