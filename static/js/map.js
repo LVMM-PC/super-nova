@@ -185,6 +185,7 @@
                     onSearchComplete: function(results){
                         // 判断状态是否正确
                         if (local.getStatus() == BMAP_STATUS_SUCCESS){
+                            var content = local.Fa.content;
                             //循环检索的数据
                             for (var i = 0; i < results.getCurrentNumPois(); i ++){
                                 var thisData = results.getPoi(i),
@@ -192,7 +193,7 @@
 
                                 //检索的数据筛选出真正的机场、火车站、汽车站数据
                                 if (/机场/.test(results.keyword) || /车站/.test(results.keyword) || /公交/.test(results.keyword)) {
-                                    if ( tags && tags.length && /机场/.test(tags.join(',')) ) {
+                                    if ( tags && tags.length && /机场/.test(tags.join(',')) ||  /机场/.test(content[i].std_tag) ) {
                                         resultArr.push(thisData);
                                     }else if( /火车站/.test(results.keyword) && tags && tags.length && /火车站/.test(tags.join(',')) ){
                                         resultArr.push(thisData);
@@ -210,6 +211,8 @@
                             searchNum++;
                             //检索结果会添加到搜索对象中
                             if (typeof data.searchCallback == 'function' && searchNum == data.keyArr.length) {
+
+
                                 //根据经纬度计算距离
                                 resultArr.sort(function(a,b){
                                     var aDistance = map.getDistance(self.point,a.point),
@@ -218,6 +221,11 @@
                                     b.distance = bDistance;
                                     return aDistance - bDistance;
                                 });
+                                //只有一条数据，不走sort单独计算
+                                if (resultArr.length==1) {
+                                    resultArr[0].distance = map.getDistance(self.point,resultArr[0].point);
+                                };
+                                
                                 //执行回调,传回检索数据
                                 data.searchCallback(resultArr);
                             };
@@ -538,7 +546,7 @@
                 className = data.className,
                 template = data.template;
 
-            this.pointArr = [];
+            this.pointArr = [this.point];
 
             //创建覆盖物
             if (pointData) {
