@@ -101,6 +101,9 @@
                     if (typeof options.enterCallback == 'function') {
                         options.enterCallback();
                     };
+                }else if(event.keyCode == "27"){ //ESC关闭补全
+                    $completeBox.hide();
+                    $(this).blur();
                 }else{
                     //输入内容
                     var thisVal = $.trim( $(this).val() );
