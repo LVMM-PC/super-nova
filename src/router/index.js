@@ -28,6 +28,7 @@ import calendarGroupon from '@/components/components/calendar/groupon'
 import navScroll from '@/components/components/nav-scroll'
 import dialog from '@/components/components/dialog'
 import map from '@/components/components/map'
+import autoComplete from '@/components/components/autoComplete'
 import dialogIframe from '@/components/components/dialog/iframe'
 import icon from '@/components/components/icon'
 import pinyin from '@/components/components/pinyin'
@@ -91,6 +92,7 @@ export default new Router({
         {path: 'nav-scroll', component: navScroll},
         {path: 'dialog', component: dialog},
         {path: 'map', component: map},
+        {path: 'autoComplete', component: autoComplete},
         {path: 'icon', component: icon},
         {path: 'pinyin', component: pinyin},
         {path: 'tips', component: tips},

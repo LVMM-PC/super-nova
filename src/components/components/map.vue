@@ -287,7 +287,7 @@ detailMap2.walking({
   import ih3 from '@/components/ih3'
 
   export default {
-    name: 'dialog',
+    name: 'map',
     components: {
       ih1,
       ih2,
@@ -301,8 +301,6 @@ detailMap2.walking({
 
 <style lang="scss">
 
-  @import "/static/assert/css/buttons.css";
-  @import "/static/assert/css/dialog.css";
 
   input {
     border: 1px solid #CCC;

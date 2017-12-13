@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.lvComplete{ display: none; position: absolute; left: 0; top: 0; min-width:300px; border:#ccc solid 1px; background-color: #fff;z-index: 9;}
+.lvComplete_list{ padding: 0 0 5px; }
+.lvComplete_list li{ font-size: 14px; cursor: pointer; position: relative;}
+.lvComplete_list li a{ display: block; padding: 0 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; height: 30px; line-height: 30px; color: #333; }
+.lvComplete_list li a:hover,.lvComplete_list li.active{ text-decoration: none; background: #fef2f9;}
+.lvComplete_list li i{ float: left; margin-top: 9px; margin-right: 5px;}
+.lvComplete_list li span{ float: right; font-size: 12px; color: #999;}
+
+.lvComplete_list li a:hover p,.lvComplete_list li.active p{ color: #e38;}
+.lvComplete_list li.active { background-color: #fef2f9; }
+
+.lvComplete_tip{ position: absolute; left: 0; top: 0; border:#ddd solid 1px; padding: 3px 10px; background-color: #fff; z-index: 10; }
+.lvComplete_tip span{ color: #e38; }
+
+
+

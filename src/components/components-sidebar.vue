@@ -38,6 +38,9 @@
               name: 'Calendar', value: 'Calendar<small>日历</small>', link: 'calendar'
             },
             {
+              name: 'autoComplete', value: 'autoComplete<small>自动补全</small>', link: 'autoComplete'
+            },
+            {
               name: 'UI', value: 'UI<small>控件</small>', link: 'ui'
             }
           ]
@@ -67,7 +70,7 @@
               name: 'NavScroll', value: 'Nav scroll<small>导航跟随</small>', link: 'nav-scroll'
             },
             {
-              name: 'map', value: 'Map<small>地图</small>', link: 'map'
+              name: 'map', value: 'map<small>地图</small>', link: 'map'
             }
           ]
         }
