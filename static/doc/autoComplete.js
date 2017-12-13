@@ -43,7 +43,7 @@ $(function () {
         ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=ROUTE&keyword={{keyword}}',
         ajaxJsonpCallback : 'recive',  
 
-        listTemplate : '<li destId="{{destId}}"><a><span>{{pinyin}}　约{{routes.type?routes.type:0}}个结果</span><p>{{searchValue}}</p></a></li>'
+        listTemplate : '<li destId="{{destId}}" data-value="{{searchValue}}"><a><span>{{pinyin}}　约{{routes.type?routes.type:0}}个结果</span><p>{{searchValue}}</p></a></li>'
     });
 
 
@@ -54,7 +54,7 @@ $(function () {
         ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=TICKET&keyword={{keyword}}',
         ajaxJsonpCallback : 'recive',  
         
-        listTemplate : '<li destId="{{destId}}"><a><span>约{{pinyin}}个结果</span><p>{{searchValue}}</p></a></li>'
+        listTemplate : '<li destId="{{destId}}" data-value="{{searchValue}}"><a><span>约{{pinyin}}个结果</span><p>{{searchValue}}</p></a></li>'
     });
 
 

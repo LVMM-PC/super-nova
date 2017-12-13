@@ -32,7 +32,7 @@ nova.autoComplete({
     skinClass : '', // 补全皮肤的className
 
     dataKey : null, //需要渲染的数组对象的key，如果返回的数据就是数组，不需配置。如果为多级数据可用对象方式查找例如：'matchList.arr'
-    listTemplate : '&lt;li destId="{<i></i>{destId}}">&lt;a>&lt;span>{<i></i>{pinyin}}　约{<i></i>{routes.type?routes.type:0}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>',  //补全列表的模板，对应数组的对象
+    listTemplate : '&lt;li value="{<i></i>{searchValue}}">&lt;a>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>',  //补全列表的模板，对应数组的对象,选中时默认把li上value的值带到输入框。
     activeName : 'active', //补全的选中状态样式
     
     tipContent : '对不起，找不到：<span>{<i></i>{keyword}}</span>', //无结果的提示模板,keyword等于输入框的内容
@@ -46,7 +46,7 @@ nova.autoComplete({
 
     emptyCallback : null, //清空input回调函数
     noDataCallback : null, //无结果的回调函数
-    enterCallback : null //回车回调函数
+    enterCallback : null //回车和点击选中回调函数
 
 });
 
@@ -112,7 +112,7 @@ nova.autoComplete({
     ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=ROUTE&keyword={<i></i>{keyword}}',
     ajaxJsonpCallback : 'recive',  
 
-    listTemplate : '&lt;li destId="{<i></i>{destId}}">&lt;a>&lt;span>{<i></i>{pinyin}} 约{<i></i>{routes.type?routes.type:0}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>', 
+    listTemplate : '&lt;li destId="{<i></i>{destId}}" value="{<i></i>{searchValue}}">&lt;a>&lt;span>{<i></i>{pinyin}} 约{<i></i>{routes.type?routes.type:0}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>', 
 });
 
 //门票
@@ -123,7 +123,7 @@ nova.autoComplete({
     ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=TICKET&keyword={<i></i>{keyword}}',
     ajaxJsonpCallback : 'recive',  
     
-    listTemplate : '&lt;li destId="{<i></i>{destId}}">&lt;a>&lt;span>约{<i></i>{pinyin}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>'
+    listTemplate : '&lt;li destId="{<i></i>{destId}}" value="{<i></i>{searchValue}}">&lt;a>&lt;span>约{<i></i>{pinyin}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>'
 });
 </code></pre>
 
