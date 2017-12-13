@@ -215,7 +215,7 @@
             //var listData = options.listData;
             //指定数据的key值
             if (options.dataKey) {
-                var dataKeyArr = options.dataKey.split('>');
+                var dataKeyArr = options.dataKey.split('.');
                 for (var i = 0; i < dataKeyArr.length; i++) {
                     listData = listData[dataKeyArr[i]];
                 };
