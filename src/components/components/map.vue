@@ -6,7 +6,7 @@
     <ih2 :model="{value: '引用'}"></ih2>
     <div>
       <ul>
-        <!-<li>
+        <!--<li>
           <a href="http://api.map.baidu.com/api?v=2.0&ak=i2ccGvMLyR86WI0YcodIe7Lu" target="_blank">http://api.map.baidu.com/api?v=2.0&ak=i2ccGvMLyR86WI0YcodIe7Lu</a>
         </li>-->
         <li>
@@ -18,7 +18,7 @@
     <ih2 :model="{value: '预览'}"></ih2>
     <ih3 :model="{value: '默认渲染地图'}"></ih3>
     <section>
-      <!-- 地图渲染 
+      <!-- 地图渲染 -->
 	  <div class="detail_map" id="detail_map1"></div>
     </section>
     <pre class="mt10"><code class="css">/* 默认地标覆盖物CSS */
