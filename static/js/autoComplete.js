@@ -34,11 +34,12 @@
         ajaxType : 'GET', //请求方式
         ajaxDataType : 'jsonp', //请求类型
         ajaxJsonpCallback : 'recive',  //jsonp的回调函数名
-        ajaxSuccess : null , //请求成功回调
+        ajaxSuccess : null , //请求成功回调,如果写回调函数，默认不渲染下拉列表。function(data,listHtml)可接收2个参数，第一个是数据，第二个是已有列表结构。补全div对象可在this.options里获得。
 
+        upDownCallback : null, //上下选择回调,function可接收一个参数，为当前选中的li。
         emptyCallback : null, //清空input回调函数
         noDataCallback : null, //无结果的回调函数
-        enterCallback : null //回车和点击选中回调函数
+        enterCallback : null //回车和点击选中回调函数,function可接收一个参数，为当前选中的li。
     };
 
 
@@ -80,36 +81,51 @@
 
             //input输入监听
             $document.on('keyup',options.input,function(event){
-                var listLength = $completeList.find('li').length;
+                
                 lvCompleteFocus = $(options.input);
                 //console.log(self.nowFocus);
                 
                 //上下选择
+                if(event.keyCode == "13"){
+                    $completeBox.hide();
+                    //回车回调
+                    if (typeof options.enterCallback == 'function') {
+                        var $li = $completeList.find('li').eq(self.index);
+                        options.enterCallback.call(self,$li);
+                    };
+                }else if(event.keyCode == "27"){ //ESC关闭补全
+                    $completeBox.hide();
+                    $(this).blur();
+                }else if(event.keyCode != "40" && event.keyCode != "38"){
+                    //输入内容
+                    var thisVal = $.trim( $(this).val() );
+                    self.inputKeyword(thisVal);
+                    
+                }
+            }).on('keydown',options.input,function(event){
+                var listLength = $completeList.find('li').length;
                 if (event.keyCode == "40") {
                     self.index+=1;
                     //检测是否超过列表总数量
                     if (self.index >= listLength) {self.index=0;};
                     self.listActive();
+                    //上下回调
+                    if (typeof options.upDownCallback == 'function') {
+                        var $li = $completeList.find('li').eq(self.index);
+                        options.upDownCallback.call(self,$li);
+                    }
+
                 }else if (event.keyCode == "38") {
                     self.index-=1;
                     //检测是否到第一个之前
                     if (self.index<0) {self.index = listLength-1;};
                     self.listActive();
-                }else if(event.keyCode == "13"){
-                    $completeBox.hide();
-                    //回车回调
-                    if (typeof options.enterCallback == 'function') {
-                        options.enterCallback();
-                    };
-                }else if(event.keyCode == "27"){ //ESC关闭补全
-                    $completeBox.hide();
-                    $(this).blur();
-                }else{
-                    //输入内容
-                    var thisVal = $.trim( $(this).val() );
 
-                    self.inputKeyword(thisVal);
-                    
+                    //上下回调
+                    if (typeof options.upDownCallback == 'function') {
+                        var $li = $completeList.find('li').eq(self.index);
+                        options.upDownCallback.call(self,$li);
+                    }
                 }
             });
 
@@ -117,6 +133,17 @@
             $document.on('click',options.input,function(e){
                 var thisVal = $.trim( $(this).val() );
                 self.inputKeyword(thisVal);
+            });
+
+            //点击选中补全内容
+            $completeList.on('click','li',function(e){
+                var $this = $(this);
+                self.index = $this.index();
+                self.listActive();
+                //回车回调
+                if (typeof options.enterCallback == 'function') {
+                    options.enterCallback.call(self,$this);
+                };
             });
 
 
@@ -129,15 +156,7 @@
                     $completeTip.hide();
                 });
                 
-                //点击选中补全内容
-                $completeList.on('click','li',function(e){
-                    self.index = $(this).index();
-                    self.listActive();
-                    //回车回调
-                    if (typeof options.enterCallback == 'function') {
-                        options.enterCallback();
-                    };
-                });
+
             };
             
         },
@@ -151,7 +170,7 @@
 
                 //清空input后的回调
                 if (typeof options.emptyCallback == 'function') {
-                    options.emptyCallback();
+                    options.emptyCallback.call(this);
                 };
 
             }else{
@@ -219,7 +238,7 @@
                     };
 
                     if (typeof options.ajaxSuccess == 'function') {
-                        options.ajaxSuccess(data,listHtml);
+                        options.ajaxSuccess.call(self,data,listHtml);
                     }else{
                         //数据填充
                         $completeList.html( listHtml );    
@@ -259,7 +278,7 @@
 
                 //回调
                 if (typeof options.noDataCallback == 'function') {
-                    options.noDataCallback();
+                    options.noDataCallback.call(this);
                 };
                 
                 return '';
