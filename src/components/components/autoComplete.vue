@@ -1,7 +1,7 @@
 <template>
   <div id="everything">
 
-    <ih1 :model="{value: 'Map'}"></ih1>
+    <ih1 :model="{value: 'autoComplete'}"></ih1>
 
     <ih2 :model="{value: '引用'}"></ih2>
     <div>
@@ -26,27 +26,27 @@
 
 
 nova.autoComplete({
-    dataKey : 'matchList',
-
     input : '#js_autoComplete1', //补全绑定的输入框
     skinClass : '', // 补全皮肤的className
 
-    dataKey : null, //需要渲染的数组对象的key，如果返回的数据就是数组，不需配置。如果为多级数据可用对象方式查找例如：'matchList.arr'
-    listTemplate : '&lt;li value="{<i></i>{searchValue}}">&lt;a>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>',  //补全列表的模板，对应数组的对象,选中时默认把li上value的值带到输入框。
+    
+    listTemplate : '&lt;li data-value="{<i></i>{searchValue}}">&lt;a>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>',  //补全列表的模板，对应数组的对象,选中时默认把li上data-value的值带到输入框。
     activeName : 'active', //补全的选中状态样式
     
     tipContent : '对不起，找不到：<span>{<i></i>{keyword}}</span>', //无结果的提示模板,keyword等于输入框的内容
 
     
-    ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=ROUTE&keyword={<i></i>{keyword}}', //ajax请求的url
+    ajaxUrl:null, //ajax请求的url
     ajaxType : 'GET', //请求方式
     ajaxDataType : 'jsonp', //请求类型
     ajaxJsonpCallback : 'recive',  //jsonp的回调函数名,默认为空;
-    ajaxSuccess : null , //请求成功回调
+    dataKey : null, //需要渲染的数组对象的key，如果返回的数据就是数组，不需配置。如果为多级数据可用对象方式查找例如：'matchList.arr'
+    ajaxSuccess : null , //请求成功回调,如果写回调函数，默认不渲染下拉列表。function(data,listHtml)可接收2个参数，第一个是数据，第二个是已有列表结构。补全div对象可在this.options里获得。
 
+    upDownCallback : null, //上下选择回调,function可接收一个参数，为当前选中的li。
     emptyCallback : null, //清空input回调函数
     noDataCallback : null, //无结果的回调函数
-    enterCallback : null //回车和点击选中回调函数
+    enterCallback : null //回车和点击选中回调函数,function可接收一个参数，为当前选中的li。
 
 });
 
@@ -112,7 +112,7 @@ nova.autoComplete({
     ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=ROUTE&keyword={<i></i>{keyword}}',
     ajaxJsonpCallback : 'recive',  
 
-    listTemplate : '&lt;li destId="{<i></i>{destId}}" value="{<i></i>{searchValue}}">&lt;a>&lt;span>{<i></i>{pinyin}} 约{<i></i>{routes.type?routes.type:0}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>', 
+    listTemplate : '&lt;li destId="{<i></i>{destId}}" data-value="{<i></i>{searchValue}}">&lt;a>&lt;span>{<i></i>{pinyin}} 约{<i></i>{routes.type?routes.type:0}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>', 
 });
 
 //门票
@@ -123,7 +123,7 @@ nova.autoComplete({
     ajaxUrl:'http://s.lvmama.com/autocomplete/autoCompleteNew.do?type=TICKET&keyword={<i></i>{keyword}}',
     ajaxJsonpCallback : 'recive',  
     
-    listTemplate : '&lt;li destId="{<i></i>{destId}}" value="{<i></i>{searchValue}}">&lt;a>&lt;span>约{<i></i>{pinyin}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>'
+    listTemplate : '&lt;li destId="{<i></i>{destId}}" data-value="{<i></i>{searchValue}}">&lt;a>&lt;span>约{<i></i>{pinyin}}个结果&lt;/span>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>'
 });
 </code></pre>
 
