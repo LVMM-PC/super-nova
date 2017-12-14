@@ -81,9 +81,8 @@
 
             //input输入监听
             $document.on('keyup',options.input,function(event){
-                
+                //设置当前焦点的输入框
                 lvCompleteFocus = $(options.input);
-                //console.log(self.nowFocus);
                 
                 //上下选择
                 if(event.keyCode == "13"){
@@ -132,6 +131,9 @@
             //获取焦点
             $document.on('click',options.input,function(e){
                 var thisVal = $.trim( $(this).val() );
+                //设置当前焦点的输入框
+                lvCompleteFocus = $(this);
+                //补全当前内容
                 self.inputKeyword(thisVal);
             });
 

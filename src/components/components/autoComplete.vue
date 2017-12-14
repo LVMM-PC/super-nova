@@ -36,10 +36,10 @@ nova.autoComplete({
     tipContent : '对不起，找不到：<span>{<i></i>{keyword}}</span>', //无结果的提示模板,keyword等于输入框的内容
 
     
-    ajaxUrl:null, //ajax请求的url
+    ajaxUrl:null, //ajax请求的url，用{<i></i>{keyword}}可以带入输入的内容，例如：'http://www.baidu.com/search.php?key={<i></i>{keyword}}'
     ajaxType : 'GET', //请求方式
     ajaxDataType : 'jsonp', //请求类型
-    ajaxJsonpCallback : 'recive',  //jsonp的回调函数名,默认为空;
+    ajaxJsonpCallback : 'recive',  //jsonp的回调函数名;
     dataKey : null, //需要渲染的数组对象的key，如果返回的数据就是数组，不需配置。如果为多级数据可用对象方式查找例如：'matchList.arr'
     ajaxSuccess : null , //请求成功回调,如果写回调函数，默认不渲染下拉列表。function(data,listHtml)可接收2个参数，第一个是数据，第二个是已有列表结构。补全div对象可在this.options里获得。
 
