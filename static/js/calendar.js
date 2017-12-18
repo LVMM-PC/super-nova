@@ -2576,11 +2576,7 @@
             dates.forEach(function (row, index) {
                 dateHtml = "";
                 if (weekHeader) {
-                    if (dateSize - 1 === index) {
-                        //最后一行不添加间隔
-                    } else {
-                        dateHtml += "<td class='ui-calendar-week-header'></td>";
-                    }
+                    dateHtml += "<td class='ui-calendar-week-header'></td>";
                 }
                 row.forEach(function (cal) {
                     if (cal) {
@@ -2601,7 +2597,11 @@
                     week: dateHtml
                 });
                 if (weekInterval) {
-                    html += '<tr><td class="ui-calendar-week-interval" colspan="8"></td></tr>'
+                    if (dateSize - 1 === index) {
+                        //最后一行不添加间隔
+                    } else {
+                        html += '<tr><td class="ui-calendar-week-interval" colspan="8"></td></tr>'
+                    }
                 }
             });
 
