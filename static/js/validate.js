@@ -20,7 +20,7 @@
     var chineseRegExp = /^[\u4e00-\u9fa5]+$/;
     var chineseAndEnglishRegExp = /^[a-zA-Z\u4e00-\u9fa5\s]+$/;
     var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    var phoneRegExp = /^((1[378]\d)|(14[57])|(15([0-3]|[5-9])))\d{8}$/;
+    var phoneRegExp = /^1[3-9]\d{9}$/;
 
     /**
      * 工厂类

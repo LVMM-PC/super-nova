@@ -145,6 +145,8 @@
 
     //默认值
     Factory.defaults = {
+        weekHeader: false,  //每周第一个单元前添加头
+        weekInterval: false,  //每周之间添加间隔
         priceTipText: "因最低价实时变化，请以实际价格为准",
         showPriceTip: true,
         sectionSelect: false,  //单个日历区间选择
@@ -488,7 +490,7 @@
          * if ((西元年份是400的倍数)或(西元年份是4的倍数但不是100的倍数)): 闰年
          * else : 平年
          */
-        if ((fullYear % 400 === 0 ) || ((fullYear % 4 === 0) && (fullYear % 100 !== 0))) {
+        if ((fullYear % 400 === 0) || ((fullYear % 4 === 0) && (fullYear % 100 !== 0))) {
             return true;
         } else {
             return false;
@@ -602,7 +604,7 @@
      * @returns {Date} 第一天日期
      */
     Calendar.getFirstDateInMonth = function (date) {
-        return new Date(date.getFullYear, date.getMonth(), 1);
+        return new Date(date.getFullYear(), date.getMonth(), 1);
     };
 
     /**
@@ -611,7 +613,7 @@
      * @returns {Date} 最后一天日期
      */
     Calendar.getLastDateInMonth = function (date) {
-        return new Date(date.getFullYear, date.getMonth() + 1, 0);
+        return new Date(date.getFullYear(), date.getMonth() + 1, 0);
     };
 
     /**
@@ -2504,6 +2506,11 @@
             var nextMonthDate = Calendar.monthOffset(date, 1);
             var nextMonthYear = nextMonthDate.getFullYear();
             var nextMonthMonth = nextMonthDate.getMonth();
+            var weekHeaderTh = "";
+
+            if (this.options.weekHeader) {
+                weekHeaderTh = '<th class="ui-calendar-week-header"></th>';
+            }
 
             html += this.replaceWith(options.template.calTitle, {
                 month: this.replaceWith(options.titleTip, {
@@ -2528,6 +2535,7 @@
             html += this.replaceWith(options.template.calBody, {
                 month: month + 1,
                 date: this.createDate(date),
+                'weekHeader': weekHeaderTh,
                 'englishWeekTitle[0]': englishWeekTitle[(0 + weekOffset + dayOffset) % 7],
                 'englishWeekTitle[1]': englishWeekTitle[(1 + weekOffset + dayOffset) % 7],
                 'englishWeekTitle[2]': englishWeekTitle[(2 + weekOffset + dayOffset) % 7],
@@ -2560,9 +2568,20 @@
             var html = "";
             var dateHtml = "";
             var dates = this.getDateArrayByMonth(date);
+            var dateSize = dates.length;
             var options = this.options;
-            dates.forEach(function (row) {
+            var weekHeader = self.options.weekHeader;
+            var weekInterval = self.options.weekInterval;
+
+            dates.forEach(function (row, index) {
                 dateHtml = "";
+                if (weekHeader) {
+                    if (dateSize - 1 === index) {
+                        //最后一行不添加间隔
+                    } else {
+                        dateHtml += "<td class='ui-calendar-week-header'></td>";
+                    }
+                }
                 row.forEach(function (cal) {
                     if (cal) {
                         var dateMap = Calendar.dateFormat(cal, self.options.dateFormat);
@@ -2581,6 +2600,9 @@
                 html += self.replaceWith(options.template.weekWrap, {
                     week: dateHtml
                 });
+                if (weekInterval) {
+                    html += '<tr><td class="ui-calendar-week-interval" colspan="8"></td></tr>'
+                }
             });
 
             return html;
@@ -2731,7 +2753,7 @@
                     dateArray[row] = [];
                     for (col = 0; col < 7; col++) {
                         var newDate = new Date(firstDate.getFullYear(), firstDate.getMonth(), index);
-                        if (space && ( spaceStart || (+nextMonthFirstDate == +newDate))) {
+                        if (space && (spaceStart || (+nextMonthFirstDate == +newDate))) {
                             space--;
                             dateArray[row][col] = null;
                         } else {
@@ -2825,6 +2847,7 @@
     var calTable = '<table class="caltable">' +
         '    <thead>' +
         '        <tr>' +
+        '            {{weekHeader}}' +
         '            <th class="{{englishWeekTitle[0]}}">{{shortWeekTitle[0]}}</th>' +
         '            <th class="{{englishWeekTitle[1]}}">{{shortWeekTitle[1]}}</th>' +
         '            <th class="{{englishWeekTitle[2]}}">{{shortWeekTitle[2]}}</th>' +
