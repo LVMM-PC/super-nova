@@ -1,117 +1,187 @@
-/**
- * Created by twili on 16/07/06.
- */
+$(window).on("load", function() {
+  var testData = [
+    {
+      xAxis: {
+        value: "07-11",
+        text: "07-11/周二"
+      },
+      yAxis: {
+        value: "350",
+        text: "<em>￥</em>350<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-12",
+        text: "07-12/周三"
+      },
+      yAxis: {
+        value: "400",
+        text: "<em>￥</em>400<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-13",
+        text: "07-14/周四"
+      },
+      yAxis: {
+        value: "360",
+        text: "<em>￥</em>360<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-14",
+        text: "07-14/周五"
+      },
+      yAxis: {
+        value: "600",
+        text: "<em>￥</em>600<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-15",
+        text: "07-15/周六"
+      },
+      yAxis: {
+        value: "440",
+        text: "<em>￥</em>440<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-16",
+        text: "07-16/周日"
+      },
+      yAxis: {
+        value: "320",
+        text: "<em>￥</em>320<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-17",
+        text: "07-17/周一"
+      },
+      yAxis: {
+        value: "470",
+        text: "<em>￥</em>470<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-18",
+        text: "07-18/周二"
+      },
+      yAxis: {
+        value: "350",
+        text: "<em>￥</em>350<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-19",
+        text: "07-19/周三"
+      },
+      yAxis: {
+        value: "560",
+        text: "<em>￥</em>560<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-20",
+        text: "07-20/周四"
+      },
+      yAxis: {
+        value: "480",
+        text: "<em>￥</em>480<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-21",
+        text: "07-21/周五"
+      },
+      yAxis: {
+        value: "640",
+        text: "<em>￥</em>640<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-22",
+        text: "07-22/周六"
+      },
+      yAxis: {
+        value: "420",
+        text: "<em>￥</em>420<small>起</small>"
+      }
+    }, {
+      xAxis: {
+        value: "07-23",
+        text: "07-23/周日"
+      },
+      yAxis: {
+        value: "410",
+        text: "<em>￥</em>410<small>起</small>"
+      }
+    }
+  ];
+  var $chartBox = $(".chart-box");
+  nova.chart({
+    chartBoxSelector: '.chart-box',
+    width: 800,
+    height: 400,
+    data: testData,
+    mousemoveCallback: function (point) {
+      var index = point.index;
+      var thisPoint = testData[index];
+      console.log();
+      $(".chart-hover").remove();
+      $chartBox.append("<div class='chart-hover'><span class='chart-price'>"+thisPoint.yAxis.text+"</span><br><span class='chart-date'>"+thisPoint.xAxis.text+"</span></div>");
+      var top = point.position.y-$(".chart-hover").outerHeight()-10+"px";
+      var left = point.position.x-$(".chart-hover").outerWidth()/2+"px";
+      $(".chart-hover").css({
+        left: left,
+        top: top
+      });
 
-$(function () {
+    },
+    mouseleaveCallback: function () {
+      $(".chart-hover").remove();
+      console.log("leave")
+    }
+  });
 
-    $(window).on("load", function () {
-
-        var $box = $("#box");
-        var $chart = $("#chart");
-        var $hover = $("#hover");
-        var $price = $("#price");
-        var $date = $("#date");
-        //console.log($chart)
-        var canvas = document.getElementById('chart');
-        var ctx = canvas.getContext("2d");
-
-        var width = $chart.width();
-        var height = $chart.height();
-        var maxPrice = 2000;
-
-        function drawPoint(p) {
-            var x = p.x;
-            var y = p.y;
-            ctx.fillStyle = "rgb(254,103,0)";
-            ctx.beginPath();
-            ctx.arc(x, y, 10, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        function drawLine(p, q) {
-            var x1 = p.x;
-            var y1 = p.y;
-            var x2 = q.x;
-            var y2 = q.y;
-            ctx.strokeStyle = "rgb(254,103,0)";
-            ctx.beginPath();
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.stroke();
-        }
-
-        $.ajax({
-            url: "json/time-price.json"
-        }).done(function (data) {
-            var size = data.length;
-
-            var points = [];
-            for (var i = 0; i < size; i++) {
-
-                var day = data[i];
-                var date = day.date;
-                var price = day.price;
-
-                var point = {
-                    x: (width / size) * i  +0.5* (width / size),
-                    y: height + (-price / maxPrice * height),
-                    date: date,
-                    price: price
-                };
-                points.push(point);
-
-            }
-
-            ctx.fillStyle = "rgba(254,103,0,0.2)";
-            ctx.beginPath();
-            ctx.moveTo(0, height);
-            for (var k = 0; k < size; k++) {
-                var o = points[k];
-                ctx.lineTo(o.x, o.y);
-            }
-            ctx.lineTo(width, height);
-            ctx.fill();
-
-            for (var j = 0; j < size; j++) {
-                var p = points[j];
-                if (j + 1 < size) {
-                    var q = points[j + 1];
-                    drawLine(p, q);
-                }
-                drawPoint(p);
-
-            }
-
-            var show = null;
-            $chart.on("mousemove", function (e) {
-                var x = e.offsetX;
-                var index = ~~(x / (width / size))
-
-                var z = points[index];
-                if (z) {
-                    $hover.show();
-                    if (show != z) {
-                        show = z;
-                        $price.html(z.price);
-                        $date.html(z.date);
-                        $hover.css({
-                            left: z.x,
-                            top: z.y
-                        })
-                    }
-
-                } else {
-                    $hover.hide();
-                }
-            });
-            $box.on("mouseleave", function () {
-                $hover.hide();
-
-            })
-
-        }).fail(function (error) {
-            console.log(error);
-        })
-    })
+  nova.chart({
+    chartBoxSelector: '.theme-chart-box',
+    width: 1000,
+    height: 500,
+    data: testData,
+    theme: {
+      // 边框线（包括中间横线）
+      borderLineStyle: {
+        width: 1,
+        color: "rgb(221,221,221)"
+      },
+      // 折线图点之间连线
+      dataLineStyle: {
+        width: 2,
+        color: "rgb(100,196,254)"
+      },
+      // 折线图圆点
+      circleStyle: {
+        radius: 4,
+        color: "rgb(100,196,254)"
+      },
+      // 折线图底部填充
+      fillBottomStyle: {
+        color: "rgba(225,244,255,0.5)"
+      },
+      // 坐标轴标识
+      axisStyle: {
+        font: "12px 'Helvetica Neue',Helvetica,Arial,sans-serif",
+        color: "rgb(51,51,51)"
+      },
+      // 最大、最小值
+      minMax: {
+        font: "12px 'Helvetica Neue',Helvetica,Arial,sans-serif",
+        color: "rgb(255,102,0)"
+      }
+    }
+  });
 
 });
+
