@@ -36,6 +36,7 @@ import tips from '@/components/components/tips'
 import ui from '@/components/components/ui'
 import validate from '@/components/components/validate'
 import validateSetting from '@/components/components/validate/setting'
+import chart from '@/components/components/chart'
 
 import guide from '@/components/guide'
 import guideHome from '@/components/guide/home'
@@ -98,7 +99,8 @@ export default new Router({
         {path: 'tips', component: tips},
         {path: 'ui', component: ui},
         {path: 'validate', component: validate},
-        {path: 'validate/setting', component: validateSetting}
+        {path: 'validate/setting', component: validateSetting},
+        {path: 'chart', component: chart}
       ]
     },
     {

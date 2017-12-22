@@ -13,7 +13,7 @@
     </div>
 
     <ih2 :model="{value: '配置'}"></ih2>
-    <pre>
+
 <code class="js">var py = novaPinyin();
 
 //1.获取汉字拼音：默认不支持多音字、以空格分隔
