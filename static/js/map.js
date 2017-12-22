@@ -25,6 +25,22 @@
 
     };
 
+
+    // 复杂的自定义覆盖物
+    function ComplexCustomOverlay(point, text, mouseoverText){
+      this._point = point;
+      this._text = text;
+      this._overText = mouseoverText;
+    }
+
+    function USGSOverlay(bounds,  map){
+        // Initialize all properties.
+        this.bounds_ = bounds;
+        this.map_ = map;
+        this.div_ = null;
+        this.setMap(map);
+    };
+
     //创建新的对象
     function Factory(options){
         //合并参数
@@ -411,12 +427,7 @@
 
 
             if (this.options.mapType == 'baidu') {
-                // 复杂的自定义覆盖物
-                function ComplexCustomOverlay(point, text, mouseoverText){
-                  this._point = point;
-                  this._text = text;
-                  this._overText = mouseoverText;
-                }
+                
                 ComplexCustomOverlay.prototype = new BMap.Overlay();
                 ComplexCustomOverlay.prototype.initialize = function(map){
                     this._map = map;
@@ -456,13 +467,7 @@
 
             }else{ //google
 
-                function USGSOverlay(bounds,  map){
-                    // Initialize all properties.
-                    this.bounds_ = bounds;
-                    this.map_ = map;
-                    this.div_ = null;
-                    this.setMap(map);
-                };
+                
                 USGSOverlay.prototype = new google.maps.OverlayView();
                 USGSOverlay.prototype.onAdd = function() {
                     var div = document.createElement('div');
