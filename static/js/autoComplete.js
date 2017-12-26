@@ -29,6 +29,7 @@
         tipContent : '对不起，找不到：<span>{{keyword}}</span>', //无结果的提示模板
         dataKey : null, //需要渲染的数据对象的key
         activeName : 'active', //补全的选中状态样式
+        zIndex: 9,
         
         ajaxUrl : null, //ajax请求的url
         ajaxType : 'GET', //请求方式
@@ -229,9 +230,10 @@
                             offset = $input.offset();
 
                         $completeBox.show().css({
-                            width : $input.outerWidth()-2,
-                            left : offset.left,
-                            top : offset.top + $input.outerHeight()
+                            "width" : $input.outerWidth()-2,
+                            "z-index" : options.zIndex,
+                            "left" : offset.left,
+                            "top" : offset.top + $input.outerHeight()
                         });    
                         
                     }else{
