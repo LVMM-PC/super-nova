@@ -28,6 +28,7 @@
 nova.autoComplete({
     input : '#js_autoComplete1', //补全绑定的输入框
     skinClass : '', // 补全皮肤的className
+    zIndex : 9, //补全模块的层级
 
     
     listTemplate : '&lt;li data-value="{<i></i>{searchValue}}">&lt;a>&lt;p>{<i></i>{searchValue}}&lt;/p>&lt;/a>&lt;/li>',  //补全列表的模板，对应数组的对象,选中时默认把li上data-value的值带到输入框。
