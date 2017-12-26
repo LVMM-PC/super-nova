@@ -20,7 +20,7 @@
         loadNum = 0;
 
     //默认参数
-    var defalt = {
+    var Default = {
         input : null, //输入框
         skinClass : '', // 皮肤
         completeBox : $completeBox, //补全盒子
@@ -48,7 +48,7 @@
     //创建新的对象
     function Factory(options){
         //合并参数
-        options = $.extend({}, defalt, options);
+        options = $.extend({}, Default, options);
         //构造新的地图对象
         return new complete(options);
     }
@@ -83,8 +83,8 @@
             //input输入监听
             $document.on('keyup',options.input,function(event){
                 //设置当前焦点的输入框
-                lvCompleteFocus = $(options.input);
-                
+                lvCompleteFocus = $(this);
+                self.$input = lvCompleteFocus;
                 //上下选择
                 if(event.keyCode == "13"){
                     $completeBox.hide();
@@ -131,9 +131,11 @@
 
             //获取焦点
             $document.on('click',options.input,function(e){
-                var thisVal = $.trim( $(this).val() );
+                var $this = $(this);
+                var thisVal = $.trim( $this.val() );
                 //设置当前焦点的输入框
-                lvCompleteFocus = $(this);
+                lvCompleteFocus = $this;
+                self.$input = lvCompleteFocus;
                 //补全当前内容
                 self.inputKeyword(thisVal);
             });
@@ -169,8 +171,11 @@
         },
         inputKeyword : function(val){
             var options =  this.options;
-
-            if (val=='') {
+            var defaultValue = lvCompleteFocus.attr('data-value');
+            if (val=='' && typeof  defaultValue != 'undefined') {
+                //请求补全数据
+                this.ajaxData(defaultValue);
+            }else if (val=='') {
                 //隐藏补全列表
                 $completeBox.hide();
                 $completeTip.hide();
@@ -230,14 +235,14 @@
                     //如果有内容则计算补全位置
                     if (listHtml) {
                         //补全位置
-                        var $input = $(options.input),
-                            offset = $input.offset();
+                        var offset = lvCompleteFocus.offset();
+
 
                         $completeBox.show().css({
-                            "width" : $input.outerWidth()-2,
+                            "width" : lvCompleteFocus.outerWidth()-2,
                             "z-index" : options.zIndex,
                             "left" : offset.left,
-                            "top" : offset.top + $input.outerHeight()
+                            "top" : offset.top + lvCompleteFocus.outerHeight()
                         });
                         //添加皮肤
                         if (options.skinClass) {
@@ -275,17 +280,17 @@
                 
             };
 
+            var defaultValue = lvCompleteFocus.attr('data-value');
             //没有数据回调
-            if (!listData.length ) {
+            if (!listData.length  && typeof  defaultValue == 'undefined' ) {
                 //提示位置
-                var $input = $(options.input),
-                    offset = $input.offset();
+                var offset = lvCompleteFocus.offset();
 
                 //提示内容
                 $completeTip.html( this.replaceAll(options.tipContent,{ "keyword" : keyword}) ).show().css({
-                    width : $input.outerWidth()-22,
+                    width : lvCompleteFocus.outerWidth()-22,
                     left : offset.left,
-                    top : offset.top + $input.outerHeight()
+                    top : offset.top + lvCompleteFocus.outerHeight()
                 });
 
                 //回调
