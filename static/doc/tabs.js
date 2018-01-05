@@ -267,8 +267,6 @@ $(function () {
             })();
         }
 
-        this.loading();
-
         //Ajax获取时间价格表数据
         $.ajax({
             url: url,

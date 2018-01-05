@@ -466,8 +466,6 @@ $(function () {
 
             })();
         }
-
-        //this.loading();
         setDate(calendarData.calendarInfo);
 
         calendarTab.changeTab(this.now);
