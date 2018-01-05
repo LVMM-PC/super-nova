@@ -397,47 +397,75 @@
         },
         //公交线路
         transit : function(data){
-            var map = this.map;
-            var routePolicy = [BMAP_TRANSIT_POLICY_LEAST_TIME,BMAP_TRANSIT_POLICY_LEAST_TRANSFER,BMAP_TRANSIT_POLICY_LEAST_WALKING,BMAP_TRANSIT_POLICY_AVOID_SUBWAYS];
 
-            //加载中
-            $('#'+data.id).html('<div class="map_loading"><img src="http://pic.lvmama.com/img/new_v/ui_scrollLoading/loading.gif" alt="" /></div>');
+            var self = this;
+            var maptest = setInterval(function(){
+                var map = self.map;
+                if (map) {
+                    clearInterval(maptest);
+
+                    var routePolicy = [BMAP_TRANSIT_POLICY_LEAST_TIME,BMAP_TRANSIT_POLICY_LEAST_TRANSFER,BMAP_TRANSIT_POLICY_LEAST_WALKING,BMAP_TRANSIT_POLICY_AVOID_SUBWAYS];
+
+                    //加载中
+                    $('#'+data.id).html('<div class="map_loading"><img src="http://pic.lvmama.com/img/new_v/ui_scrollLoading/loading.gif" alt="" /></div>');
+                    
+                    var transit = new BMap.TransitRoute(map, {
+                        renderOptions: {map: map, panel: data.id}
+                    });
+
+                    //清除覆盖物
+                    self.clearOverlays(); 
+                    
+                    //设置公交筛选条件
+                    if ( !data.num && data.num!=0 ) {
+                        data.num = 0; //默认为时间最少
+                    };
+                    transit.setPolicy(routePolicy[data.num]);
+
+                    //搜索线路
+                    transit.search(data.start, data.end);
+                }
+            },100);
             
-            var transit = new BMap.TransitRoute(map, {
-                renderOptions: {map: map, panel: data.id}
-            });
-
-            //清除覆盖物
-            this.clearOverlays(); 
             
-            //设置公交筛选条件
-            if ( !data.num && data.num!=0 ) {
-                data.num = 0; //默认为时间最少
-            };
-            transit.setPolicy(routePolicy[data.num]);
-
-            //搜索线路
-            transit.search(data.start, data.end);
 
 
         },
         //id：驾车路线详情渲染的位置，start：开始地点，end：结束地点
         driving:function(data){ 
-            var map = this.map;
-            var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: data.id , autoViewport: true}});
-            //清除覆盖物
-            this.clearOverlays(); 
-            //搜索线路
-            driving.search(data.start, data.end);
+
+            var self = this;
+            var maptest = setInterval(function(){
+                var map = self.map;
+                if (map) {
+                    clearInterval(maptest);
+
+                    var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: data.id , autoViewport: true}});
+                    //清除覆盖物
+                    self.clearOverlays(); 
+                    //搜索线路
+                    driving.search(data.start, data.end);    
+                }
+            },100);
+            
         },
         //id：步行路线详情渲染的位置，start：开始地点，end：结束地点
         walking:function(data){ 
-            var map = this.map;
-            var walking = new BMap.WalkingRoute(map, {renderOptions: {map: map, panel: data.id, autoViewport: true}});
-            //清除覆盖物
-            this.clearOverlays();
-            //搜索线路
-            walking.search(data.start, data.end);
+
+            var self = this;
+            var maptest = setInterval(function(){
+                var map = self.map;
+                if (map) {
+                    clearInterval(maptest);
+                    
+                    var walking = new BMap.WalkingRoute(map, {renderOptions: {map: map, panel: data.id, autoViewport: true}});
+                    //清除覆盖物
+                    self.clearOverlays();
+                    //搜索线路
+                    walking.search(data.start, data.end);
+                }
+            },100);
+            
         },
         // 创建复杂的自定义覆盖物,point：经纬度对象，num：覆盖物序号,content:覆盖物内容，className：覆盖物class
         overlay:function(data){ 
@@ -661,30 +689,32 @@
             });
         },
         overlayLine:function(data){
-            var map = this.map;
+            var self = this;
+            var maptest = setInterval(function(){
+                var map = self.map;
+                if (map) {
+                    clearInterval(maptest);
+                    //清除所有覆盖物
+                    self.clearOverlays();
+                    //重绘默认覆盖物
+                    self.defaultOverlay();
+                    
+                    if (data.pointData.length) {
+                        //绘制新的覆盖物
+                        self.overlayList(data);
 
-            //清除所有覆盖物
-            this.clearOverlays();
-            //重绘默认覆盖物
-            this.defaultOverlay();
-            
-
-            if (data.pointData.length) {
-                //绘制新的覆盖物
-                this.overlayList(data);
-
-                if (this.options.mapType == 'baidu') {
-                    //获取所有覆盖物的中心和最佳缩放比例
-                    var centerSize = this.getViewport(this.pointArr);
-                    map.setZoom(centerSize.zoom);
-                    map.panTo(centerSize.center);    
+                        if (self.options.mapType == 'baidu') {
+                            //获取所有覆盖物的中心和最佳缩放比例
+                            var centerSize = self.getViewport(self.pointArr);
+                            map.setZoom(centerSize.zoom);
+                            map.panTo(centerSize.center);    
+                        };
+                        
+                    }else{
+                        self.moveTo();
+                    };    
                 };
-                
-            }else{
-                this.moveTo();
-            };
-
-            
+            },100);
         },
         replaceAll: function (str, obj) {
             for (var i in obj) {
