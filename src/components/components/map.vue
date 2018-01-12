@@ -56,6 +56,8 @@ var detailMap = nova.map({
             number:'' //地标箭头的html内容
         }
     ], //经纬度数组,可默认渲染多个地点覆盖物
+    template : '&lt;span class="map_icon map_icon_position">{<i></i>{number}}&lt;/span>&lt;p>{{title}<i></i>}&lt;/p>', //覆盖物的内容模板
+    className : 'map_tip_box',  //覆盖物外层div的class
     fullViewport : false, //所有覆盖物是否在一屏显示
 
     pointLine : false, //是否连线
@@ -84,8 +86,14 @@ detailMap.getZoom(); //获取地图当前缩放比例
 detailMap.getCenter(); //获取当前地图中心点的经纬度
 detailMap.getDistance(startPoint,endPoint); //获取两个经纬度之间的距离
 
+//设置多个点的中心点：传入经纬度数组，设置多个坐标的中心点
+detailMap.setViewportCenter(pointArr); 
 
-detailMap.enableScrollWheelZoom(true); //开启或关闭滚轮缩放
+//画线段和折线：第一个参数传入经纬度数组，第二个参数设置线条颜色、粗细、透明度。
+detailMap.addLine(pointArr,{strokeColor:'#e38',strokeWeight:2,strokeOpacity:1}); 
+
+detailMap.enableScrollWheelZoom(true); //设置开启或关闭滚轮缩放
+
 
 
 </code></pre>

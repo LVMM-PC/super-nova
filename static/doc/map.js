@@ -109,13 +109,15 @@ $(function () {
         ]
     });
 
-    //查询公交
-    detailMap2.transit({
-        id : 'map_list2',
-        start : '天安门广场',
-        end : '北京大学',
-        num : 0 //查询类型,0:时间最少，1：换乘最少，2：步行最少，3：不乘地铁。
-    });
+    setTimeout(function(){
+        //查询公交
+        detailMap2.transit({
+            id : 'map_list2',
+            start : '天安门广场',
+            end : '北京大学',
+            num : 0 //查询类型,0:时间最少，1：换乘最少，2：步行最少，3：不乘地铁。
+        });
+    },1000);
 
 
 
@@ -128,12 +130,16 @@ $(function () {
         ]
     });
 
-    //查询驾车
-    detailMap3.driving({
-        id : 'car_info_detail',
-        start : '天安门广场',
-        end : '北京大学'
-    });
+    
+
+    setTimeout(function(){
+        //查询驾车
+        detailMap3.driving({
+            id : 'car_info_detail',
+            start : '天安门广场',
+            end : '北京大学'
+        });
+    },1000);
 
 
 
@@ -146,11 +152,15 @@ $(function () {
         ]
     });
 
-    //查询步行
-    detailMap4.walking({
-        id : 'walk_info_detail',
-        start : '天安门广场',
-        end : '北京大学'
-    });
+
+    setTimeout(function(){
+        //查询步行
+        detailMap4.walking({
+            id : 'walk_info_detail',
+            start : '天安门广场',
+            end : '北京大学'
+        });    
+    },1000);
+    
 
 });
