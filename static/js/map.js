@@ -154,18 +154,20 @@
         //百度地图
         baidu:function(){
             var options = this.options,
-                centerData = options.pointData[0],
-                firstPoint = centerData.point;
-            
+                centerData = options.pointData[0];
+
             // 百度地图API功能
             this.map = new BMap.Map(options.mapID);
-            this.point = new BMap.Point(firstPoint.lng,firstPoint.lat);
-            this.map.centerAndZoom(this.point, options.zoom);
 
             if (options.scrollWheelZoom) {
                 this.map.enableScrollWheelZoom(true);
             };
-            
+
+            //拖动事件
+            if (typeof options.dragstart =='function') {
+                this.map.addEventListener("dragstart",options.dragstart);
+            };
+
             //显示缩放控件
             if (options.showControl) {
                 this.map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT}));        
@@ -173,14 +175,21 @@
                 this.map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}));
             };
 
+            //没有数据
+            if(!centerData){
+                return false;
+            }
+
+            //设置中心点
+            var firstPoint = centerData.point;
+            this.point = new BMap.Point(firstPoint.lng,firstPoint.lat);
+            this.map.centerAndZoom(this.point, options.zoom);
+            
             //添加默认调用的酒店覆盖物
             this.defaultOverlay();
 
 
-            //拖动事件
-            if (typeof options.dragstart =='function') {
-                this.map.addEventListener("dragstart",options.dragstart);
-            };
+            
             
 
         },
@@ -590,8 +599,8 @@
                 pointLineColor = data.pointLineColor?data.pointLineColor:"#e38",
                 className = data.className,
                 template = data.template;
-
-            this.pointArr = [this.point];
+            //检测是否有初始化经纬度
+            this.pointArr = this.point?[this.point]:[];
 
             //创建覆盖物
             if (pointData) {
