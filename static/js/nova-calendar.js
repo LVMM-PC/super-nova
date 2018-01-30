@@ -406,7 +406,8 @@
         },
         cascadingEndNotShowStart: false,  //级联第二个日历不显示第一个选中元素,
         weekOffset: 0,
-        dayOffset: 0
+        dayOffset: 0,
+        todayTitle: "今天"
     };
 
     /**
@@ -1969,8 +1970,8 @@
             var mosNext = this.options.monthNext;
             var mosPrev = this.options.monthPrev;
 
-            var upperLimit = Calendar.monthOffset(today, mosNext);
-            var lowerLimit = Calendar.monthOffset(today, -mosPrev);
+            var upperLimit = Calendar.monthOffset(Calendar.getFirstDateInMonth(today), mosNext);
+            var lowerLimit = Calendar.monthOffset(Calendar.getFirstDateInMonth(today), -mosPrev);
 
             if (mosNext != -1 && Calendar.isSameMonth(upperLimit, this.now)) {
                 this.hideMonthNext();
@@ -2441,10 +2442,10 @@
                 //小日历
                 if (dateTodayStr === date) {
                     if ($(self.wrap).is(".nova-calendar-mini")) {
-                        $date.html("今天");
+                        $date.html(self.options.todayTitle);
                     } else {
                         //大日历
-                        $novaCalendarDay.html("今天");
+                        $novaCalendarDay.html(self.options.todayTitle);
                     }
                 }
 
@@ -2503,7 +2504,7 @@
             var options = this.options;
             var month = date.getMonth();
             var year = date.getFullYear();
-            var nextMonthDate = Calendar.monthOffset(date, 1);
+            var nextMonthDate = Calendar.monthOffset(Calendar.getFirstDateInMonth(date), 1);
             var nextMonthYear = nextMonthDate.getFullYear();
             var nextMonthMonth = nextMonthDate.getMonth();
             var weekHeaderTh = "";
@@ -2802,7 +2803,7 @@
 
                 //当天
                 if (Calendar.isSameDay(today, date)) {
-                    return "今天";
+                    return this.options.todayTitle;
                 }
 
                 if (!noFestival) {
