@@ -677,6 +677,7 @@
         },
         overlayLine:function(data){
             var self = this;
+            var options = this.options;
             var maptest = setInterval(function(){
                 var map = self.map;
 
@@ -684,6 +685,14 @@
                     clearInterval(maptest);
                     //清除所有覆盖物
                     self.clearOverlays();
+                    //如果默认没有经纬度，则把渲染的第一个经纬度设为默认
+                    if(!self.point){
+                        var firstPoint = data.pointData[0].point;
+                        self.point = new BMap.Point(firstPoint.lng,firstPoint.lat);
+                        self.map.centerAndZoom(self.point, options.zoom);
+                    }
+                    
+
                     //重绘默认覆盖物
                     self.defaultOverlay();
                     
@@ -692,7 +701,9 @@
                         self.overlayList(data);
                         //设置所有覆盖物的中心点
                         self.setViewportCenter(self.pointArr);
-                        
+                        if(data.pointData.length==1 && data.zoom){
+                            self.setZoom(data.zoom);
+                        }
                     }else{
                         self.moveTo();
                     };    
