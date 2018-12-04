@@ -67,8 +67,7 @@
 
     //获取北京时间1970年1月1日 00:00:00.0000
     function getEpochOfCST() {
-        var epoch = new Date(0);
-        epoch.setHours(0);
+        var epoch = new Date(1970, 0, 1);
         return epoch;
     }
 
@@ -222,98 +221,6 @@
         hasTime: false,  //是否含时间
         clickDocumentHide: true,  //是点击
         festival: {
-            '2017-01-01': {
-                name: '元旦',
-                vacationName: '元旦'
-            },
-            '2017-01-02': {
-                vacationName: '元旦假期'
-            },
-            '2017-01-27': {
-                name: '除夕',
-                vacationName: '除夕'
-            },
-            '2017-01-28': {
-                name: '春节',
-                vacationName: '春节'
-            },
-            '2017-01-29': {
-                vacationName: '春节假期'
-            },
-            '2017-01-30': {
-                vacationName: '春节假期'
-            },
-            '2017-01-31': {
-                vacationName: '春节假期'
-            },
-            '2017-02-01': {
-                vacationName: '春节假期'
-            },
-            '2017-02-02': {
-                vacationName: '春节假期'
-            },
-            '2017-04-02': {
-                vacationName: '清明节假期'
-            },
-            '2017-04-03': {
-                vacationName: '清明节假期'
-            },
-            '2017-04-04': {
-                name: '清明',
-                vacationName: '清明节'
-            },
-            '2017-04-29': {
-                vacationName: '劳动节假期'
-            },
-            '2017-04-30': {
-                vacationName: '劳动节假期'
-            },
-            '2017-05-01': {
-                name: '劳动',
-                vacationName: '劳动节'
-            },
-            '2017-05-28': {
-                vacationName: '端午节假期'
-            },
-            '2017-05-29': {
-                vacationName: '端午节假期'
-            },
-            '2017-05-30': {
-                name: '端午',
-                vacationName: '端午节'
-            },
-            '2017-10-01': {
-                name: '国庆',
-                vacationName: '国庆节'
-            },
-            '2017-10-02': {
-                vacationName: '国庆节、中秋节假期'
-            },
-            '2017-10-03': {
-                vacationName: '国庆节、中秋节假期'
-            },
-            '2017-10-04': {
-                name: '中秋',
-                vacationName: '中秋节'
-            },
-            '2017-10-05': {
-                vacationName: '国庆节、中秋节假期'
-            },
-            '2017-10-06': {
-                vacationName: '国庆节、中秋节假期'
-            },
-            '2017-10-07': {
-                vacationName: '国庆节、中秋节假期'
-            },
-            '2017-10-08': {
-                vacationName: '国庆节、中秋节假期'
-            },
-            '2017-12-30': {
-                vacationName: '元旦假期'
-            },
-            '2017-12-31': {
-                vacationName: '元旦假期'
-            },
             '2018-01-01': {
                 name: '元旦',
                 vacationName: '元旦'
@@ -402,11 +309,108 @@
             },
             '2018-10-07': {
                 vacationName: '国庆节假期'
+            },
+            '2018-12-30': {
+                vacationName: '元旦假期'
+            },
+            '2018-12-31': {
+                vacationName: '元旦假期'
+            },
+            '2019-01-01': {
+                name: '元旦',
+                vacationName: '元旦'
+            },
+            '2019-02-04': {
+                name: '除夕',
+                vacationName: '除夕'
+            },
+            '2019-02-05': {
+                name: '春节',
+                vacationName: '春节'
+            },
+            '2019-02-06': {
+                vacationName: '春节假期'
+            },
+            '2019-02-07': {
+                vacationName: '春节假期'
+            },
+            '2019-02-08': {
+                vacationName: '春节假期'
+            },
+            '2019-02-09': {
+                vacationName: '春节假期'
+            },
+            '2019-02-10': {
+                vacationName: '春节假期'
+            },
+            '2019-04-05': {
+                name: '清明',
+                vacationName: '清明节'
+            },
+            '2019-04-06': {
+                vacationName: '清明节假期'
+            },
+            '2019-04-07': {
+                vacationName: '清明节假期'
+            },
+            '2019-04-29': {
+                vacationName: '劳动节假期'
+            },
+            '2019-04-30': {
+                vacationName: '劳动节假期'
+            },
+            '2019-05-01': {
+                name: '劳动',
+                vacationName: '劳动节'
+            },
+            '2019-06-07': {
+                name: '端午',
+                vacationName: '端午节'
+            },
+            '2019-06-08': {
+                vacationName: '端午节假期'
+            },
+            '2019-06-09': {
+                vacationName: '端午节假期'
+            },
+            '2019-09-13': {
+                name: '中秋',
+                vacationName: '中秋节'
+            },
+            '2019-09-14': {
+                vacationName: '中秋节假期'
+            },
+            '2019-09-15': {
+                vacationName: '中秋节假期'
+            },
+            '2019-10-01': {
+                name: '国庆',
+                vacationName: '国庆节'
+            },
+            '2019-10-02': {
+                vacationName: '国庆节假期'
+            },
+            '2019-10-03': {
+                vacationName: '国庆节假期'
+            },
+            '2019-10-04': {
+                vacationName: '国庆节假期'
+            },
+            '2019-10-05': {
+                vacationName: '国庆节假期'
+            },
+            '2019-10-06': {
+                vacationName: '国庆节假期'
+            },
+            '2019-10-07': {
+                vacationName: '国庆节假期'
             }
         },
         cascadingEndNotShowStart: false,  //级联第二个日历不显示第一个选中元素,
         weekOffset: 0,
         dayOffset: 0,
+        yearTitle: "年",
+        monthTitle: "月",
         todayTitle: "今天"
     };
 
@@ -754,7 +758,7 @@
 
             //生日日历
             if (options.isBirthday && Factory.defaults.titleTip == options.titleTip) {
-                options.titleTip = '<span class="cal-year-select">{{year}}年<i></i></span><span class="cal-month-select">{{month}}月<i></i></span>';
+                options.titleTip = '<span class="cal-year-select">{{year}}' + options.yearTitle + '<i></i></span><span class="cal-month-select">{{month}}' + options.monthTitle + '<i></i></span>';
             }
 
             this.options = options;
@@ -1507,7 +1511,7 @@
 
             var $dropdownBox = $('' +
                 '<div class="cal-month-dropdown-box">' +
-                '    <div class="cal-month-select-active">' + (this.now.getMonth() + 1) + '月<i></i></div>' +
+                '    <div class="cal-month-select-active">' + (this.now.getMonth() + 1) + this.options.monthTitle + '<i></i></div>' +
                 '</div>');
             var $ul = $('<ul class="cal-month-dropdown"></ul>');
             $dropdownBox.append($ul);
@@ -1530,7 +1534,7 @@
 
             var $dropdownBox = $('' +
                 '<div class="cal-year-dropdown-box">' +
-                '    <div class="cal-year-select-active">' + this.now.getFullYear() + '年<i></i></div>' +
+                '    <div class="cal-year-select-active">' + this.now.getFullYear() + this.options.yearTitle + '<i></i></div>' +
                 '</div>');
             var $ul = $('<ul class="cal-year-dropdown"></ul>');
             $dropdownBox.append($ul);
@@ -2440,7 +2444,7 @@
                     }
                 }
                 //小日历
-                if (dateTodayStr === date) {
+                if (dateTodayStr === date && self.options.todayTitle!=null) {
                     if ($(self.wrap).is(".ui-calendar-mini")) {
                         $date.html(self.options.todayTitle);
                     } else {

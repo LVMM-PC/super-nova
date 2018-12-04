@@ -171,7 +171,7 @@
         },
         inputKeyword : function(val){
             var options =  this.options;
-            var defaultValue = lvCompleteFocus.attr('data-value');
+            var defaultValue = lvCompleteFocus.attr('data-default-value');
             if (val=='' && typeof  defaultValue != 'undefined') {
                 //请求补全数据
                 this.ajaxData(defaultValue);
@@ -280,7 +280,7 @@
                 
             };
 
-            var defaultValue = lvCompleteFocus.attr('data-value');
+            var defaultValue = lvCompleteFocus.attr('data-default-value');
             //没有数据回调
             if (!listData.length  && typeof  defaultValue == 'undefined' ) {
                 //提示位置

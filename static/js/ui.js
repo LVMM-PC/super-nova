@@ -105,6 +105,11 @@
                 var $label = $(ele);
 
                 var $select = $label.find("select");
+
+                if (!$select.length) {
+                  return
+                }
+
                 var originIndex = $select.get(0).selectedIndex;
 
                 function getOptHtml($children) {

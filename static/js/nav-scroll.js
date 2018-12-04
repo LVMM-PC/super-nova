@@ -93,7 +93,7 @@
             $(document).on('click', $navList.selector, function (e) {
                 //是否开启监听高度变化，如果开启了，就取最新的位置，没有就用旧的位置
                 var topArr = options.monitoring ? self.getTopArr() : self.navTopArr,
-                    num = $(this).index(),
+                    num = $(this).index($navList.selector),
                     thisInfo = topArr[num];
                 //没有当前id不滚动
                 if (thisInfo.idName === '') return;
