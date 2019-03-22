@@ -357,6 +357,15 @@
                 name: '劳动',
                 vacationName: '劳动节'
             },
+            '2019-05-02': {
+                vacationName: '劳动节假期'
+            },
+            '2019-05-03': {
+                vacationName: '劳动节假期'
+            },
+            '2019-05-04': {
+                vacationName: '劳动节假期'
+            },
             '2019-06-07': {
                 name: '端午',
                 vacationName: '端午节'
