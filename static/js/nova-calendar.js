@@ -555,6 +555,7 @@
      */
     Calendar.getDateFromFormattedString = function (str, format) {
         var date = getEpochOfCST();
+        date.setFullYear(3000);
 
         var match;
         var parts = [];
@@ -589,7 +590,9 @@
                 }
             }
         }
-        if (+date === +getEpochOfCST()) {
+
+        var invalidDate = getEpochOfCST().setFullYear(3000);
+        if (+date === +invalidDate) {
             date = new Date();
             date.isInvalidDate = true;
         }
