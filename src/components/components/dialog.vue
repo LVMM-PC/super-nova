@@ -198,7 +198,7 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
 <code>nova.dialog({
 
     showClose: true,  //是否显示关闭按钮
-    button: null,  //按钮组
+    buttons: null,  //按钮组
     fixed: true,  //是否position:fixed
     masked: true,  //是否有遮罩层
     drag: false,  //是否可以拖拽
@@ -324,7 +324,7 @@ top.nova.loading('&lt;div class="nova-dialog-body-loading"&gt;&lt;i&gt;&lt;/i&gt
       <pre><code class="js">nova.dialog({
     content: '&lt;h4&gt;您对模态窗口满意吗？&lt;/h4&gt;' +
     '&lt;p&gt;说明：使用模态窗口，能实现全站的弹窗统一，外观能够控制，方便修改，功能上也可定制，实在是统一网页设计弹窗的必备武器！&lt;/p&gt;',
-    button: [
+    buttons: [
         {
             text: "非常满意",
             className: "btn-pink",
